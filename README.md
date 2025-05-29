@@ -52,6 +52,8 @@ At the heart of this system lies the **Enhanced Dungeon Crawler Engine**—a mys
 
 *The engine is built to be both powerful and elegant, handling everything from simple village encounters to epic dragon battles with the same mystical precision.*
 
+## 🏰 **Default Realm Information**
+
 ### 🌍 **The World Codex** - `world_db.crawlrpg`
 Herein lies the **Realm of Aethermoor**, a European Medieval overworld rich with possibility:
 
