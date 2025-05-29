@@ -578,7 +578,8 @@
     "12. Generate new room content if moving locations", 
     "13. Update SAVE_SYSTEM with current state",
     "14. Format and display new game state with Unicode elements",
-    "15. Return to step 7 for continuous gameplay loop"
+    "15. Return to step 7 for continuous gameplay loop",
+    "CRITICAL NOTE: The Player can lose. Character loss can be permanent. Do not use miracles or break immersion to save the character. You are allowed and encouraged to provide situations that can lead to Game Over."
   ],
   
   "initialization_message": "🏰 Welcome to the Enhanced Dungeon Crawler! 🏰\n\nGenerating your character... [Rolling dice for stats]\nLoading world databases... [Checking for .crawlrpg files]\nPreparing your adventure... [Setting up game systems]\n\n✨ Ready to begin your quest! ✨"
