@@ -1,0 +1,800 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan",
+  "default_starting_location": "village_square",
+  
+  "rooms": {
+    "outdoor_areas": {
+      "bamboo_grove": {
+        "description_template": "You stand among [RANDOM_CHOICE densities] bamboo stalks that sway gently in the [RANDOM_CHOICE wind_types]. [RANDOM_CHOICE atmosphere]",
+        "densities": ["towering", "dense", "ancient", "whispering", "sacred"],
+        "wind_types": ["mountain breeze", "gentle wind", "rustling air", "cool draft", "spirit-touched breeze"],
+        "atmosphere": [
+          "Filtered sunlight creates dancing patterns on the moss-covered ground",
+          "The hollow sound of bamboo knocking together creates a natural rhythm",
+          "A stone lantern flickers with mysterious blue flame among the stalks",
+          "Cherry blossoms drift through the grove like snow",
+          "The air carries the faint sound of a distant temple bell"
+        ],
+        "common_features": ["stone lanterns", "moss-covered paths", "hidden shrines", "carved markers", "bamboo fountains"],
+        "encounter_chance": 0.3,
+        "loot_chance": 0.4,
+        "exits": ["north", "south", "east", "west", "hidden_path"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🎋    🎋    🎋 ║",
+          "║               ║",
+          "║   🏮   🧙   🍃 ║",
+          "║               ║",
+          "║ 🎋    🎋    🎋 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "shrine_path": {
+        "description_template": "A [RANDOM_CHOICE path_types] path leads through [RANDOM_CHOICE surroundings] toward a [RANDOM_CHOICE shrine_descriptions] shrine. [RANDOM_CHOICE spiritual_atmosphere]",
+        "path_types": ["stone-paved", "winding mountain", "moss-covered", "lantern-lit", "sacred"],
+        "surroundings": ["ancient cedar trees", "flowering azaleas", "terraced gardens", "misty hills", "cascading waterfalls"],
+        "shrine_descriptions": ["vermillion torii-marked", "weathered wooden", "moss-covered stone", "gold-adorned", "mountain-peak"],
+        "spiritual_atmosphere": [
+          "Incense smoke drifts from hidden censers along the way",
+          "Prayer flags flutter in the wind, carrying wishes skyward", 
+          "The sound of running water from purification fountains echoes nearby",
+          "Carved fox statues watch your passage with stone eyes",
+          "The air itself seems to hum with spiritual energy"
+        ],
+        "common_features": ["torii gates", "stone foxes", "prayer flags", "purification fountains", "offering boxes"],
+        "encounter_chance": 0.2,
+        "loot_chance": 0.5,
+        "exits": ["shrine", "village", "mountain_path", "forest_trail"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║       ⛩️       ║",
+          "║   🏮  │  🏮   ║",
+          "║       🧙       ║",
+          "║   🌸  │  🌸   ║",
+          "║       │       ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "rice_paddy_fields": {
+        "description_template": "Terraced [RANDOM_CHOICE field_states] rice paddies stretch across the [RANDOM_CHOICE landscape_types]. [RANDOM_CHOICE seasonal_details]",
+        "field_states": ["flooded", "golden", "green", "muddy", "harvested"],
+        "landscape_types": ["hillside slopes", "valley floor", "mountain foothills", "riverside lowlands"],
+        "seasonal_details": [
+          "Farmers in wide hats work methodically, bending to tend the tender shoots",
+          "Herons wade carefully between the flooded terraces hunting for fish",
+          "The setting sun turns the water into mirrors of gold and crimson",
+          "Dragonflies dance above the water while frogs chorus from hidden spots",
+          "Scarecrows dressed in old kimono watch over the precious grain"
+        ],
+        "common_features": ["irrigation channels", "scarecrows", "farming tools", "water wheels", "storage huts"],
+        "encounter_chance": 0.2,
+        "loot_chance": 0.4,
+        "exits": ["village", "river", "mountain_path", "forest_edge"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🌾≋🌾≋🌾≋🌾≋🌾 ║",
+          "║               ║",
+          "║ 🌾≋🌾🧙🌾≋🌾≋🌾 ║",
+          "║               ║",
+          "║ 🌾≋🌾≋🌾≋🌾≋🌾 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "mountain_pass": {
+        "description_template": "A [RANDOM_CHOICE pass_types] mountain path winds through [RANDOM_CHOICE terrain]. [RANDOM_CHOICE mountain_atmosphere]",
+        "pass_types": ["narrow", "treacherous", "ancient", "mist-shrouded", "pilgrim's"],
+        "terrain": ["jagged rocks and pine trees", "steep cliffs and waterfalls", "boulder fields and hardy shrubs", "snow-dusted peaks and cedars"],
+        "mountain_atmosphere": [
+          "Prayer wheels spin in the mountain wind, their bells chiming softly",
+          "Stone cairns mark the path while eagles circle overhead",
+          "Mist swirls around the peaks, occasionally revealing hidden temples",
+          "The thin air carries the scent of pine and the promise of storms",
+          "Ancient steps carved into the rock show the passage of countless pilgrims"
+        ],
+        "common_features": ["stone cairns", "prayer wheels", "rope bridges", "mountain shrines", "cave entrances"],
+        "encounter_chance": 0.4,
+        "loot_chance": 0.3,
+        "exits": ["summit", "valley", "cave", "hidden_temple"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║     🗻🗻🗻     ║",
+          "║   ⛩️      🏮   ║",
+          "║     ∩∩🧙∩∩     ║",
+          "║               ║",
+          "║     ∩∩∩∩∩     ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "cherry_blossom_garden": {
+        "description_template": "You enter a [RANDOM_CHOICE garden_types] garden where [RANDOM_CHOICE blossom_states] cherry trees [RANDOM_CHOICE tree_actions]. [RANDOM_CHOICE garden_atmosphere]",
+        "garden_types": ["formal", "wild", "temple", "imperial", "contemplation"],
+        "blossom_states": ["full-bloomed", "budding", "petal-falling", "ancient gnarled", "perfectly pruned"],
+        "tree_actions": [
+          "create a canopy of pink and white",
+          "drop petals like gentle snow",
+          "frame a small reflecting pond",
+          "shelter stone benches and meditation areas",
+          "line carefully raked gravel paths"
+        ],
+        "garden_atmosphere": [
+          "Visitors sit quietly beneath the blossoms, composing poetry",
+          "A small tea pavilion offers rest and contemplation",
+          "Koi fish create ripples in the central pond",
+          "The sound of a bamboo water feature marks time with gentle clicks",
+          "Stone lanterns will illuminate the path when evening comes"
+        ],
+        "common_features": ["stone benches", "koi pond", "tea pavilion", "stone lanterns", "gravel paths"],
+        "encounter_chance": 0.1,
+        "loot_chance": 0.6,
+        "exits": ["temple", "palace", "village", "river_path"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🌸   🏮   🌸 ║",
+          "║       ≋≋≋     ║",
+          "║ 🌸   🧙≋≋≋   🌸 ║",
+          "║       ≋≋≋     ║",
+          "║ 🌸   🏮   🌸 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "riverbank_torii": {
+        "description_template": "A [RANDOM_CHOICE torii_descriptions] torii gate stands [RANDOM_CHOICE positions] in the [RANDOM_CHOICE water_states] water. [RANDOM_CHOICE mystical_elements]",
+        "torii_descriptions": ["massive vermillion", "weathered wooden", "ancient stone", "gold-leafed", "moss-covered"],
+        "positions": ["partially submerged", "majestically rising", "reflected perfectly", "standing sentinel"],
+        "water_states": ["crystal clear", "gently flowing", "mist-shrouded", "lotus-filled", "moon-reflected"],
+        "mystical_elements": [
+          "Offering boats drift past carrying prayers and candles",
+          "Sacred carp swim in the shadows of the great pillars",
+          "Shrine maidens perform purification rituals at the water's edge",
+          "Morning mist makes the torii appear to float in clouds",
+          "The gate frames a distant mountain peak perfectly"
+        ],
+        "common_features": ["offering boats", "purification basin", "sacred rope", "prayer plaques", "stone guardians"],
+        "encounter_chance": 0.25,
+        "loot_chance": 0.45,
+        "exits": ["shrine", "upstream", "downstream", "boat_dock", "mountain_view"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║       ⛩️       ║",
+          "║   ≋≋≋≋≋≋≋≋≋   ║",
+          "║   ≋≋≋🧙≋≋≋≋   ║",
+          "║   ≋≋≋≋≋≋≋≋≋   ║",
+          "║ 🏮           🏮 ║",
+          "╚═══════════════╝"
+        ]
+      }
+    },
+    
+    "building_interiors": {
+      "teahouse_common_room": {
+        "description_template": "The [RANDOM_CHOICE teahouse_names] welcomes you with [RANDOM_CHOICE atmosphere]. [RANDOM_CHOICE interior_details]",
+        "teahouse_names": ["Moonlit Crane", "Whispering Bamboo", "Golden Lotus", "Morning Mist", "Tranquil Stream"],
+        "atmosphere": [
+          "the gentle hiss of boiling water and quiet conversation",
+          "the aroma of jasmine tea and sweet dumplings",
+          "soft light filtering through paper screens",
+          "the rustle of silk kimono and quiet laughter",
+          "the click of go stones and gentle music"
+        ],
+        "interior_details": [
+          "Low tables surrounded by silk cushions fill the tatami-floored room",
+          "Hanging scrolls display seasonal poetry while incense burns nearby",
+          "A charcoal brazier warms an iron kettle in the corner",
+          "Geishas play shamisen while patrons enjoy their evening tea",
+          "Paper lanterns cast warm light on polished wooden beams"
+        ],
+        "common_features": ["tatami mats", "low tables", "tea service", "paper screens", "hanging scrolls"],
+        "encounter_chance": 0.5,
+        "loot_chance": 0.3,
+        "exits": ["outside", "private_rooms", "garden", "kitchen"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🍵   🍵   🍵 ║",
+          "║   🪑 🪑 🪑   ║",
+          "║ 🏮     🧙     ║",
+          "║   🪑 🪑 🪑   ║",
+          "║ 🚪         ⬆️ ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "dojo_training_hall": {
+        "description_template": "The village dojo echoes with [RANDOM_CHOICE training_sounds]. [RANDOM_CHOICE dojo_details]",
+        "training_sounds": [
+          "the crack of bamboo practice swords striking each other",
+          "the rhythmic breathing of students practicing kata",
+          "the sharp commands of the sensei and students' responses",
+          "the whisper of feet moving across polished wood floors"
+        ],
+        "dojo_details": [
+          "Students in white gi practice forms while others meditate in seiza",
+          "Wooden practice weapons line the walls beneath calligraphy scrolls",
+          "A small shrine honors the dojo's founding master and martial ancestors",
+          "Polished wooden floors reflect the dedication of countless hours of training",
+          "The morning sun streams through high windows, illuminating floating dust motes"
+        ],
+        "common_features": ["weapon racks", "training dummies", "meditation area", "master's shrine", "wooden floors"],
+        "encounter_chance": 0.4,
+        "loot_chance": 0.6,
+        "exits": ["outside", "weapons_room", "master_quarters", "garden"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ ⚔️   ⚔️   ⚔️ ║",
+          "║               ║",
+          "║ 🥋   🧙   🥋 ║",
+          "║               ║",
+          "║ ⛩️   ⛩️   ⛩️ ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "katana_smithy": {
+        "description_template": "The master swordsmith's forge rings with [RANDOM_CHOICE forge_sounds]. [RANDOM_CHOICE smithy_details]",
+        "forge_sounds": [
+          "the rhythmic hammering of folded steel",
+          "the roar of charcoal fires and hiss of quenching water",
+          "the scrape of whetstones sharpening perfect edges",
+          "the gentle chime of finished blades being tested"
+        ],
+        "smithy_details": [
+          "Sparks fly as the master works tamahagane steel into a katana blade",
+          "Finished swords rest in honored places, their beauty evident even unsharpened",
+          "The forge glows cherry-red while bellows pump rhythmically",
+          "Sacred water from mountain springs waits in wooden buckets for quenching",
+          "Tools passed down through generations hang from wooden pegs"
+        ],
+        "common_features": ["forge", "anvil", "quenching barrels", "sword displays", "grinding wheels"],
+        "encounter_chance": 0.3,
+        "loot_chance": 0.8,
+        "exits": ["outside", "storage", "master_quarters"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ ⚔️   ⚔️   ⚔️ ║",
+          "║               ║",
+          "║ 🔥 ⚒️ 🧙 ⚒️   ║",
+          "║               ║",
+          "║ 🛡️   🛡️   🛡️ ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "temple_inner_sanctum": {
+        "description_template": "The sacred inner temple radiates [RANDOM_CHOICE sacred_atmosphere]. [RANDOM_CHOICE temple_features]",
+        "sacred_atmosphere": [
+          "deep peace and spiritual tranquility",
+          "the power of countless prayers and devotions",
+          "ancient wisdom and divine presence",
+          "harmony between earth and heaven"
+        ],
+        "temple_features": [
+          "Golden Buddha statues sit in meditation surrounded by lotus offerings",
+          "Incense coils burn slowly, filling the air with sandalwood and cedar",
+          "Monks in saffron robes chant sutras while prayer wheels turn",
+          "Silk banners hang from the ceiling depicting celestial beings",
+          "Polished gongs await the call to evening prayers"
+        ],
+        "common_features": ["altar", "Buddha statues", "incense burners", "prayer wheels", "offering bowls"],
+        "encounter_chance": 0.1,
+        "loot_chance": 0.4,
+        "exits": ["outside", "meditation_garden", "monk_quarters", "bell_tower"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║       ⛩️       ║",
+          "║   🏮     🏮   ║",
+          "║       🧙       ║",
+          "║ 🪑 🪑 🪑 🪑 🪑 ║",
+          "║       🚪       ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "daimyo_hall": {
+        "description_template": "The lord's hall displays [RANDOM_CHOICE hall_grandeur]. [RANDOM_CHOICE court_atmosphere]",
+        "hall_grandeur": [
+          "the wealth and power of the domain",
+          "ancient scrolls and priceless artwork",
+          "armor and weapons of legendary ancestors",
+          "silk banners bearing the clan mon"
+        ],
+        "court_atmosphere": [
+          "Retainers in formal dress attend to their lord's business",
+          "Petitioners wait respectfully on tatami mats for audience",
+          "The daimyo's katana rests on an honored stand beside his seat",
+          "Servants move silently, serving tea and preparing documents",
+          "Guards in lacquered armor stand at attention by painted screens"
+        ],
+        "common_features": ["raised platform", "clan banners", "weapon displays", "painted screens", "audience area"],
+        "encounter_chance": 0.6,
+        "loot_chance": 0.7,
+        "exits": ["outside", "private_quarters", "armory", "gardens"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🏮 👑 ⚔️ 👑 🏮 ║",
+          "║               ║",
+          "║       🧙       ║",
+          "║   🪑 🪑 🪑   ║",
+          "║       🚪       ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "merchant_storehouse": {
+        "description_template": "The [RANDOM_CHOICE merchant_types] storehouse contains [RANDOM_CHOICE goods_descriptions]. [RANDOM_CHOICE commerce_atmosphere]",
+        "merchant_types": [
+          "silk trader's",
+          "spice merchant's", 
+          "tea master's",
+          "traveling goods"
+        ],
+        "goods_descriptions": [
+          "bolts of fine silk and elaborate kimono",
+          "ceramic jars filled with exotic spices and teas",
+          "lacquered boxes containing precious jewelry",
+          "scrolls, brushes, and imported curiosities"
+        ],
+        "commerce_atmosphere": [
+          "The merchant calculates profits while assistants organize inventory",
+          "Customers examine fine goods while negotiating prices",
+          "The air is fragrant with incense, spices, and new textiles",
+          "Account books record trades with distant provinces and kingdoms"
+        ],
+        "common_features": ["storage shelves", "abacus counter", "goods displays", "scales", "cash box"],
+        "encounter_chance": 0.4,
+        "loot_chance": 0.9,
+        "exits": ["outside", "warehouse", "office"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 📦 📦 📦 📦 📦 ║",
+          "║               ║",
+          "║ 🧙     💰     ║",
+          "║               ║",
+          "║ 📦 📦 📦 📦 📦 ║",
+          "╚═══════════════╝"
+        ]
+      }
+    }
+  },
+  
+  "locations": {
+    "settlements": {
+      "village": {
+        "name_templates": ["[RANDOM_CHOICE prefixes][RANDOM_CHOICE suffixes]"],
+        "prefixes": ["Yama", "Kawa", "Sakura", "Ume", "Take", "Hana", "Kiri", "Yuki", "Midori", "Ao"],
+        "suffixes": ["mura", "gawa", "yama", "no-sato", "dera", "jinja", "bashi", "mori", "hara", "oka"],
+        "population": "[ROLL 2d6*30]",
+        "buildings": [
+          "Village Square with Shrine",
+          "Teahouse/Inn",
+          "Katana Smith",
+          "Buddhist Temple",
+          "General Store",
+          "[ROLL 1d6+4] Traditional Houses",
+          "[RANDOM_CHOICE special_buildings]"
+        ],
+        "special_buildings": ["Rice Mill", "Stable", "Healer's Hut", "Elder's House", "Granary", "Dojo"],
+        "notable_features": [
+          "Ancient cherry tree in the center square",
+          "Stone well blessed by mountain kami",
+          "Wooden watchtower with signal fires",
+          "Small shrine to protective spirits",
+          "Market day brings traders from neighboring domains"
+        ]
+      },
+      
+      "castle_town": {
+        "name_templates": ["[RANDOM_CHOICE castle_prefixes] [RANDOM_CHOICE castle_suffixes]"],
+        "castle_prefixes": ["Shiro", "Honmaru", "Tenshukaku", "Yamashiro", "Hirajiro", "Mizushiro"],
+        "castle_suffixes": ["jo", "machi", "jokamachi", "shiro", "gawa", "yama"],
+        "population": "[ROLL 3d6*150]",
+        "buildings": [
+          "Castle Keep with Lord's Hall",
+          "Multiple Teahouses and Inns",
+          "Swordsmith Quarter",
+          "Grand Temple Complex",
+          "Merchant District",
+          "Samurai Residences",
+          "Artisan Workshops",
+          "[ROLL 2d6+15] Commoner Houses"
+        ],
+        "special_features": [
+          "Stone walls with traditional gates",
+          "Cobbled streets and wooden bridges",
+          "Guild halls for various crafts",
+          "Ashigaru barracks and training grounds",
+          "Weekly markets drawing traders from distant provinces"
+        ]
+      }
+    },
+    
+    "wilderness": {
+      "forest": {
+        "name_templates": ["[RANDOM_CHOICE forest_names] [RANDOM_CHOICE forest_types]"],
+        "forest_names": ["Kiri", "Yuki", "Kage", "Shinrin", "Mori", "Takeyabu"],
+        "forest_types": ["no-mori", "hayashi", "shinrin", "bamboo-grove", "sacred-grove"],
+        "characteristics": [
+          "Dense bamboo groves block most sunlight",
+          "Ancient cedars and cryptomeria tower overhead",
+          "Winding paths lead to hidden shrines",
+          "Wildlife sounds echo through misty air",
+          "Mountain streams and hot springs break the trees"
+        ],
+        "dangers": [
+          "Wild boar and mountain bears",
+          "Bandits and ronin hiding in the depths",
+          "Easy to become lost without proper guidance",
+          "Yokai spirits leading travelers astray"
+        ]
+      },
+      
+      "mountains": {
+        "name_templates": ["[RANDOM_CHOICE mountain_names] [RANDOM_CHOICE mountain_types]"],
+        "mountain_names": ["Fuji", "Takao", "Ontake", "Hakone", "Asama", "Daisen"],
+        "mountain_types": ["san", "yama", "dake", "mine", "peak"],
+        "characteristics": [
+          "Sacred peaks reaching toward heaven",
+          "Mist-shrouded slopes with hidden temples",
+          "Ancient pilgrimage routes marked by stone markers",
+          "Hot springs and mountain monasteries",
+          "Terraced fields clinging to hillsides"
+        ],
+        "features": [
+          "Mountain shrines with torii gates",
+          "Stone cairns marking safe paths",
+          "Hermit caves and meditation retreats",
+          "Ancient battlefields from clan wars"
+        ]
+      }
+    }
+  },
+  
+  "npcs": {
+    "villagers": {
+      "farmer": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE farmer_surnames]"],
+        "first_names": ["Hiroshi", "Kenji", "Akira", "Yuki", "Hanako", "Michiko", "Taro", "Emiko"],
+        "farmer_surnames": ["Tanaka", "Yamada", "Sato", "Suzuki", "Takahashi", "Ito", "Watanabe", "Nakamura"],
+        "descriptions": [
+          "A weather-beaten [RANDOM_CHOICE gender] with earth-stained hands and simple cotton clothes",
+          "A sturdy [RANDOM_CHOICE gender] whose face shows years of working in rice paddies",
+          "A practical [RANDOM_CHOICE gender] with the quiet wisdom of one who knows the seasons"
+        ],
+        "gender": ["man", "woman"],
+        "dialogue": [
+          "The rice harvest looks promising this year, blessed be the kami.",
+          "Strange lights have been seen near the mountain shrine lately.",
+          "The cherry blossoms bloomed early - an omen of change perhaps?",
+          "Wild boar have been troubling the fields again.",
+          "You look weary, traveler. Please share our humble meal."
+        ],
+        "trades": ["rice", "vegetables", "silk worms", "sake", "bamboo"],
+        "stats": {
+          "hp": "[ROLL 2d6+6]",
+          "str": "[ROLL 2d6+6]",
+          "agi": "[ROLL 2d6+3]",
+          "int": "[ROLL 2d6+4]",
+          "con": "[ROLL 2d6+8]"
+        }
+      },
+      
+      "katana_smith": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE smith_surnames]"],
+        "smith_surnames": ["Masamune", "Muramasa", "Kotetsu", "Kanemoto", "Myochin", "Myoju"],
+        "descriptions": [
+          "A master [RANDOM_CHOICE gender] with arms strengthened by countless hours at the forge",
+          "A skilled [RANDOM_CHOICE gender] whose blades are sought by samurai throughout the land",
+          "A reverent [RANDOM_CHOICE gender] craftsperson who treats each sword as a work of art"
+        ],
+        "dialogue": [
+          "A fine blade requires patience, prayer, and perfect steel.",
+          "The spirit of the sword must be honored in its forging.",
+          "These old hands have folded steel more times than the mountain has seasons.",
+          "Warriors depend on perfect balance between edge and soul.",
+          "The forge burns hottest when the kami smile upon the work."
+        ],
+        "trades": ["katana", "wakizashi", "tanto", "armor", "tools"],
+        "stats": {
+          "hp": "[ROLL 3d6+9]",
+          "str": "[ROLL 3d6+12]",
+          "agi": "[ROLL 2d6+3]",
+          "int": "[ROLL 2d6+6]",
+          "con": "[ROLL 3d6+9]"
+        }
+      },
+      
+      "tea_master": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE tea_surnames]",
+        "tea_surnames": ["Sen", "Enshu", "Rikyu", "Sowa", "Joo", "Sekishu"],
+        "descriptions": [
+          "A serene [RANDOM_CHOICE gender] whose every movement embodies the way of tea",
+          "An elegant [RANDOM_CHOICE gender] who finds peace in the simple ritual of serving tea",
+          "A wise [RANDOM_CHOICE gender] whose teahouse is a refuge from the world's troubles"
+        ],
+        "dialogue": [
+          "Welcome, honored guest. Allow me to prepare tea for your journey.",
+          "In the tea ceremony, we find harmony between host and guest.",
+          "Each season brings its own beauty to the tea ritual.",
+          "True hospitality flows from an understanding heart.",
+          "The way of tea teaches us to find beauty in simplicity."
+        ],
+        "trades": ["tea", "ceramics", "hospitality", "meditation instruction", "cultural wisdom"],
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "str": "[ROLL 2d6+3]",
+          "agi": "[ROLL 2d6+8]",
+          "int": "[ROLL 2d6+12]",
+          "con": "[ROLL 2d6+4]"
+        }
+      },
+      
+      "merchant": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE merchant_surnames]"],
+        "merchant_surnames": ["Osaka", "Kyoto", "Edo", "Mitsui", "Sumitomo", "Konoike"],
+        "descriptions": [
+          "A well-dressed [RANDOM_CHOICE gender] with keen eyes and silk-lined sleeves",
+          "A traveled [RANDOM_CHOICE gender] whose cart holds treasures from distant provinces",
+          "A shrewd [RANDOM_CHOICE gender] who knows the value of everything from rice to rare scrolls"
+        ],
+        "dialogue": [
+          "Fine goods from the capital, fairly priced for discerning customers!",
+          "Traveled all the way from Kyoto with these exceptional wares.",
+          "Special consideration for noble samurai and their retainers.",
+          "Dangerous roads these days, but profitable for those with courage.",
+          "Heard rumors of ancient treasures in the abandoned castle ruins."
+        ],
+        "trades": ["silk", "spices", "ceramics", "scrolls", "information"],
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "str": "[ROLL 2d6+3]",
+          "agi": "[ROLL 2d6+6]",
+          "int": "[ROLL 2d6+9]",
+          "con": "[ROLL 2d6+4]"
+        }
+      }
+    },
+    
+    "special_npcs": {
+      "village_elder": {
+        "name_templates": ["Elder [RANDOM_CHOICE first_names]"],
+        "descriptions": [
+          "An ancient [RANDOM_CHOICE gender] whose eyes hold decades of wisdom and tradition",
+          "A respected [RANDOM_CHOICE gender] whose word carries the weight of ancestral authority",
+          "A venerable [RANDOM_CHOICE gender] who remembers when the old ways were stronger"
+        ],
+        "dialogue": [
+          "In my long years, I have seen many changes come to this land.",
+          "The old traditions must be preserved for future generations.",
+          "You have the bearing of one touched by destiny, young warrior.",
+          "There are spirits in these mountains older than human memory.",
+          "Seek the ancient shrines if you would understand our true history."
+        ],
+        "special_abilities": ["Ancient Lore", "Village Authority", "Spiritual Blessing"],
+        "stats": {
+          "hp": "[ROLL 1d6+3]",
+          "str": "[ROLL 1d6+1]",
+          "agi": "[ROLL 1d6+1]",
+          "int": "[ROLL 3d6+15]",
+          "con": "[ROLL 1d6+2]"
+        }
+      },
+      
+      "traveling_ronin": {
+        "name_templates": ["[RANDOM_CHOICE first_names] the [RANDOM_CHOICE ronin_titles]"],
+        "ronin_titles": ["Wanderer", "Masterless", "Storm-Touched", "Iron-Hearted", "Dawn-Walker", "Shadow-Step"],
+        "descriptions": [
+          "A weathered [RANDOM_CHOICE gender] samurai with katana and travel-worn kimono",
+          "A masterless [RANDOM_CHOICE gender] warrior whose eyes hold both honor and sorrow",
+          "A skilled [RANDOM_CHOICE gender] swordsperson who walks the path of the wandering warrior"
+        ],
+        "dialogue": [
+          "The way of the sword teaches harsh lessons, but necessary ones.",
+          "Honor is not found in service alone, but in how one lives.",
+          "I seek worthy opponents to test my blade and spirit.",
+          "The road is long, but it leads where the kami will.",
+          "Would you care to cross swords? I promise to be gentle."
+        ],
+        "special_abilities": ["Masterful Swordsmanship", "Combat Insight", "Warrior's Code"],
+        "stats": {
+          "hp": "[ROLL 3d6+12]",
+          "str": "[ROLL 2d6+9]",
+          "agi": "[ROLL 2d6+9]",
+          "int": "[ROLL 2d6+6]",
+          "con": "[ROLL 2d6+6]"
+        ]
+      },
+      
+      "shrine_maiden": {
+        "name_templates": ["Miko [RANDOM_CHOICE first_names]"],
+        "descriptions": [
+          "A young [RANDOM_CHOICE gender] in white and red robes who tends the sacred fires",
+          "A devoted [RANDOM_CHOICE gender] whose spiritual purity is evident in every gesture",
+          "A wise [RANDOM_CHOICE gender] who serves as intermediary between mortals and kami"
+        ],
+        "dialogue": [
+          "The kami speak to those who approach with pure hearts.",
+          "May the spirits guide your path and protect your journey.",
+          "The sacred rituals must be performed with perfect dedication.",
+          "I sense spiritual disturbance in the mountain forests.",
+          "Offerings of rice and sake please the guardian spirits."
+        ],
+        "special_abilities": ["Spiritual Sight", "Divine Blessing", "Purification Ritual"],
+        "stats": {
+          "hp": "[ROLL 2d6+6]",
+          "str": "[ROLL 1d6+2]",
+          "agi": "[ROLL 2d6+6]",
+          "int": "[ROLL 2d6+12]",
+          "con": "[ROLL 2d6+4]"
+        }
+      },
+      
+      "mountain_monk": {
+        "name_templates": ["Monk [RANDOM_CHOICE first_names]"],
+        "descriptions": [
+          "A serene [RANDOM_CHOICE gender] in simple robes whose presence radiates inner peace",
+          "An austere [RANDOM_CHOICE gender] whose years of meditation show in calm bearing",
+          "A humble [RANDOM_CHOICE gender] who has found enlightenment through mountain solitude"
+        ],
+        "dialogue": [
+          "All suffering comes from attachment to illusion.",
+          "The mountain teaches patience to those who listen.",
+          "Meditation reveals truths that cannot be learned from books.",
+          "Compassion is the greatest strength a warrior can possess.",
+          "The path to enlightenment is walked one step at a time."
+        ],
+        "special_abilities": ["Inner Peace", "Healing Touch", "Spiritual Wisdom"],
+        "stats": {
+          "hp": "[ROLL 2d6+8]",
+          "str": "[ROLL 2d6+4]",
+          "agi": "[ROLL 2d6+8]",
+          "int": "[ROLL 2d6+12]",
+          "con": "[ROLL 2d6+8]"
+        }
+      }
+    }
+  },
+  
+  "world_lore": {
+    "domain": {
+      "name": "Province of Tsukikage",
+      "ruler": "Daimyo Minamoto Yoshinao",
+      "capital": "Yamashiro-jo",
+      "history": [
+        "Founded four centuries ago by the legendary warrior Minamoto Tametomo",
+        "Known for its master swordsmiths and beautiful cherry blossom festivals",
+        "Protected by a network of mountain castles and loyal samurai retainers",
+        "Ancient kami still dwell in the sacred groves and mountain peaks",
+        "Recent troubles with bandits and strange yokai in the wilderness"
+      ],
+      "current_events": [
+        "Cherry Blossom Festival approaching in two weeks",
+        "Increased patrols due to bandit activity on trade routes",
+        "Mysterious fox spirits seen near the mountain shrines",
+        "Rumors of a legendary katana hidden in ancient ruins",
+        "Traveling merchants report unusual spiritual activity"
+      ]
+    },
+    
+    "local_legends": [
+      "The Ghost of Sekigahara Bridge appears on moonless nights",
+      "Treasure buried beneath the Sacred Oak during the Genpei War",
+      "The Kitsune of Mount Takao grants wishes for worthy souls",
+      "Ancient samurai sleep in the Warrior's Tomb, awaiting their lord's call",
+      "The Golden Carp leads pure hearts to hidden wisdom"
+    ],
+    
+    "points_of_interest": {
+      "ancient_castle_ruins": {
+        "description": "Crumbling stone foundations of a fortress lost to clan warfare",
+        "danger_level": "Medium",
+        "rumors": [
+          "Built by master architects who understood both war and beauty",
+          "Hidden passages lead to underground treasure chambers",
+          "Ancestral spirits still guard the most sacred areas",
+          "Legendary weapons remain for those brave enough to claim them"
+        ]
+      },
+      
+      "sacred_mountain_shrine": {
+        "description": "A torii gate marks the path to an ancient mountaintop temple",
+        "danger_level": "Low",
+        "rumors": [
+          "The kami whisper secrets to worthy pilgrims",
+          "Sacred herbs grow nowhere else in the province",
+          "Wild animals are peaceful within the shrine's protection",
+          "The old gods still hold power in this blessed place"
+        ]
+      },
+      
+      "bandit_stronghold": {
+        "description": "Hidden fortress of outlaws who prey on merchants and pilgrims",
+        "danger_level": "High",
+        "rumors": [
+          "Led by a fallen samurai who turned to the way of dishonor",
+          "Stolen goods from a dozen villages hoarded within",
+          "They know secret paths through every mountain pass",
+          "The authorities offer substantial rewards for their capture"
+        ]
+      }
+    }
+  },
+  
+  "random_encounters": {
+    "road_encounters": [
+      {
+        "name": "Merchant Caravan",
+        "description": "A small convoy of traders protected by ashigaru guards",
+        "reaction": "Friendly",
+        "outcomes": ["Trade opportunity", "Job offer as guard", "News and regional gossip"]
+      },
+      {
+        "name": "Mountain Pilgrims",
+        "description": "Devotees on their way to a distant mountain shrine",
+        "reaction": "Neutral",
+        "outcomes": ["Blessing ceremony", "Shared vegetarian meal", "Spiritual guidance"]
+      },
+      {
+        "name": "Highway Bandits",
+        "description": "Desperate ronin or ashigaru turned to outlawry",
+        "reaction": "Hostile",
+        "outcomes": ["Combat encounter", "Honor duel negotiation", "Chase through forest"]
+      },
+      {
+        "name": "Wild Animals",
+        "description": "Mountain bears or wild boar defending territory",
+        "reaction": "Cautious",
+        "outcomes": ["Animal pacification", "Peaceful withdrawal", "Territorial battle"]
+      }
+    ],
+    
+    "forest_encounters": [
+      {
+        "name": "Hermit's Hut",
+        "description": "A wise old recluse living alone in the mountains",
+        "reaction": "Wary",
+        "outcomes": ["Ancient wisdom", "Herbal remedies", "Cryptic prophecies"]
+      },
+      {
+        "name": "Kitsune Spirit",
+        "description": "A fox spirit with mysterious powers and intentions",
+        "reaction": "Mystical",
+        "outcomes": ["Magical blessing", "Riddle contest", "Spiritual trial"]
+      },
+      {
+        "name": "Poacher's Camp",
+        "description": "Illegal hunters working in protected forests",
+        "reaction": "Suspicious",
+        "outcomes": ["Information trade", "Conflict with authorities", "Hunting alliance"]
+      }
+    ]
+  },
+  
+  "weather_system": {
+    "seasons": {
+      "spring": {
+        "description": "Cherry blossoms bloom with gentle spring rains",
+        "effects": ["Muddy mountain paths", "Blooming flowers everywhere", "Increased spiritual activity"],
+        "encounter_modifiers": {"pilgrims": "+30%", "spirits": "+20%"}
+      },
+      "summer": {
+        "description": "Hot, humid days with monsoon rains and cicada songs",
+        "effects": ["Swollen rivers", "Abundant rice growth", "Festival celebrations"],
+        "encounter_modifiers": {"merchants": "+25%", "festivals": "+40%"}
+      },
+      "autumn": {
+        "description": "Cool air with brilliant maple leaves and harvest preparation",
+        "effects": ["Golden landscapes", "Harvest festivals", "Mountain hiking weather"],
+        "encounter_modifiers": {"harvest_work": "+50%", "mountain_travel": "+20%"}
+      },
+      "winter": {
+        "description": "Snow-covered peaks with crisp air and shorter days",
+        "effects": ["Dangerous mountain travel", "Indoor contemplation", "Hot spring visits"],
+        "encounter_modifiers": {"bandits": "+20%", "merchants": "-30%", "spirits": "+10%"}
+      }
+    }
+  }
+}

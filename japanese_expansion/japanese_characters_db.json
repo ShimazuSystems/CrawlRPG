@@ -1,0 +1,678 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan Characters",
+  "character_system": "Class-based with honor and spiritual mechanics",
+  
+  "character_creation": {
+    "base_stats": {
+      "HP": "[ROLL 2d6+8]",
+      "MAX_HP": "equal to HP",
+      "STRENGTH": "[ROLL 3d6]",
+      "AGILITY": "[ROLL 3d6]",
+      "INTELLIGENCE": "[ROLL 3d6]",
+      "CONSTITUTION": "[ROLL 3d6]",
+      "WISDOM": "[ROLL 3d6]",
+      "CHARISMA": "[ROLL 3d6]",
+      "HONOR": "[ROLL 2d6+6]",
+      "SPIRITUAL_POWER": "[ROLL 1d6+3]",
+      "MON_COINS": "[ROLL 2d6] * 20",
+      "LEVEL": 1,
+      "XP": 0,
+      "XP_TO_NEXT": 100
+    },
+    
+    "name_generation": {
+      "male_first_names": [
+        "Akira", "Hiroshi", "Kenji", "Takeshi", "Noboru", "Masaru", "Yuki", "Satoshi",
+        "Taro", "Jiro", "Ichiro", "Kazuo", "Hideo", "Minoru", "Osamu", "Isamu"
+      ],
+      "female_first_names": [
+        "Akiko", "Yuki", "Keiko", "Michiko", "Hanako", "Emiko", "Sachiko", "Reiko",
+        "Haruko", "Noriko", "Tomoko", "Kazuko", "Mariko", "Naoko", "Yukiko", "Etsuko"
+      ],
+      "family_names": [
+        "Yamada", "Tanaka", "Suzuki", "Takahashi", "Watanabe", "Ito", "Nakamura", "Kobayashi",
+        "Kato", "Yoshida", "Yamamoto", "Sasaki", "Matsumoto", "Inoue", "Kimura", "Hayashi",
+        "Shimizu", "Yamazaki", "Mori", "Abe", "Ikeda", "Hashimoto", "Yamashita", "Ishikawa"
+      ],
+      "clan_names": [
+        "Minamoto", "Taira", "Fujiwara", "Tachibana", "Ashikaga", "Tokugawa", "Oda", "Takeda",
+        "Uesugi", "Mori", "Shimazu", "Date", "Maeda", "Hosokawa", "Kuroda", "Kato"
+      ],
+      "name_format": "[RANDOM_CHOICE family_names] [RANDOM_CHOICE first_names]"
+    },
+    
+    "social_background": {
+      "peasant": {
+        "description": "Born to farming or common labor families",
+        "starting_equipment": ["simple_kimono", "farming_tools", "travel_rations"],
+        "stat_modifiers": {"CON": "+1", "WIS": "+1"},
+        "special_skills": ["Farming", "Animal Handling", "Weather Prediction"],
+        "starting_money_modifier": "x0.5",
+        "social_connections": "Village community, local farmers"
+      },
+      "merchant": {
+        "description": "From trading families with business connections",
+        "starting_equipment": ["fine_kimono", "abacus", "trade_goods"],
+        "stat_modifiers": {"INT": "+1", "CHA": "+1"},
+        "special_skills": ["Negotiation", "Appraisal", "Mathematics"],
+        "starting_money_modifier": "x2.0",
+        "social_connections": "Merchant guilds, trade networks"
+      },
+      "artisan": {
+        "description": "Skilled craftspeople with specialized knowledge",
+        "starting_equipment": ["quality_tools", "craft_materials", "workshop_access"],
+        "stat_modifiers": {"AGI": "+1", "INT": "+1"},
+        "special_skills": ["Craftsmanship", "Artistic Knowledge", "Tool Mastery"],
+        "starting_money_modifier": "x1.5",
+        "social_connections": "Craft guilds, artistic communities"
+      },
+      "samurai": {
+        "description": "Born to the warrior class with honor obligations",
+        "starting_equipment": ["katana", "formal_kimono", "family_mon"],
+        "stat_modifiers": {"STR": "+1", "HONOR": "+3"},
+        "special_skills": ["Swordsmanship", "Bushido Code", "Leadership"],
+        "starting_money_modifier": "x1.0",
+        "social_connections": "Clan hierarchy, military networks"
+      },
+      "temple_raised": {
+        "description": "Raised in temples with spiritual training",
+        "starting_equipment": ["monk_robes", "prayer_beads", "sacred_texts"],
+        "stat_modifiers": {"WIS": "+2", "SPIRITUAL_POWER": "+2"},
+        "special_skills": ["Meditation", "Sutra Knowledge", "Spiritual Insight"],
+        "starting_money_modifier": "x0.25",
+        "social_connections": "Temple networks, spiritual communities"
+      },
+      "noble": {
+        "description": "From high-ranking families with court connections",
+        "starting_equipment": ["expensive_kimono", "family_treasure", "personal_servant"],
+        "stat_modifiers": {"CHA": "+2", "HONOR": "+2"},
+        "special_skills": ["Court Etiquette", "Poetry", "Political Awareness"],
+        "starting_money_modifier": "x3.0",
+        "social_connections": "Court nobility, political networks"
+      }
+    }
+  },
+  
+  "character_classes": {
+    "bushi_samurai": {
+      "name": "Bushi (Samurai Warrior)",
+      "description": "Noble warriors bound by bushido, masters of sword and honor",
+      "primary_stats": ["STRENGTH", "CONSTITUTION", "HONOR"],
+      "hit_points": "+5 HP at creation, +3 HP per level",
+      "stat_bonuses": {
+        "STR": "+2",
+        "HONOR": "+3",
+        "starting_weapon_skill": "+2"
+      },
+      "starting_equipment": {
+        "weapons": ["katana", "wakizashi", "yumi_bow"],
+        "armor": ["do_maru", "samurai_kabuto"],
+        "items": ["family_mon", "ceremonial_tea_set", "calligraphy_set"]
+      },
+      "special_abilities": [
+        "Bushido Code: +2 to all rolls when acting honorably",
+        "Iaijutsu: First attack with katana deals +1d6 damage if weapon was sheathed",
+        "Intimidating Presence: Can demoralize opponents with lower honor",
+        "Seppuku Option: Can choose honorable death over dishonor"
+      ],
+      "class_progression": {
+        "level_2": "Master Strike: Critical hits on 19-20",
+        "level_3": "Battle Leadership: Allies gain +1 to attack rolls",
+        "level_4": "Perfect Balance: +2 to all agility-based rolls",
+        "level_5": "Legendary Reputation: +3 to social interactions"
+      },
+      "honor_code": [
+        "Must always speak truthfully to honorable people",
+        "Cannot attack defenseless opponents",
+        "Must accept formal duels when challenged",
+        "Cannot retreat from battle unless ordered by superior"
+      ],
+      "unicode_symbol": "⚔️"
+    },
+    
+    "shinobi_ninja": {
+      "name": "Shinobi (Shadow Warrior)",
+      "description": "Masters of stealth and espionage, walking the gray areas of honor",
+      "primary_stats": ["AGILITY", "INTELLIGENCE", "WISDOM"],
+      "hit_points": "+2 HP at creation, +2 HP per level",
+      "stat_bonuses": {
+        "AGI": "+3",
+        "stealth_skills": "+4",
+        "HONOR": "-2"
+      },
+      "starting_equipment": {
+        "weapons": ["ninjato", "shuriken", "kunai"],
+        "armor": ["black_cloth_armor", "tabi_boots"],
+        "items": ["grappling_hook", "smoke_bombs", "poison_kit"]
+      },
+      "special_abilities": [
+        "Shadow Step: Can move through shadows without being detected",
+        "Sneak Attack: +2d6 damage when attacking from concealment",
+        "Poison Use: Can apply poisons to weapons safely",
+        "Wall Walking: Can climb any surface at half movement speed"
+      ],
+      "class_progression": {
+        "level_2": "Vanish: Can become invisible for [ROLL 1d4] rounds per day",
+        "level_3": "Death Strike: Critical hits may instantly kill weak enemies",
+        "level_4": "Shadow Clone: Can create illusory duplicate for distraction",
+        "level_5": "Master Assassin: Can kill silently without alerting nearby enemies"
+      },
+      "ninja_code": [
+        "Loyalty to clan supersedes personal honor",
+        "Mission completion is paramount",
+        "Secrecy must be maintained at all costs",
+        "Honor traditional enemies but show no mercy"
+      ],
+      "unicode_symbol": "🥷"
+    },
+    
+    "sohei_monk": {
+      "name": "Sohei (Warrior Monk)",
+      "description": "Temple warriors who blend martial arts with spiritual power",
+      "primary_stats": ["WISDOM", "CONSTITUTION", "SPIRITUAL_POWER"],
+      "hit_points": "+3 HP at creation, +2 HP per level",
+      "stat_bonuses": {
+        "WIS": "+2",
+        "SPIRITUAL_POWER": "+3",
+        "unarmed_combat": "+2"
+      },
+      "starting_equipment": {
+        "weapons": ["bo_staff", "prayer_beads"],
+        "armor": ["monk_robes", "prayer_protection"],
+        "items": ["sutras", "incense", "meditation_mat"]
+      },
+      "special_abilities": [
+        "Chi Strike: Unarmed attacks deal 1d6+WIS damage",
+        "Spiritual Resistance: +4 vs supernatural effects",
+        "Healing Touch: Can heal [ROLL 1d6+WIS] HP once per day",
+        "Inner Peace: Immune to fear and charm effects"
+      ],
+      "class_progression": {
+        "level_2": "Stunning Strike: Can stun enemies with unarmed attacks",
+        "level_3": "Spirit Sight: Can see invisible and spiritual creatures",
+        "level_4": "Diamond Body: Immune to poison and disease",
+        "level_5": "Enlightenment: Can cast priest spells using WIS"
+      },
+      "monastic_vows": [
+        "No killing except in defense of innocents",
+        "No accumulation of material wealth",
+        "Daily meditation and prayer required",
+        "Must help those who ask for spiritual guidance"
+      ],
+      "unicode_symbol": "🧘"
+    },
+    
+    "miko_shrine_maiden": {
+      "name": "Miko (Shrine Maiden)",
+      "description": "Spiritual intermediaries between mortals and kami, wielding divine power",
+      "primary_stats": ["WISDOM", "CHARISMA", "SPIRITUAL_POWER"],
+      "hit_points": "+1 HP at creation, +1 HP per level",
+      "stat_bonuses": {
+        "WIS": "+3",
+        "CHA": "+2",
+        "SPIRITUAL_POWER": "+4"
+      },
+      "starting_equipment": {
+        "weapons": ["ceremonial_naginata", "ofuda_talismans"],
+        "armor": ["white_and_red_robes", "spiritual_protection"],
+        "items": ["divination_tools", "purification_salt", "sacred_mirror"]
+      },
+      "special_abilities": [
+        "Divine Blessing: Can bless allies for +2 to all rolls",
+        "Spirit Communication: Can speak with kami and spirits",
+        "Purification: Can remove curses and negative effects",
+        "Kami Favor: [ROLL 1d6] spell-like abilities per day"
+      ],
+      "class_progression": {
+        "level_2": "Spirit Sight: Can see and interact with all supernatural entities",
+        "level_3": "Divine Protection: Aura grants +1 defense to nearby allies",
+        "level_4": "Exorcism: Can banish evil spirits and demons",
+        "level_5": "Avatar State: Can channel kami directly for incredible power"
+      },
+      "sacred_duties": [
+        "Maintain shrine purity and perform daily rituals",
+        "Never refuse aid to those seeking spiritual help",
+        "Protect sacred sites from desecration",
+        "Serve as mediator between human and spirit worlds"
+      ],
+      "unicode_symbol": "⛩️"
+    },
+    
+    "onmyoji_mystic": {
+      "name": "Onmyoji (Court Mystic)",
+      "description": "Scholar-sorcerers who study the balance of cosmic forces",
+      "primary_stats": ["INTELLIGENCE", "WISDOM", "SPIRITUAL_POWER"],
+      "hit_points": "+0 HP at creation, +1 HP per level",
+      "stat_bonuses": {
+        "INT": "+3",
+        "WIS": "+2",
+        "SPIRITUAL_POWER": "+5"
+      },
+      "starting_equipment": {
+        "weapons": ["ceremonial_staff", "paper_talismans"],
+        "armor": ["court_robes", "mystic_protections"],
+        "items": ["divination_compass", "star_charts", "spell_scrolls"]
+      },
+      "special_abilities": [
+        "Spell Casting: [ROLL 1d4+2] spells per day",
+        "Divination: Can predict future events and reveal hidden truths",
+        "Elemental Control: Can manipulate five elements (earth, water, fire, wood, metal)",
+        "Protective Wards: Can create magical barriers and protections"
+      ],
+      "class_progression": {
+        "level_2": "Spirit Binding: Can summon and command shikigami servants",
+        "level_3": "Weather Control: Can influence local weather patterns",
+        "level_4": "Astral Projection: Can separate spirit from body for reconnaissance",
+        "level_5": "Master of Elements: Can cast powerful elemental magic"
+      },
+      "scholarly_obligations": [
+        "Must study astronomical phenomena and maintain calendars",
+        "Serve as advisor to nobility on auspicious timing",
+        "Cannot use power for personal gain",
+        "Must preserve and transmit mystical knowledge"
+      ],
+      "unicode_symbol": "🔮"
+    },
+    
+    "geisha_entertainer": {
+      "name": "Geisha (Cultural Artist)",
+      "description": "Masters of art, music, and social grace with hidden depths",
+      "primary_stats": ["CHARISMA", "AGILITY", "INTELLIGENCE"],
+      "hit_points": "+1 HP at creation, +1 HP per level",
+      "stat_bonuses": {
+        "CHA": "+4",
+        "AGI": "+2",
+        "social_skills": "+3"
+      },
+      "starting_equipment": {
+        "weapons": ["hidden_tanto", "iron_fan", "hairpin_stiletto"],
+        "armor": ["elegant_kimono", "social_armor"],
+        "items": ["shamisen", "cosmetics", "tea_ceremony_set"]
+      },
+      "special_abilities": [
+        "Social Mastery: +4 to all social interaction rolls",
+        "Hidden Weapons: Can conceal weapons in clothing and hair",
+        "Performance Magic: Music and dance can influence emotions",
+        "Information Network: Access to gossip and secrets"
+      ],
+      "class_progression": {
+        "level_2": "Charm Person: Can entrance listeners with performance",
+        "level_3": "Perfect Disguise: Can adopt any social role convincingly",
+        "level_4": "Subtle Poison: Expert in undetectable toxins",
+        "level_5": "Cultural Icon: Reputation opens any door in society"
+      },
+      "artistic_code": [
+        "Maintain professional distance with clients",
+        "Preserve cultural traditions through performance",
+        "Never reveal secrets learned in confidence",
+        "Art must always be perfected, never merely performed"
+      ],
+      "unicode_symbol": "🎭"
+    },
+    
+    "ronin_wanderer": {
+      "name": "Ronin (Masterless Warrior)",
+      "description": "Fallen samurai seeking new purpose, freed from but haunted by obligation",
+      "primary_stats": ["STRENGTH", "WISDOM", "Variable"],
+      "hit_points": "+4 HP at creation, +2 HP per level",
+      "stat_bonuses": {
+        "choose_two_stats": "+2 each",
+        "HONOR": "-1",
+        "survival_skills": "+3"
+      },
+      "starting_equipment": {
+        "weapons": ["ancestral_katana", "worn_wakizashi"],
+        "armor": ["travel_worn_armor", "weathered_cloak"],
+        "items": ["few_possessions", "bitter_memories", "hidden_shame"]
+      },
+      "special_abilities": [
+        "Adaptability: Can learn abilities from other classes",
+        "Survival Instinct: +3 to all survival and wilderness rolls",
+        "Desperation Strike: +2 damage when below 25% HP",
+        "Freedom of Choice: Not bound by strict class limitations"
+      ],
+      "class_progression": {
+        "level_2": "Wanderer's Wisdom: +1 to all knowledge rolls",
+        "level_3": "Battle Experience: Can use any weapon without penalty",
+        "level_4": "Inner Strength: Can act even when severely wounded",
+        "level_5": "New Purpose: Can choose specialization from any class"
+      },
+      "ronin_burden": [
+        "Haunted by past failure or dishonor",
+        "Seeks to restore honor or find new meaning",
+        "Suspicious of authority and formal obligations",
+        "Values personal relationships over social expectations"
+      ],
+      "unicode_symbol": "🗾"
+    }
+  },
+  
+  "skill_system": {
+    "combat_skills": {
+      "kenjutsu": {
+        "name": "Sword Arts",
+        "description": "Mastery of katana, wakizashi, and other bladed weapons",
+        "governing_stat": "STR + AGI",
+        "class_bonuses": {"bushi_samurai": "+4", "ronin_wanderer": "+2"}
+      },
+      "kyujutsu": {
+        "name": "Archery",
+        "description": "Skill with yumi bows and projectile weapons",
+        "governing_stat": "AGI + WIS",
+        "class_bonuses": {"bushi_samurai": "+2", "shinobi_ninja": "+3"}
+      },
+      "jujutsu": {
+        "name": "Unarmed Combat",
+        "description": "Hand-to-hand fighting and grappling techniques",
+        "governing_stat": "STR + WIS",
+        "class_bonuses": {"sohei_monk": "+4", "shinobi_ninja": "+1"}
+      },
+      "naginatajutsu": {
+        "name": "Polearm Arts",
+        "description": "Fighting with naginata, yari, and staff weapons",
+        "governing_stat": "STR + AGI",
+        "class_bonuses": {"miko_shrine_maiden": "+3", "sohei_monk": "+2"}
+      }
+    },
+    
+    "social_skills": {
+      "court_etiquette": {
+        "name": "Court Manners",
+        "description": "Knowledge of proper behavior in noble society",
+        "governing_stat": "INT + CHA",
+        "class_bonuses": {"geisha_entertainer": "+4", "onmyoji_mystic": "+2"}
+      },
+      "negotiation": {
+        "name": "Persuasion",
+        "description": "Ability to convince and influence others",
+        "governing_stat": "CHA + WIS",
+        "class_bonuses": {"geisha_entertainer": "+3", "merchants": "+2"}
+      },
+      "intimidation": {
+        "name": "Menacing Presence",
+        "description": "Using fear and authority to control situations",
+        "governing_stat": "STR + CHA",
+        "class_bonuses": {"bushi_samurai": "+3", "ronin_wanderer": "+1"}
+      }
+    },
+    
+    "spiritual_skills": {
+      "meditation": {
+        "name": "Spiritual Discipline",
+        "description": "Focus and connection to inner spiritual power",
+        "governing_stat": "WIS + SPIRITUAL_POWER",
+        "class_bonuses": {"sohei_monk": "+4", "miko_shrine_maiden": "+3"}
+      },
+      "divination": {
+        "name": "Fortune Telling",
+        "description": "Reading signs and predicting future events",
+        "governing_stat": "WIS + INT",
+        "class_bonuses": {"onmyoji_mystic": "+4", "miko_shrine_maiden": "+2"}
+      },
+      "exorcism": {
+        "name": "Spirit Banishing",
+        "description": "Driving away evil spirits and supernatural threats",
+        "governing_stat": "WIS + SPIRITUAL_POWER",
+        "class_bonuses": {"miko_shrine_maiden": "+4", "sohei_monk": "+2"}
+      }
+    },
+    
+    "practical_skills": {
+      "stealth": {
+        "name": "Hidden Movement",
+        "description": "Moving unseen and unheard",
+        "governing_stat": "AGI + WIS",
+        "class_bonuses": {"shinobi_ninja": "+5", "ronin_wanderer": "+1"}
+      },
+      "survival": {
+        "name": "Wilderness Craft",
+        "description": "Finding food, shelter, and direction in wild places",
+        "governing_stat": "CON + WIS",
+        "class_bonuses": {"ronin_wanderer": "+3", "sohei_monk": "+1"}
+      },
+      "craftsmanship": {
+        "name": "Artisan Skills",
+        "description": "Creating and repairing items with skill",
+        "governing_stat": "AGI + INT",
+        "class_bonuses": {"artisan_background": "+3", "sohei_monk": "+1"}
+      }
+    },
+    
+    "cultural_skills": {
+      "tea_ceremony": {
+        "name": "Way of Tea",
+        "description": "Performing the ritual tea ceremony with grace",
+        "governing_stat": "AGI + WIS",
+        "class_bonuses": {"geisha_entertainer": "+3", "bushi_samurai": "+2"}
+      },
+      "calligraphy": {
+        "name": "Brush Writing",
+        "description": "Beautiful writing and artistic expression",
+        "governing_stat": "AGI + INT",
+        "class_bonuses": {"onmyoji_mystic": "+3", "geisha_entertainer": "+2"}
+      },
+      "poetry": {
+        "name": "Verse Composition",
+        "description": "Creating and appreciating poetic forms",
+        "governing_stat": "INT + CHA",
+        "class_bonuses": {"geisha_entertainer": "+4", "noble_background": "+2"}
+      },
+      "flower_arranging": {
+        "name": "Ikebana",
+        "description": "Artistic arrangement of flowers and natural materials",
+        "governing_stat": "AGI + WIS",
+        "class_bonuses": {"geisha_entertainer": "+2", "miko_shrine_maiden": "+2"}
+      }
+    }
+  },
+  
+  "honor_system": {
+    "honor_scale": {
+      "0-3": "Dishonored - Shunned by respectable society",
+      "4-6": "Questionable - Viewed with suspicion",
+      "7-9": "Adequate - Meets basic social expectations", 
+      "10-12": "Honorable - Respected by peers",
+      "13-15": "Noble - Admired and trusted",
+      "16-18": "Legendary - Spoken of with reverence",
+      "19-20": "Mythical - Stories told for generations"
+    },
+    
+    "honor_gains": {
+      "completing_quests_honorably": "+1 to +3",
+      "protecting_innocents": "+1",
+      "showing_mercy_to_defeated_enemies": "+1",
+      "upholding_oaths_and_promises": "+1 to +2",
+      "performing_great_deeds": "+2 to +5",
+      "sacrificing_for_others": "+2 to +3"
+    },
+    
+    "honor_losses": {
+      "breaking_oaths": "-2 to -5",
+      "attacking_defenseless_opponents": "-2",
+      "lying_to_honorable_people": "-1",
+      "abandoning_allies_in_danger": "-3",
+      "acting_with_cowardice": "-1 to -2",
+      "committing_crimes": "-2 to -4"
+    },
+    
+    "honor_effects": {
+      "social_interactions": "Honor modifies all social rolls",
+      "leadership": "High honor grants bonuses to commanding others",
+      "spiritual_power": "Honor affects connection to kami and cosmic forces",
+      "class_abilities": "Some abilities require minimum honor levels"
+    }
+  },
+  
+  "spiritual_power_system": {
+    "power_sources": {
+      "kami_connection": "Relationship with nature spirits and protective deities",
+      "ancestral_wisdom": "Guidance from honored family spirits",
+      "buddha_nature": "Inner enlightenment and compassion",
+      "cosmic_harmony": "Understanding of universal balance and flow"
+    },
+    
+    "power_uses": {
+      "enhanced_abilities": "Boost physical and mental capabilities temporarily",
+      "supernatural_senses": "Detect spirits, magic, and hidden truths",
+      "blessing_rituals": "Provide beneficial effects to self and others",
+      "protective_wards": "Create barriers against supernatural threats",
+      "spirit_communication": "Speak with and request aid from spirits"
+    },
+    
+    "power_regeneration": {
+      "daily_meditation": "+1 per hour of proper meditation",
+      "shrine_visits": "+[ROLL 1d4] at properly consecrated sites",
+      "honorable_acts": "+1 when acting in accordance with character's principles",
+      "seasonal_festivals": "+[ROLL 1d6] during major spiritual celebrations",
+      "natural_environments": "+1 per day in sacred groves or mountains"
+    }
+  },
+  
+  "clan_affiliations": {
+    "major_clans": {
+      "minamoto": {
+        "description": "Ancient warrior clan with imperial connections",
+        "specialties": ["Military leadership", "Court politics", "Honor traditions"],
+        "benefits": "+1 to leadership rolls, access to military networks",
+        "obligations": "Serve clan interests, maintain family honor"
+      },
+      "taira": {
+        "description": "Influential clan with naval and trade power",
+        "specialties": ["Naval warfare", "Trade networks", "Coastal territories"],
+        "benefits": "+1 to navigation rolls, trade connections",
+        "obligations": "Protect trade routes, serve clan maritime interests"
+      },
+      "fujiwara": {
+        "description": "Court nobles with scholarly and cultural influence",
+        "specialties": ["Court intrigue", "Cultural arts", "Religious connections"],
+        "benefits": "+1 to cultural skill rolls, court access",
+        "obligations": "Maintain cultural traditions, serve court interests"
+      }
+    },
+    
+    "minor_clans": {
+      "mountain_clans": {
+        "description": "Hardy folk dwelling in mountain regions",
+        "specialties": ["Mountain warfare", "Mining", "Spiritual traditions"],
+        "benefits": "+1 to survival in mountains, mineral knowledge",
+        "obligations": "Protect mountain territories, honor mountain kami"
+      },
+      "merchant_families": {
+        "description": "Wealthy trading houses with commercial networks",
+        "specialties": ["Commerce", "Information", "Urban connections"],
+        "benefits": "+1 to trade rolls, commercial contacts",
+        "obligations": "Advance family business, maintain trade relationships"
+      }
+    },
+    
+    "clanless": {
+      "description": "Characters without formal clan affiliation",
+      "benefits": "Freedom from clan obligations, can form own alliances",
+      "drawbacks": "Lack of inherited connections and support",
+      "opportunities": "Can be adopted into clans through service or marriage"
+    }
+  },
+  
+  "character_advancement": {
+    "experience_sources": {
+      "combat_victories": "[ROLL 1d6+10] XP per significant battle",
+      "quest_completion": "[ROLL 2d6+20] XP based on quest difficulty",
+      "cultural_achievements": "[ROLL 1d6+5] XP for artistic or cultural accomplishments",
+      "spiritual_growth": "[ROLL 1d6+15] XP for religious or philosophical advancement",
+      "social_success": "[ROLL 1d6+10] XP for political or diplomatic victories"
+    },
+    
+    "level_benefits": {
+      "hit_points": "Gain HP based on class and CON modifier",
+      "skill_points": "[ROLL 1d4+INT modifier] points to distribute among skills",
+      "class_abilities": "Unlock new class-specific powers and techniques",
+      "stat_improvement": "Every 3rd level, increase one stat by 1",
+      "reputation": "Higher level characters gain social recognition"
+    },
+    
+    "multiclassing": {
+      "requirements": "Must find teacher of new class and spend time training",
+      "restrictions": "Some class combinations conflict (samurai/ninja, monk/merchant)",
+      "benefits": "Gain abilities from multiple classes",
+      "penalties": "Slower advancement in individual class abilities"
+    }
+  },
+  
+  "character_motivations": {
+    "personal_goals": [
+      "Restore family honor after ancestral disgrace",
+      "Master a particular art or skill to perfection",
+      "Seek enlightenment through spiritual practice",
+      "Avenge the death of a loved one",
+      "Discover the truth about mysterious heritage",
+      "Prove worthiness to join prestigious organization",
+      "Protect a specific person, place, or ideal",
+      "Accumulate wealth and social status"
+    ],
+    
+    "spiritual_quests": [
+      "Seek audiences with legendary kami spirits",
+      "Complete pilgrimage to all sacred mountain shrines",
+      "Study under renowned spiritual masters",
+      "Achieve perfect balance between opposing forces",
+      "Transcend mortal limitations through discipline",
+      "Serve as bridge between human and spirit worlds"
+    ],
+    
+    "social_ambitions": [
+      "Rise from humble origins to noble status",
+      "Become trusted advisor to powerful daimyo",
+      "Establish new clan or merchant house",
+      "Achieve recognition as master artisan",
+      "Gain influence in imperial court",
+      "Unite rival factions for common cause"
+    ]
+  },
+  
+  "character_flaws_and_virtues": {
+    "virtues": [
+      "Gi (Rectitude) - Always acts with moral correctness",
+      "Yu (Courage) - Never backs down from righteous cause",
+      "Jin (Benevolence) - Shows compassion to all beings",
+      "Rei (Respect) - Honors traditions and proper behavior",
+      "Makoto (Honesty) - Speaks truth regardless of consequences",
+      "Meiyo (Honor) - Values reputation above material gain",
+      "Chugi (Loyalty) - Faithful to worthy leaders and causes"
+    ],
+    
+    "flaws": [
+      "Pride - Cannot accept help or admit mistakes",
+      "Stubbornness - Refuses to change course once decided",
+      "Vengefulness - Must repay all slights and injuries",
+      "Naivety - Trusts too easily and believes the best of others",
+      "Perfectionism - Cannot accept anything less than perfection",
+      "Melancholy - Prone to depression and dark thoughts",
+      "Recklessness - Acts without considering consequences"
+    ]
+  },
+  
+  "integration_systems": {
+    "database_connections": {
+      "world_integration": "Characters reference japanese_world_db for origins and connections",
+      "item_integration": "Starting equipment drawn from japanese_items_db",
+      "monster_integration": "Character abilities designed to interact with japanese_monsters_db",
+      "quest_integration": "Character backgrounds create hooks for japanese_quests_db",
+      "art_integration": "Character types correspond to japanese_art_db visual representations"
+    },
+    
+    "mechanical_consistency": {
+      "stat_system": "Uses same stats as other databases (STR, AGI, INT, etc.)",
+      "dice_mechanics": "All rolls use [ROLL XdY+Z] format",
+      "progression": "Experience and level system matches quest reward structure",
+      "balance": "Class abilities balanced for cooperative gameplay"
+    },
+    
+    "cultural_authenticity": {
+      "historical_basis": "Classes based on actual historical roles",
+      "social_structure": "Reflects feudal Japanese hierarchy and values",
+      "spiritual_elements": "Incorporates Shinto, Buddhist, and folk belief systems",
+      "honor_system": "Bushido code affects all character interactions"
+    }
+  }
+}

@@ -1,0 +1,1101 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan Items",
+  "currency": "Mon Coins",
+  
+  "weapons": {
+    "melee_weapons": {
+      "swords": {
+        "worn_wakizashi": {
+          "name": "Worn Wakizashi",
+          "damage": "1d6",
+          "cost": 25,
+          "weight": 2,
+          "description": "A short sword showing signs of age and many battles. Still sharp enough for an honorable warrior.",
+          "rarity": "common",
+          "unicode_symbol": "⚔️"
+        },
+        "iron_katana": {
+          "name": "Iron Katana",
+          "damage": "1d8",
+          "cost": 80,
+          "weight": 3,
+          "description": "A well-forged blade of good iron, properly balanced with excellent reach. The soul of the samurai.",
+          "rarity": "common",
+          "unicode_symbol": "⚔️"
+        },
+        "tamahagane_katana": {
+          "name": "Tamahagane Katana",
+          "damage": "1d8+1",
+          "cost": 200,
+          "weight": 3,
+          "description": "Forged from sacred steel with a perfect edge that holds true. Bears the signature of a master smith.",
+          "rarity": "uncommon",
+          "unicode_symbol": "⚔️"
+        },
+        "samurai_daisho": {
+          "name": "Samurai Daisho Set",
+          "damage": "1d10",
+          "cost": 400,
+          "weight": 5,
+          "description": "A matched katana and wakizashi set, symbols of samurai honor and status.",
+          "rarity": "uncommon",
+          "unicode_symbol": "⚔️",
+          "special": "Can attack twice per round with both blades"
+        },
+        "moonlight_blade": {
+          "name": "Moonlight Katana",
+          "damage": "1d8+2",
+          "cost": 750,
+          "weight": 3,
+          "description": "Steel folded with silver and blessed under the full moon. Gleams with inner light.",
+          "rarity": "rare",
+          "unicode_symbol": "⚔️",
+          "special": "Double damage vs supernatural creatures, glows in darkness"
+        }
+      },
+      
+      "daggers": {
+        "tanto": {
+          "name": "Tanto",
+          "damage": "1d4+1",
+          "cost": 15,
+          "weight": 1,
+          "description": "A traditional short blade perfect for close combat or ritual purposes.",
+          "rarity": "common",
+          "unicode_symbol": "🗡️"
+        },
+        "assassin_kunai": {
+          "name": "Assassin's Kunai",
+          "damage": "1d4+2",
+          "cost": 45,
+          "weight": 1,
+          "description": "A multi-purpose tool and weapon favored by ninja. The handle is wrapped in black silk.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🗡️",
+          "special": "Can be thrown, +2 to stealth attacks"
+        },
+        "poisoned_tanto": {
+          "name": "Poisoned Tanto",
+          "damage": "1d4+1",
+          "cost": 250,
+          "weight": 1,
+          "description": "A ceremonial blade with a hollow groove for poison. Handle with extreme caution.",
+          "rarity": "rare",
+          "unicode_symbol": "🗡️",
+          "special": "Target must save vs poison or take [ROLL 1d4] additional damage per round for 3 rounds"
+        }
+      },
+      
+      "polearms": {
+        "yari": {
+          "name": "Yari Spear",
+          "damage": "1d6+1",
+          "cost": 30,
+          "weight": 4,
+          "description": "A straight-bladed spear ideal for formation fighting and mounted combat.",
+          "rarity": "common",
+          "unicode_symbol": "🗡️",
+          "special": "Can attack from second rank in formation"
+        },
+        "naginata": {
+          "name": "Naginata",
+          "damage": "1d10+1",
+          "cost": 120,
+          "weight": 6,
+          "description": "A curved blade on a long pole, traditionally wielded by warrior monks and noble women.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🗡️",
+          "special": "Can trip mounted opponents, +1 reach"
+        },
+        "tetsubo": {
+          "name": "Tetsubo War Club",
+          "damage": "1d10+2",
+          "cost": 100,
+          "weight": 8,
+          "description": "An iron-studded club capable of crushing armor and bone alike.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🔨",
+          "special": "Ignores 2 points of armor"
+        }
+      },
+      
+      "exotic_weapons": {
+        "tessen": {
+          "name": "Iron War Fan",
+          "damage": "1d4",
+          "cost": 35,
+          "weight": 1,
+          "description": "An iron fan that serves as both defensive tool and concealed weapon.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🪭",
+          "special": "Can block attacks, +1 defense when not attacking"
+        },
+        "kusarigama": {
+          "name": "Kusarigama",
+          "damage": "1d6+1",
+          "cost": 90,
+          "weight": 3,
+          "description": "A sickle attached to a weighted chain, requiring great skill to master.",
+          "rarity": "rare",
+          "unicode_symbol": "⛓️",
+          "special": "Can entangle enemies, reach attack option"
+        }
+      }
+    },
+    
+    "ranged_weapons": {
+      "bows": {
+        "bamboo_yumi": {
+          "name": "Bamboo Yumi",
+          "damage": "1d6",
+          "cost": 40,
+          "weight": 2,
+          "description": "A traditional asymmetrical longbow made from seasoned bamboo and wood.",
+          "rarity": "common",
+          "unicode_symbol": "🏹",
+          "ammunition": "ya arrows"
+        },
+        "daikyu_longbow": {
+          "name": "Daikyu Longbow",
+          "damage": "1d8",
+          "cost": 100,
+          "weight": 3,
+          "description": "A powerful bow requiring great strength. In skilled hands, deadly at long range.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🏹",
+          "ammunition": "ya arrows",
+          "special": "Extended range, requires STR 12+"
+        },
+        "spirit_blessed_yumi": {
+          "name": "Spirit-Blessed Yumi",
+          "damage": "1d8+2",
+          "cost": 500,
+          "weight": 2,
+          "description": "Crafted from sacred wood and blessed by shrine maidens. Never misses its intended target.",
+          "rarity": "rare",
+          "unicode_symbol": "🏹",
+          "ammunition": "ya arrows",
+          "special": "+3 to hit rolls, arrows blessed vs evil"
+        }
+      },
+      
+      "crossbows": {
+        "do_kyu": {
+          "name": "Do-kyu Repeating Crossbow",
+          "damage": "1d6+1",
+          "cost": 150,
+          "weight": 5,
+          "description": "A mechanical bow of foreign design, modified by Japanese craftsmen.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🏹",
+          "ammunition": "bolts",
+          "special": "Can fire twice per round"
+        }
+      },
+      
+      "thrown_weapons": {
+        "shuriken": {
+          "name": "Shuriken",
+          "damage": "1d4",
+          "cost": 5,
+          "weight": 0.2,
+          "description": "Star-shaped throwing blades, often carried in sets of eight or more.",
+          "rarity": "common",
+          "unicode_symbol": "⭐",
+          "special": "Can be thrown silently, sold in sets of 8"
+        },
+        "tessen_thrown": {
+          "name": "Throwing Tessen",
+          "damage": "1d4+1",
+          "cost": 25,
+          "weight": 1,
+          "description": "A weighted iron fan designed for throwing and close combat.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🪭",
+          "special": "Returns to thrower on successful hit"
+        }
+      }
+    },
+    
+    "magical_weapons": {
+      "spirit_weapons": {
+        "monk_staff": {
+          "name": "Monk's Staff",
+          "damage": "1d4+1",
+          "cost": 40,
+          "weight": 3,
+          "description": "A simple wooden staff carried by wandering monks and used for protection.",
+          "rarity": "common",
+          "unicode_symbol": "🏷️"
+        },
+        "prayer_staff": {
+          "name": "Prayer Staff",
+          "damage": "1d6+WIS",
+          "cost": 300,
+          "weight": 3,
+          "description": "Carved with sutras and topped with sacred rings. Channels spiritual energy.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🏷️",
+          "special": "Can cast [RANDOM_CHOICE ['Blessing', 'Purification', 'Spirit Ward']] once per day"
+        },
+        "dragon_staff": {
+          "name": "Dragon King's Staff",
+          "damage": "1d8+WIS",
+          "cost": 1200,
+          "weight": 4,
+          "description": "A legendary focus topped with a carved dragon. Lightning crackles around its head.",
+          "rarity": "legendary",
+          "unicode_symbol": "🏷️",
+          "special": "Spell damage +2, can summon lightning once per day"
+        }
+      },
+      
+      "enchanted_blades": {
+        "fire_katana": {
+          "name": "Flame-Kissed Katana",
+          "damage": "1d8+1d4 fire",
+          "cost": 1000,
+          "weight": 3,
+          "description": "The blade burns with sacred fire that never consumes the steel. Warm even in winter.",
+          "rarity": "rare",
+          "unicode_symbol": "⚔️",
+          "special": "Fire damage, provides warmth and light"
+        },
+        "ice_wakizashi": {
+          "name": "Winter Wind Wakizashi",
+          "damage": "1d6+1d4 cold",
+          "cost": 900,
+          "weight": 2,
+          "description": "Frost forms along this blade's edge. The air grows cold in its presence.",
+          "rarity": "rare",
+          "unicode_symbol": "⚔️",
+          "special": "Cold damage, may freeze enemies in place"
+        },
+        "spirit_tanto": {
+          "name": "Ghost-Touch Tanto",
+          "damage": "1d4+2 spiritual",
+          "cost": 800,
+          "weight": 1,
+          "description": "This blade can cut both flesh and spirit. Useful against supernatural foes.",
+          "rarity": "rare",
+          "unicode_symbol": "🗡️",
+          "special": "Can damage incorporeal creatures, glows near undead"
+        }
+      }
+    }
+  },
+  
+  "armor": {
+    "light_armor": {
+      "cotton_kimono": {
+        "name": "Padded Kimono",
+        "defense": 1,
+        "cost": 30,
+        "weight": 4,
+        "description": "Layers of cotton and silk sewn together for basic protection. Better than nothing.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "leather_haramaki": {
+        "name": "Leather Haramaki",
+        "defense": 2,
+        "cost": 60,
+        "weight": 6,
+        "description": "Hardened leather armor protecting the torso. Favored by ashigaru and scouts.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "studded_uwagi": {
+        "name": "Studded Uwagi",
+        "defense": 3,
+        "cost": 120,
+        "weight": 8,
+        "description": "Leather jacket reinforced with metal studs. Good protection without hindering movement.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      }
+    },
+    
+    "medium_armor": {
+      "chain_kusari": {
+        "name": "Chain Kusari",
+        "defense": 4,
+        "cost": 200,
+        "weight": 12,
+        "description": "Interlocked metal rings worn under clothing. Standard protection for professional warriors.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️"
+      },
+      "lamellar_armor": {
+        "name": "Lamellar Armor",
+        "defense": 5,
+        "cost": 300,
+        "weight": 15,
+        "description": "Small metal or leather plates laced together. Excellent protection and flexibility.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️"
+      },
+      "do_maru": {
+        "name": "Do-maru",
+        "defense": 6,
+        "cost": 500,
+        "weight": 20,
+        "description": "Traditional samurai armor wrapping around the body. The standard of medieval warfare.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️"
+      }
+    },
+    
+    "heavy_armor": {
+      "oyoroi": {
+        "name": "O-yoroi",
+        "defense": 7,
+        "cost": 800,
+        "weight": 30,
+        "description": "Great armor for mounted combat with large shoulder guards and elaborate decoration.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "penalty": "-1 to agility rolls on foot"
+      },
+      "tosei_gusoku": {
+        "name": "Tosei-gusoku",
+        "defense": 8,
+        "cost": 1200,
+        "weight": 35,
+        "description": "Modern armor combining traditional and foreign techniques. Pinnacle of armorcraft.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "penalty": "-2 to agility rolls"
+      },
+      "daimyo_armor": {
+        "name": "Daimyo's Ceremonial Armor",
+        "defense": 9,
+        "cost": 2000,
+        "weight": 40,
+        "description": "Masterwork armor decorated with clan mon and gold inlay. Worn only by great lords.",
+        "rarity": "legendary",
+        "unicode_symbol": "🛡️",
+        "penalty": "-2 to agility rolls",
+        "special": "Resistance to fear effects, +2 to intimidation"
+      }
+    },
+    
+    "shields": {
+      "wooden_tate": {
+        "name": "Wooden Tate",
+        "defense": 1,
+        "cost": 25,
+        "weight": 5,
+        "description": "A large rectangular shield used by ashigaru in formation fighting.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "iron_tessen": {
+        "name": "Iron Tessen",
+        "defense": 2,
+        "cost": 60,
+        "weight": 3,
+        "description": "An iron war fan that can block and strike. Elegant and practical.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🪭",
+        "special": "Can be used as weapon for 1d4 damage"
+      },
+      "samurai_sode": {
+        "name": "Samurai Sode",
+        "defense": 3,
+        "cost": 200,
+        "weight": 8,
+        "description": "Large shoulder guards that can be repositioned to block attacks.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "special": "Reduces damage from ranged attacks by additional 1 point"
+      }
+    },
+    
+    "magical_armor": {
+      "blessed_kimono": {
+        "name": "Spirit-Blessed Kimono",
+        "defense": 4,
+        "cost": 600,
+        "weight": 4,
+        "description": "Silk robes blessed by shrine maidens. Light as air but strong as steel.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "special": "No movement penalty, +1 to spiritual resistance"
+      },
+      "monk_robes": {
+        "name": "Robes of Inner Peace",
+        "defense": "2+WIS bonus",
+        "cost": 800,
+        "weight": 2,
+        "description": "Simple robes woven with protective mantras. Wisdom enhances the spiritual defenses.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "special": "Magic resistance, meditation bonus"
+      }
+    },
+    
+    "helmets": {
+      "ashigaru_helmet": {
+        "name": "Ashigaru Jingasa",
+        "defense": 1,
+        "cost": 40,
+        "weight": 3,
+        "description": "A simple conical helmet of lacquered wood or iron.",
+        "rarity": "common",
+        "unicode_symbol": "⛑️"
+      },
+      "samurai_kabuto": {
+        "name": "Samurai Kabuto",
+        "defense": 2,
+        "cost": 150,
+        "weight": 5,
+        "description": "An elaborate helmet with face mask and decorative maedate crest.",
+        "rarity": "uncommon",
+        "unicode_symbol": "⛑️",
+        "special": "Intimidating appearance, +1 to fear effects against enemies"
+      }
+    }
+  },
+  
+  "consumables": {
+    "potions": {
+      "healing_tea": {
+        "name": "Healing Tea",
+        "effect": "Restores [ROLL 2d4+2] HP",
+        "cost": 60,
+        "weight": 0.5,
+        "description": "A blend of medicinal herbs in a small ceramic cup. Bitter but effective.",
+        "rarity": "common",
+        "unicode_symbol": "🍵"
+      },
+      "greater_healing_tea": {
+        "name": "Immortal's Tea",
+        "effect": "Restores [ROLL 3d6+6] HP",
+        "cost": 180,
+        "weight": 0.5,
+        "description": "A legendary blend that glows with golden light. Heals even mortal wounds.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🍵"
+      },
+      "strength_sake": {
+        "name": "Tiger's Strength Sake",
+        "effect": "+[ROLL 1d4+1] STR for [ROLL 1d6+3] rounds",
+        "cost": 120,
+        "weight": 0.5,
+        "description": "Potent rice wine that makes muscles swell with power. Effects fade gradually.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🍶"
+      },
+      "agility_elixir": {
+        "name": "Crane's Grace Elixir",
+        "effect": "+[ROLL 1d4+1] AGI for [ROLL 1d6+3] rounds",
+        "cost": 120,
+        "weight": 0.5,
+        "description": "A clear liquid that quickens reflexes and sharpens coordination like a dancing crane.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🧪"
+      },
+      "antidote": {
+        "name": "Universal Antidote",
+        "effect": "Neutralizes poison and cures disease",
+        "cost": 90,
+        "weight": 0.5,
+        "description": "A bitter medicine that counteracts toxins and purifies the blood.",
+        "rarity": "common",
+        "unicode_symbol": "🧪"
+      }
+    },
+    
+    "food_and_drink": {
+      "travel_rations": {
+        "name": "Travel Rations",
+        "effect": "Prevents hunger penalties for 1 day",
+        "cost": 8,
+        "weight": 2,
+        "description": "Dried fish, pickled vegetables, and rice balls. Sustaining but not delicious.",
+        "rarity": "common",
+        "unicode_symbol": "🍙"
+      },
+      "fresh_rice": {
+        "name": "Fresh Rice Bowl",
+        "effect": "Restores 1 HP, prevents hunger for 1 day",
+        "cost": 3,
+        "weight": 1,
+        "description": "A steaming bowl of perfectly cooked rice. Simple food that nourishes body and soul.",
+        "rarity": "common",
+        "unicode_symbol": "🍚"
+      },
+      "sake_cup": {
+        "name": "Cup of Sake",
+        "effect": "Restores 1 HP, +1 CHA for 1 hour, -1 INT for 1 hour",
+        "cost": 5,
+        "weight": 0.5,
+        "description": "Warm rice wine in a ceramic cup. Loosens the tongue and lifts spirits.",
+        "rarity": "common",
+        "unicode_symbol": "🍶"
+      },
+      "premium_sake": {
+        "name": "Premium Junmai Sake",
+        "effect": "+2 CHA for 2 hours",
+        "cost": 40,
+        "weight": 1,
+        "description": "Finest sake from the master brewer's reserve. Smooth and warming to the spirit.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🍶"
+      },
+      "kaiseki_meal": {
+        "name": "Kaiseki Feast",
+        "effect": "Restores [ROLL 1d6+2] HP, prevents hunger for 3 days",
+        "cost": 25,
+        "weight": 0,
+        "description": "An elaborate multi-course meal that satisfies both hunger and aesthetic sense.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🍱"
+      },
+      "green_tea": {
+        "name": "Ceremonial Green Tea",
+        "effect": "+1 WIS for 2 hours, +1 meditation bonus",
+        "cost": 15,
+        "weight": 0.2,
+        "description": "Carefully prepared matcha that clears the mind and sharpens focus.",
+        "rarity": "common",
+        "unicode_symbol": "🍵"
+      }
+    },
+    
+    "scrolls": {
+      "light_scroll": {
+        "name": "Scroll of Lantern Light",
+        "effect": "Creates bright light for [ROLL 1d6+6] hours",
+        "cost": 35,
+        "weight": 0.1,
+        "description": "Paper inscribed with glowing characters. Banishes darkness when unrolled.",
+        "rarity": "common",
+        "unicode_symbol": "📜"
+      },
+      "healing_sutra": {
+        "name": "Healing Sutra",
+        "effect": "Restores [ROLL 2d6+4] HP",
+        "cost": 90,
+        "weight": 0.1,
+        "description": "Sacred words written in gold ink. Channels divine healing power through chanting.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📜"
+      },
+      "protection_ward": {
+        "name": "Protection Ward",
+        "effect": "+3 DEF for [ROLL 1d6+4] rounds",
+        "cost": 120,
+        "weight": 0.1,
+        "description": "Mystical wards written on blessed paper. Creates a shimmering barrier when activated.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📜"
+      },
+      "fire_scroll": {
+        "name": "Scroll of Dragon's Breath",
+        "effect": "Deals [ROLL 3d6] fire damage to target",
+        "cost": 200,
+        "weight": 0.1,
+        "description": "Dangerous magic bound in calligraphy. The paper feels warm to the touch.",
+        "rarity": "rare",
+        "unicode_symbol": "📜"
+      }
+    }
+  },
+  
+  "tools_and_utilities": {
+    "adventuring_gear": {
+      "paper_lantern": {
+        "name": "Paper Lantern",
+        "effect": "Provides light for [ROLL 1d4+2] hours",
+        "cost": 2,
+        "weight": 1,
+        "description": "A collapsible paper lantern with candle. Essential for night travel.",
+        "rarity": "common",
+        "unicode_symbol": "🏮"
+      },
+      "silk_rope": {
+        "name": "Silk Rope (50 ft)",
+        "effect": "Climbing aid, binding tool",
+        "cost": 20,
+        "weight": 8,
+        "description": "Strong silk rope that's lighter than hemp but twice as strong.",
+        "rarity": "common",
+        "unicode_symbol": "🪢"
+      },
+      "grappling_hook": {
+        "name": "Iron Grappling Hook",
+        "effect": "Climbing aid, can catch ledges",
+        "cost": 35,
+        "weight": 4,
+        "description": "Iron hooks attached to a length of chain. Perfect for scaling castle walls.",
+        "rarity": "common",
+        "unicode_symbol": "⚓"
+      },
+      "lockpicks": {
+        "name": "Thief's Tools",
+        "effect": "+2 to lock picking attempts",
+        "cost": 80,
+        "weight": 0.5,
+        "description": "A set of fine picks and tools for the discerning burglar. Possession may raise questions.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🗝️"
+      },
+      "spyglass": {
+        "name": "Foreign Spyglass",
+        "effect": "See distant objects clearly",
+        "cost": 300,
+        "weight": 2,
+        "description": "Polished lenses in a brass tube from distant lands. See enemies before they see you.",
+        "rarity": "rare",
+        "unicode_symbol": "🔭"
+      },
+      "writing_set": {
+        "name": "Calligraphy Set",
+        "effect": "Required for writing scrolls and documents",
+        "cost": 50,
+        "weight": 3,
+        "description": "Brush, ink stone, and fine paper. Essential for the educated.",
+        "rarity": "common",
+        "unicode_symbol": "🖌️"
+      }
+    },
+    
+    "crafting_materials": {
+      "iron_ingot": {
+        "name": "Iron Ingot",
+        "effect": "Smithing material",
+        "cost": 20,
+        "weight": 5,
+        "description": "A bar of good iron ready for the forge. Foundation of all metalwork.",
+        "rarity": "common",
+        "unicode_symbol": "📦"
+      },
+      "tamahagane_steel": {
+        "name": "Tamahagane Steel",
+        "effect": "Superior smithing material",
+        "cost": 100,
+        "weight": 5,
+        "description": "Sacred steel smelted from iron sand. Worth its weight in finished blades.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📦"
+      },
+      "silk_fabric": {
+        "name": "Fine Silk Fabric",
+        "effect": "Clothing and armor crafting material",
+        "cost": 40,
+        "weight": 2,
+        "description": "Smooth silk fabric ready for the tailor's needle. Soft yet surprisingly strong.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📦"
+      },
+      "medicinal_herbs": {
+        "name": "Mountain Herbs",
+        "effect": "Potion brewing ingredient",
+        "cost": 45,
+        "weight": 0.5,
+        "description": "Carefully dried medicinal plants from sacred mountains. Essential for healing potions.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🌿"
+      },
+      "bamboo_wood": {
+        "name": "Sacred Bamboo",
+        "effect": "Bow and tool crafting material",
+        "cost": 25,
+        "weight": 3,
+        "description": "Specially selected bamboo with perfect flexibility and strength.",
+        "rarity": "common",
+        "unicode_symbol": "🎋"
+      }
+    }
+  },
+  
+  "treasure": {
+    "coins_and_gems": {
+      "mon_coins": {
+        "name": "Mon Coins",
+        "effect": "Standard currency",
+        "value": 1,
+        "weight": 0.02,
+        "description": "Square-holed copper coins bearing the domain's seal.",
+        "rarity": "common",
+        "unicode_symbol": "💰"
+      },
+      "silver_coins": {
+        "name": "Silver Koban",
+        "effect": "Premium currency",
+        "value": 10,
+        "weight": 0.02,
+        "description": "Oval silver coins worth ten mon each. Used for larger transactions.",
+        "rarity": "common",
+        "unicode_symbol": "💰"
+      },
+      "gold_coins": {
+        "name": "Gold Oban",
+        "effect": "Noble currency",
+        "value": 100,
+        "weight": 0.05,
+        "description": "Large gold coins bearing the Emperor's chrysanthemum seal.",
+        "rarity": "uncommon",
+        "unicode_symbol": "💰"
+      },
+      "ruby": {
+        "name": "Fire Ruby",
+        "effect": "Valuable gem",
+        "value": "[ROLL 2d6*50]",
+        "weight": 0.1,
+        "description": "A blood-red gem that seems to hold inner fire. Highly prized by nobles.",
+        "rarity": "rare",
+        "unicode_symbol": "💎"
+      },
+      "sapphire": {
+        "name": "Heaven Sapphire",
+        "effect": "Valuable gem",
+        "value": "[ROLL 2d6*60]",
+        "weight": 0.1,
+        "description": "A brilliant blue stone said to reflect the color of heaven itself.",
+        "rarity": "rare",
+        "unicode_symbol": "💎"
+      },
+      "jade": {
+        "name": "Imperial Jade",
+        "effect": "Sacred gem",
+        "value": "[ROLL 2d6*75]",
+        "weight": 0.1,
+        "description": "Green stone treasured above all others. Symbol of immortality and virtue.",
+        "rarity": "rare",
+        "unicode_symbol": "💎"
+      },
+      "pearl": {
+        "name": "Perfect Pearl",
+        "effect": "Ocean's treasure",
+        "value": "[ROLL 3d6*40]",
+        "weight": 0.05,
+        "description": "A lustrous pearl of perfect spherical form from deep ocean waters.",
+        "rarity": "rare",
+        "unicode_symbol": "⚪"
+      }
+    },
+    
+    "art_objects": {
+      "ceramic_vase": {
+        "name": "Ceramic Tea Vase",
+        "effect": "Valuable art object",
+        "value": "[ROLL 2d6*60]",
+        "weight": 3,
+        "description": "An elegant ceramic vase with flowing glazes, perfect for tea ceremony.",
+        "rarity": "rare",
+        "unicode_symbol": "🏺"
+      },
+      "golden_statue": {
+        "name": "Golden Buddha Statue",
+        "effect": "Valuable art object",
+        "value": "[ROLL 3d6*100]",
+        "weight": 5,
+        "description": "A small Buddha cast in gold, radiating peace and prosperity.",
+        "rarity": "rare",
+        "unicode_symbol": "🏆"
+      },
+      "painted_scroll": {
+        "name": "Master's Painted Scroll",
+        "effect": "Valuable artwork",
+        "value": "[ROLL 2d6*120]",
+        "weight": 1,
+        "description": "Hand-painted scroll depicting [RANDOM_CHOICE ['mountain landscapes', 'cherry blossoms', 'court scenes', 'spiritual beings']] by a renowned artist.",
+        "rarity": "rare",
+        "unicode_symbol": "📜"
+      },
+      "lacquered_box": {
+        "name": "Lacquered Jewelry Box",
+        "effect": "Valuable container",
+        "value": "[ROLL 2d6*80]",
+        "weight": 2,
+        "description": "An intricately decorated box with gold inlay and mother-of-pearl designs.",
+        "rarity": "rare",
+        "unicode_symbol": "📦"
+      }
+    }
+  },
+  
+  "artifacts": {
+    "legendary_items": {
+      "emperors_crown": {
+        "name": "Crown of the Dragon Emperor",
+        "effect": "+3 CHA, +2 INT, Imperial Presence",
+        "cost": "Priceless",
+        "weight": 3,
+        "description": "A golden crown set with jade and pearls, symbol of divine mandate to rule.",
+        "rarity": "legendary",
+        "unicode_symbol": "👑",
+        "special": "NPCs more likely to obey commands, +5 to leadership rolls"
+      },
+      "muramasa_blade": {
+        "name": "Muramasa's Bloodthirsty Blade",
+        "damage": "2d8+3",
+        "cost": "Priceless",
+        "weight": 3,
+        "description": "A legendary katana that thirsts for blood. The blade hums with malevolent energy.",
+        "rarity": "legendary",
+        "unicode_symbol": "⚔️",
+        "special": "Double damage vs humans, becomes more powerful with each kill, cursed"
+      },
+      "divine_mirror": {
+        "name": "Yata-no-Kagami, Sacred Mirror",
+        "defense": 5,
+        "cost": "Priceless",
+        "weight": 3,
+        "description": "One of the three sacred treasures. Reflects truth and banishes deception.",
+        "rarity": "legendary",
+        "unicode_symbol": "🪞",
+        "special": "Immunity to illusions, reflects hostile magic 50% of the time"
+      },
+      "sage_staff": {
+        "name": "Staff of the Mountain Sage",
+        "damage": "1d8+WIS+3",
+        "cost": "Priceless",
+        "weight": 4,
+        "description": "The legendary focus of an immortal hermit. Wisdom flows through its ancient wood.",
+        "rarity": "legendary",
+        "unicode_symbol": "🏷️",
+        "special": "All spells cost 1 less chi, can cast any scroll without consuming it"
+      },
+      "imperial_seal": {
+        "name": "Imperial Jade Seal",
+        "effect": "+2 to all stats",
+        "cost": "Priceless",
+        "weight": 0.5,
+        "description": "A jade seal that radiates imperial authority. Its true power is beyond measure.",
+        "rarity": "legendary",
+        "unicode_symbol": "🔱",
+        "special": "Regenerate 1 HP per hour, command respect from all social classes"
+      }
+    }
+  },
+  
+  "loot_tables": {
+    "common_enemy_drops": {
+      "bandit": {
+        "gold": "[ROLL 1d6*8]",
+        "items": [
+          {"item": "worn_wakizashi", "chance": 60},
+          {"item": "cotton_kimono", "chance": 40},
+          {"item": "travel_rations", "chance": 80},
+          {"item": "paper_lantern", "chance": 30}
+        ]
+      },
+      "wild_animal": {
+        "gold": 0,
+        "items": [
+          {"item": "animal_hide", "chance": 70},
+          {"item": "travel_rations", "chance": 40},
+          {"item": "medicinal_herbs", "chance": 20}
+        ]
+      },
+      "ronin": {
+        "gold": "[ROLL 1d4*10]",
+        "items": [
+          {"item": "iron_katana", "chance": 80},
+          {"item": "silver_coins", "chance": 60},
+          {"item": "sake_cup", "chance": 40}
+        ]
+      }
+    },
+    
+    "merchant_inventories": {
+      "katana_smith": {
+        "weapons": [
+          {"item": "iron_katana", "stock": "[ROLL 1d3]"},
+          {"item": "naginata", "stock": "[ROLL 1d2]"},
+          {"item": "yari", "stock": "[ROLL 1d4]"},
+          {"item": "tanto", "stock": "[ROLL 1d6]"}
+        ],
+        "armor": [
+          {"item": "do_maru", "stock": "[ROLL 1d2]"},
+          {"item": "samurai_kabuto", "stock": "[ROLL 1d3]"},
+          {"item": "studded_uwagi", "stock": "[ROLL 1d2]"}
+        ],
+        "materials": [
+          {"item": "tamahagane_steel", "stock": "[ROLL 2d6]"}
+        ]
+      },
+      
+      "general_store": {
+        "consumables": [
+          {"item": "healing_tea", "stock": "[ROLL 1d4+1]"},
+          {"item": "travel_rations", "stock": "[ROLL 2d6]"},
+          {"item": "paper_lantern", "stock": "[ROLL 3d6]"}
+        ],
+        "tools": [
+          {"item": "silk_rope", "stock": "[ROLL 1d3]"},
+          {"item": "grappling_hook", "stock": "[ROLL 1d2]"},
+          {"item": "writing_set", "stock": "[ROLL 1d4]"}
+        ]
+      },
+      
+      "teahouse": {
+        "food_drink": [
+          {"item": "green_tea", "stock": "unlimited"},
+          {"item": "kaiseki_meal", "stock": "[ROLL 2d6]"},
+          {"item": "fresh_rice", "stock": "[ROLL 1d6+3]"},
+          {"item": "premium_sake", "stock": "[ROLL 1d4]"}
+        ],
+        "rooms": {
+          "common_room": {"cost": 3, "description": "Tatami mat in shared room"},
+          "private_room": {"cost": 8, "description": "Private room with tea service"}
+        }
+      },
+      
+      "temple_healer": {
+        "potions": [
+          {"item": "healing_tea", "stock": "[ROLL 1d6+2]"},
+          {"item": "greater_healing_tea", "stock": "[ROLL 1d3]"},
+          {"item": "antidote", "stock": "[ROLL 1d4]"}
+        ],
+        "scrolls": [
+          {"item": "light_scroll", "stock": "[ROLL 1d4]"},
+          {"item": "healing_sutra", "stock": "[ROLL 1d3]"},
+          {"item": "protection_ward", "stock": "[ROLL 1d2]"}
+        ],
+        "materials": [
+          {"item": "medicinal_herbs", "stock": "[ROLL 1d6]"}
+        ]
+      }
+    },
+    
+    "treasure_hoards": {
+      "small_cache": {
+        "gold": "[ROLL 2d6*15]",
+        "items": [
+          {"type": "common_item", "chance": 80},
+          {"type": "uncommon_item", "chance": 40},
+          {"type": "gem", "chance": 30}
+        ]
+      },
+      
+      "medium_hoard": {
+        "gold": "[ROLL 3d6*40]",
+        "items": [
+          {"type": "uncommon_item", "chance": 70},
+          {"type": "rare_item", "chance": 40},
+          {"type": "gem", "chance": 60},
+          {"type": "art_object", "chance": 30}
+        ]
+      },
+      
+      "large_treasure": {
+        "gold": "[ROLL 4d6*80]",
+        "items": [
+          {"type": "rare_item", "chance": 80},
+          {"type": "legendary_item", "chance": 20},
+          {"type": "gem", "chance": 90},
+          {"type": "art_object", "chance": 60}
+        ]
+      },
+      
+      "daimyo_treasury": {
+        "gold": "[ROLL 6d6*200]",
+        "items": [
+          {"type": "legendary_item", "chance": 60},
+          {"type": "rare_item", "chance": 100},
+          {"type": "gem", "chance": 100},
+          {"type": "art_object", "chance": 80},
+          {"type": "artifact", "chance": 30}
+        ]
+      }
+    },
+    
+    "quest_rewards": {
+      "village_quest": {
+        "gold": "[ROLL 2d6*30]",
+        "items": [
+          {"item": "healing_tea", "quantity": "[ROLL 1d3]"},
+          {"type": "common_equipment", "chance": 60}
+        ],
+        "reputation": "+1 with village"
+      },
+      
+      "town_quest": {
+        "gold": "[ROLL 3d6*75]",
+        "items": [
+          {"type": "uncommon_equipment", "chance": 80},
+          {"item": "greater_healing_tea", "quantity": "[ROLL 1d2]"}
+        ],
+        "reputation": "+2 with town, access to better merchants"
+      },
+      
+      "daimyo_quest": {
+        "gold": "[ROLL 4d6*150]",
+        "items": [
+          {"type": "rare_equipment", "chance": 60},
+          {"type": "magical_item", "chance": 40}
+        ],
+        "reputation": "+3 with nobility, minor title granted"
+      },
+      
+      "imperial_quest": {
+        "gold": "[ROLL 6d6*300]",
+        "items": [
+          {"type": "legendary_item", "chance": 80},
+          {"type": "artifact", "chance": 30}
+        ],
+        "reputation": "Samurai status, land grants"
+      }
+    }
+  },
+  
+  "special_item_properties": {
+    "magical_effects": [
+      "Glows with soft moonlight in darkness",
+      "Never rusts or loses its edge",
+      "Feels warm like summer sunshine",
+      "Whispers wisdom to worthy wielders",
+      "Changes color with the seasons",
+      "Repels evil spirits and yokai",
+      "Self-sharpening and self-repairing"
+    ],
+    
+    "cursed_effects": [
+      "Cannot be willingly abandoned",
+      "Slowly drains wielder's honor",
+      "Attracts hostile supernatural attention",
+      "Whispers dark temptations",
+      "Makes wielder prone to violence",
+      "Causes nightmares of ancient battles"
+    ],
+    
+    "enhancement_types": [
+      "+1 to attack rolls",
+      "+1 to damage",
+      "+1 to defense",
+      "Resistance to one element",
+      "Bonus to one skill or stat",
+      "Special ability once per day"
+    ]
+  },
+  
+  "item_generation_rules": {
+    "random_item_by_rarity": {
+      "common": "[PERCENTAGE_CHANCE 60]",
+      "uncommon": "[PERCENTAGE_CHANCE 25]",
+      "rare": "[PERCENTAGE_CHANCE 12]",
+      "legendary": "[PERCENTAGE_CHANCE 3]"
+    },
+    
+    "condition_modifiers": {
+      "broken": {"cost_modifier": 0.1, "effectiveness": 0.5},
+      "worn": {"cost_modifier": 0.5, "effectiveness": 0.8},
+      "good": {"cost_modifier": 1.0, "effectiveness": 1.0},
+      "excellent": {"cost_modifier": 1.5, "effectiveness": 1.1},
+      "masterwork": {"cost_modifier": 2.0, "effectiveness": 1.2}
+    },
+    
+    "naming_conventions": {
+      "weapon_prefixes": ["Sharp", "Swift", "Moonlight", "Dragon", "Spirit", "Honorable", "Ancient"],
+      "weapon_suffixes": ["of the Samurai", "of Honor", "of the Mountain", "of the Phoenix", "of Victory"],
+      "armor_prefixes": ["Strong", "Blessed", "Sacred", "Noble", "Harmonious", "Protective"],
+      "armor_suffixes": ["of the Guardian", "of Peace", "of Courage", "of Endurance", "of the Kami"]
+    }
+  }
+}

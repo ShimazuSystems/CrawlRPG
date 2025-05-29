@@ -1,0 +1,591 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan ASCII Art",
+  "art_style": "Unicode + Emoji Small Format (4-5 lines)",
+  
+  "buildings_and_structures": {
+    "torii_gate": {
+      "name": "Sacred Torii Gate",
+      "art": [
+        "    ⛩️    ",
+        "  ╔═══╗  ",
+        "  ║   ║  ",
+        "  ║   ║  ",
+        "═══╩═══╩═══"
+      ],
+      "usage": ["shrine entrances", "sacred locations", "quest markers"]
+    },
+    
+    "temple": {
+      "name": "Buddhist Temple",
+      "art": [
+        "   🏮🏯🏮   ",
+        " ╔══════╗ ",
+        " ║ ⛩️ 🔔 ║ ",
+        " ║ 🪑 🕯️ ║ ",
+        "═╩══════╩═"
+      ],
+      "usage": ["temple locations", "monk encounters", "healing areas"]
+    },
+    
+    "castle": {
+      "name": "Daimyo Castle",
+      "art": [
+        "     🏯     ",
+        "   ╔═══╗   ",
+        " ╔═║ 👑 ║═╗ ",
+        " ║ ║ ⚔️ ║ ║ ",
+        "═╩═╩═══╩═╩═"
+      ],
+      "usage": ["castle locations", "daimyo encounters", "political quests"]
+    },
+    
+    "teahouse": {
+      "name": "Traditional Teahouse",
+      "art": [
+        " 🌸 ╔═╗ 🌸 ",
+        "   ║🍵║   ",
+        "   ║🪑║   ",
+        "   ║🏮║   ",
+        "═══╩═╩═══"
+      ],
+      "usage": ["rest locations", "NPC encounters", "cultural scenes"]
+    },
+    
+    "shrine": {
+      "name": "Mountain Shrine",
+      "art": [
+        "🏮 ⛩️ 🏮",
+        "  ╔═╗  ",
+        "  ║🦊║  ",
+        "  ║🍃║  ",
+        "══╩═╩══"
+      ],
+      "usage": ["spiritual locations", "kitsune encounters", "blessing scenes"]
+    },
+    
+    "bamboo_grove": {
+      "name": "Bamboo Grove",
+      "art": [
+        "🎋   🎋   🎋",
+        "║    ║    ║",
+        "║ 🏮 ║ 🍃 ║",
+        "║    ║    ║",
+        "╩    ╩    ╩"
+      ],
+      "usage": ["forest encounters", "hiding places", "peaceful scenes"]
+    }
+  },
+  
+  "characters": {
+    "samurai_standing": {
+      "name": "Noble Samurai",
+      "art": [
+        "   👺   ",
+        "  /⚔️\\  ",
+        "  |🥋|  ",
+        "  /   \\ ",
+        " 👟   👟"
+      ],
+      "usage": ["samurai NPCs", "honor encounters", "combat ready"]
+    },
+    
+    "ninja_hiding": {
+      "name": "Shadow Ninja",
+      "art": [
+        "       🥷",
+        "     /|  ",
+        "    🗡️|  ",
+        "     /   ",
+        "    👟   "
+      ],
+      "usage": ["stealth encounters", "assassination attempts", "mysterious figures"]
+    },
+    
+    "monk_meditating": {
+      "name": "Buddhist Monk",
+      "art": [
+        "   👨‍🦲   ",
+        "  \\🙏/  ",
+        "   |👘|   ",
+        "  / ☮️ \\ ",
+        " 👟   👟"
+      ],
+      "usage": ["temple encounters", "wisdom givers", "peaceful NPCs"]
+    },
+    
+    "shrine_maiden": {
+      "name": "Shrine Maiden",
+      "art": [
+        "   👩‍🦰   ",
+        "  /🏮\\  ",
+        "  |👘|  ",
+        "  / 🌸 \\ ",
+        " 👠   👠"
+      ],
+      "usage": ["shrine encounters", "spiritual guidance", "purification rituals"]
+    },
+    
+    "daimyo": {
+      "name": "Lord Daimyo",
+      "art": [
+        "   👑   ",
+        "  /👴\\  ",
+        "  |🎌|  ",
+        "  \\⚔️/  ",
+        " 👞   👞"
+      ],
+      "usage": ["noble encounters", "quest givers", "political figures"]
+    },
+    
+    "geisha": {
+      "name": "Elegant Geisha",
+      "art": [
+        "   👘   ",
+        "  /🪭\\  ",
+        "  |🌸|  ",
+        "  \\ 🎶 / ",
+        " 👠   👠"
+      ],
+      "usage": ["cultural encounters", "entertainment", "information sources"]
+    }
+  },
+  
+  "creatures_and_yokai": {
+    "kitsune": {
+      "name": "Fox Spirit",
+      "art": [
+        "   🦊   ",
+        "  /🔥\\  ",
+        " (👁️ 👁️) ",
+        "  \\___/  ",
+        "🔥🔥🔥🔥🔥"
+      ],
+      "usage": ["spirit encounters", "wisdom tests", "trickster scenes"]
+    },
+    
+    "oni": {
+      "name": "Red Oni",
+      "art": [
+        "   👹   ",
+        "  /🔨\\  ",
+        "  |💪|  ",
+        "  \\⚡/  ",
+        " 👟   👟"
+      ],
+      "usage": ["boss battles", "guardian encounters", "demon threats"]
+    },
+    
+    "tengu": {
+      "name": "Mountain Tengu",
+      "art": [
+        "   👺   ",
+        "  🪶|🪶  ",
+        "  /⚔️\\  ",
+        "  |🥋|  ",
+        " 🦶   🦶"
+      ],
+      "usage": ["mountain encounters", "martial arts teachers", "aerial combat"]
+    },
+    
+    "dragon": {
+      "name": "Eastern Dragon",
+      "art": [
+        "🐉~~~~~~🐉",
+        "  \\    /  ",
+        "   ⚡🌊⚡   ",
+        "  /    \\  ",
+        "🌟~~~~~~🌟"
+      ],
+      "usage": ["legendary encounters", "weather control", "wisdom givers"]
+    },
+    
+    "jiangshi": {
+      "name": "Hopping Vampire",
+      "art": [
+        "   🧟   ",
+        "  \\📜/  ",
+        "  |👘|  ",
+        "  | | |  ",
+        " 👟 👟 "
+      ],
+      "usage": ["undead encounters", "graveyard scenes", "curse victims"]
+    },
+    
+    "mountain_bear": {
+      "name": "Mountain Bear",
+      "art": [
+        "   🐻   ",
+        "  /🍯\\  ",
+        " (👁️ 👁️) ",
+        "  \\🔥/  ",
+        " 🐾   🐾"
+      ],
+      "usage": ["wilderness encounters", "territorial guardians", "natural threats"]
+    }
+  },
+  
+  "weapons_and_items": {
+    "katana": {
+      "name": "Sacred Katana",
+      "art": [
+        "    ⚔️    ",
+        "  ══════  ",
+        " ♦═════♦ ",
+        "  ══════  ",
+        "    🏮    "
+      ],
+      "usage": ["weapon displays", "honor symbols", "quest items"]
+    },
+    
+    "fan": {
+      "name": "War Fan",
+      "art": [
+        "   🪭   ",
+        "  /|\\  ",
+        " / | \\ ",
+        "/  |  \\",
+        "═══╩═══"
+      ],
+      "usage": ["elegant weapons", "defensive items", "cultural objects"]
+    },
+    
+    "scroll": {
+      "name": "Ancient Scroll",
+      "art": [
+        "   📜   ",
+        "  ╔═══╗ ",
+        "  ║漢字║ ",
+        "  ║文書║ ",
+        "  ╚═══╝ "
+      ],
+      "usage": ["quest items", "magical scrolls", "important documents"]
+    },
+    
+    "lantern": {
+      "name": "Paper Lantern",
+      "art": [
+        "   🏮   ",
+        "  ╔═══╗ ",
+        "  ║ 🔥 ║ ",
+        "  ║   ║ ",
+        "  ╚═══╝ "
+      ],
+      "usage": ["light sources", "atmospheric elements", "festival decorations"]
+    },
+    
+    "tea_set": {
+      "name": "Tea Ceremony Set",
+      "art": [
+        " 🍵   🫖 ",
+        " ╔═╗ ╔═╗",
+        " ║🌸║ ║🍃║",
+        " ║  ║ ║  ║",
+        " ╚═╝ ╚═╝"
+      ],
+      "usage": ["cultural scenes", "healing items", "peaceful encounters"]
+    },
+    
+    "treasure_chest": {
+      "name": "Treasure Chest",
+      "art": [
+        " ╔═══════╗",
+        " ║💰💎⚔️🏮║",
+        " ║🍶📜🥋💰║",
+        " ║💎⚔️🏮💰║",
+        " ╚═══════╝"
+      ],
+      "usage": ["treasure discoveries", "quest rewards", "loot scenes"]
+    }
+  },
+  
+  "nature_and_weather": {
+    "cherry_blossoms": {
+      "name": "Cherry Blossom Tree",
+      "art": [
+        "   🌸🌸🌸   ",
+        "  🌸🌳🌸  ",
+        " 🌸 ║ 🌸 ",
+        "   ║   ",
+        "═══╩═══"
+      ],
+      "usage": ["spring scenes", "peaceful locations", "festival backgrounds"]
+    },
+    
+    "mountain": {
+      "name": "Sacred Mountain",
+      "art": [
+        "    🗻    ",
+        "   /⛩️\\   ",
+        "  / 🏮 \\  ",
+        " /  ⚡  \\ ",
+        "═════════"
+      ],
+      "usage": ["mountain encounters", "divine locations", "challenging terrain"]
+    },
+    
+    "moon": {
+      "name": "Full Moon Night",
+      "art": [
+        "    🌕    ",
+        "  ✨ ✨  ",
+        " ✨ 🏮 ✨ ",
+        "  ✨ ✨  ",
+        "═════════"
+      ],
+      "usage": ["night scenes", "spiritual encounters", "romantic moments"]
+    },
+    
+    "storm": {
+      "name": "Thunder Storm",
+      "art": [
+        " ⚡ ☁️ ⚡ ",
+        "☁️ ⚡ ☁️⚡",
+        " 🌧️ 🌩️ 🌧️ ",
+        "🌧️ ⚡ 🌧️ ",
+        "═════════"
+      ],
+      "usage": ["dramatic weather", "dangerous travel", "supernatural events"]
+    },
+    
+    "waterfall": {
+      "name": "Mountain Waterfall",
+      "art": [
+        "   ≋≋≋   ",
+        "  ≋⛩️≋  ",
+        " ≋ 🏮 ≋ ",
+        "≋ 🪨 ≋",
+        "≋≋≋≋≋≋≋"
+      ],
+      "usage": ["peaceful scenes", "meditation spots", "natural barriers"]
+    },
+    
+    "rice_fields": {
+      "name": "Flooded Rice Paddies",
+      "art": [
+        "🌾≋🌾≋🌾",
+        "≋🐸≋🐸≋",
+        "🌾≋🌾≋🌾",
+        "≋🏮≋🏮≋",
+        "═════════"
+      ],
+      "usage": ["farming scenes", "village outskirts", "seasonal work"]
+    }
+  },
+  
+  "combat_scenes": {
+    "sword_duel": {
+      "name": "Samurai Duel",
+      "art": [
+        "⚔️     ⚔️",
+        " 👺   👺 ",
+        " /|\\ /|\\ ",
+        " / \\ / \\ ",
+        "👟   👟 👟"
+      ],
+      "usage": ["honor duels", "combat encounters", "dramatic confrontations"]
+    },
+    
+    "ninja_ambush": {
+      "name": "Ninja Ambush",
+      "art": [
+        "🌙     🥷",
+        "   ⭐  /| ",
+        "  👤 🗡️|  ",
+        "  /|\\  /  ",
+        " 👟👟 👟  "
+      ],
+      "usage": ["stealth attacks", "surprise encounters", "assassination attempts"]
+    },
+    
+    "yokai_battle": {
+      "name": "Spirit Battle",
+      "art": [
+        "👹 ⚡ 🦊",
+        " ⚔️ 💫 🔥",
+        "💀 ⭐ 💀",
+        " ⚡ 🌟 ⚡",
+        "🔥🔥🔥🔥🔥"
+      ],
+      "usage": ["supernatural combat", "spirit encounters", "magical battles"]
+    },
+    
+    "group_battle": {
+      "name": "Battlefield",
+      "art": [
+        "⚔️👺⚔️👺⚔️",
+        " 🛡️ ⚡ 🛡️ ",
+        "👟👟👟👟👟",
+        " 🩸 💀 🩸 ",
+        "═════════"
+      ],
+      "usage": ["large battles", "war scenes", "epic confrontations"]
+    }
+  },
+  
+  "atmospheric_elements": {
+    "festival": {
+      "name": "Village Festival",
+      "art": [
+        "🏮🎌🏮🎌🏮",
+        " 🎶 👘 🎶 ",
+        "🍡 🥟 🍶",
+        " 👟 👠 👟 ",
+        "═════════"
+      ],
+      "usage": ["celebration scenes", "cultural events", "joyful moments"]
+    },
+    
+    "graveyard": {
+      "name": "Ancient Cemetery",
+      "art": [
+        "⛩️ 💀 ⛩️",
+        " 🕯️ 👻 🕯️ ",
+        "🪦   🪦",
+        " 🌫️ 🌫️ 🌫️ ",
+        "═════════"
+      ],
+      "usage": ["spooky scenes", "undead encounters", "somber moments"]
+    },
+    
+    "meditation": {
+      "name": "Peaceful Meditation",
+      "art": [
+        "   🧘   ",
+        "  🕯️ 🕯️  ",
+        " 🌸 ☯️ 🌸 ",
+        "  ✨ ✨  ",
+        "═════════"
+      ],
+      "usage": ["peaceful scenes", "spiritual moments", "rest areas"]
+    },
+    
+    "journey": {
+      "name": "Mountain Path",
+      "art": [
+        "   🗻   ",
+        "  /🚶\\  ",
+        " / 🏮 \\ ",
+        "/  ⛩️  \\",
+        "═════════"
+      ],
+      "usage": ["travel scenes", "exploration", "journey moments"]
+    }
+  },
+  
+  "status_displays": {
+    "health_critical": {
+      "name": "Critical Health",
+      "art": [
+        "💔💔💔💔💔",
+        "🩸 CRITICAL 🩸",
+        "💔💔💔💔💔"
+      ],
+      "usage": ["low health warning", "emergency status", "danger alerts"]
+    },
+    
+    "spiritual_power": {
+      "name": "Spiritual Energy",
+      "art": [
+        "✨⭐✨⭐✨",
+        " 🌟 CHI 🌟 ",
+        "✨⭐✨⭐✨"
+      ],
+      "usage": ["magic power display", "spiritual status", "energy levels"]
+    },
+    
+    "honor_high": {
+      "name": "High Honor",
+      "art": [
+        "🌸👑🌸👑🌸",
+        " ⭐HONOR⭐ ",
+        "🌸👑🌸👑🌸"
+      ],
+      "usage": ["honor status", "reputation display", "achievement marker"]
+    },
+    
+    "victory": {
+      "name": "Victory Banner",
+      "art": [
+        "🎌 VICTORY 🎌",
+        "⭐ ⚔️ ⭐ ⚔️ ⭐",
+        "🏆🏆🏆🏆🏆"
+      ],
+      "usage": ["combat victory", "quest completion", "success celebration"]
+    }
+  },
+  
+  "seasonal_art": {
+    "spring": {
+      "name": "Spring Scene",
+      "art": [
+        "🌸🦋🌸🦋🌸",
+        " 🌱 🌳 🌱 ",
+        "🌸 🏮 🌸",
+        " 🐸 🌊 🐸 ",
+        "═════════"
+      ],
+      "usage": ["spring encounters", "renewal themes", "growth scenes"]
+    },
+    
+    "summer": {
+      "name": "Summer Festival",
+      "art": [
+        "☀️🎋☀️🎋☀️",
+        " 🏮 🎶 🏮 ",
+        "🍉 👘 🍉",
+        " ⭐ 🎌 ⭐ ",
+        "═════════"
+      ],
+      "usage": ["summer events", "hot weather", "festival seasons"]
+    },
+    
+    "autumn": {
+      "name": "Autumn Harvest",
+      "art": [
+        "🍂🌾🍂🌾🍂",
+        " 🍁 🥟 🍁 ",
+        "🌾 🏮 🌾",
+        " 🍂 🌕 🍂 ",
+        "═════════"
+      ],
+      "usage": ["harvest time", "autumn colors", "mature themes"]
+    },
+    
+    "winter": {
+      "name": "Winter Solitude",
+      "art": [
+        "❄️⛩️❄️⛩️❄️",
+        " ☃️ 🏮 ☃️ ",
+        "❄️ 🔥 ❄️",
+        " 🌨️ 🌨️ 🌨️ ",
+        "═════════"
+      ],
+      "usage": ["winter scenes", "cold weather", "contemplative moments"]
+    }
+  },
+  
+  "integration_system": {
+    "display_rules": {
+      "code_block_required": "All ASCII art must be displayed in ```text code blocks",
+      "context_appropriate": "Choose art based on current game situation",
+      "size_consistent": "Maintain 4-5 line height for consistency",
+      "unicode_safe": "Use widely supported unicode characters"
+    },
+    
+    "usage_triggers": {
+      "location_entry": "Display appropriate building/nature art when entering new areas",
+      "combat_start": "Show relevant combat scene art at battle beginning",
+      "character_encounter": "Display character art when meeting important NPCs",
+      "item_discovery": "Show item art when finding treasure or quest objects",
+      "status_change": "Display status art for important health/honor changes",
+      "seasonal_events": "Use seasonal art during festivals and weather changes"
+    },
+    
+    "randomization": {
+      "atmospheric_variety": "Use [RANDOM_CHOICE] to vary atmospheric elements",
+      "seasonal_selection": "Choose appropriate seasonal art based on game calendar",
+      "mood_matching": "Select art that matches current scene mood and tone"
+    }
+  }
+}

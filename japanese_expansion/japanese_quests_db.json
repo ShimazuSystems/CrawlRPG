@@ -1,0 +1,1027 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan Quests",
+  "quest_scaling": "Village to Imperial difficulty progression",
+  
+  "quest_categories": {
+    "village_quests": {
+      "fetch_quests": {
+        "herb_gathering": {
+          "name": "Sacred Herbs for [RANDOM_CHOICE npc_names]",
+          "description": "The village [RANDOM_CHOICE healers] needs [RANDOM_CHOICE herb_types] to treat [RANDOM_CHOICE ailments]. They grow in [RANDOM_CHOICE locations] but beware of [RANDOM_CHOICE dangers].",
+          "npc_names": ["Healer Akiko", "Elder Hiroshi", "Wise Woman Yuki", "Medicine Master Kenji"],
+          "healers": ["healer", "wise woman", "village elder", "medicine master"],
+          "herb_types": [
+            "mountain ginseng (restores vitality)",
+            "sacred lotus petals (purifies spirit)", 
+            "bamboo heart essence (mends broken bones)",
+            "cherry blossom extract (calms troubled minds)"
+          ],
+          "ailments": [
+            "a child cursed by fox spirits",
+            "the blacksmith's festering wound from yokai claws",
+            "a mysterious illness affecting the rice harvest",
+            "ashigaru returning from battle with spiritual corruption"
+          ],
+          "locations": [
+            "the sacred grove beyond the torii gate",
+            "the misty bamboo forest to the east",
+            "the abandoned mountain temple ruins",
+            "the peak of Mount Takao where tengu dwell"
+          ],
+          "dangers": [
+            "territorial mountain bears protecting their cubs",
+            "mischievous kitsune playing deadly tricks",
+            "vengeful spirits of fallen monks",
+            "a fierce oni guarding the mountain paths"
+          ],
+          "objectives": [
+            "Collect [ROLL 1d4+2] bundles of the required herbs",
+            "Return safely to the quest giver within 3 days",
+            "Optional: Appease [RANDOM_CHOICE dangers] for bonus reward"
+          ],
+          "rewards": {
+            "gold": "[ROLL 2d6*15]",
+            "items": [
+              {"item": "healing_tea", "quantity": "[ROLL 1d3]"},
+              {"item": "mountain_herbs", "quantity": "[ROLL 1d4]"}
+            ],
+            "reputation": "+1 with village"
+          },
+          "failure_conditions": ["Herbs lose potency if not returned within 3 days"],
+          "unicode_symbol": "🌿"
+        },
+        
+        "lost_livestock": {
+          "name": "The Missing [RANDOM_CHOICE animals] of Farmer [RANDOM_CHOICE farmer_names]",
+          "description": "Farmer [RANDOM_CHOICE farmer_names]'s prized [RANDOM_CHOICE animals] have gone missing! [RANDOM_CHOICE circumstances] Tracks lead toward [RANDOM_CHOICE directions].",
+          "animals": ["rice oxen", "silk worms", "koi fish", "prize rooster", "mountain goats"],
+          "farmer_names": ["Tanaka", "Yamada", "Sato", "Watanabe", "Suzuki"],
+          "circumstances": [
+            "They broke through the bamboo fence during last night's thunderstorm.",
+            "Strange fox lights were seen near the paddies before they vanished.",
+            "The gate was found open - could ronin bandits be involved?",
+            "Mysterious drums echoed from the forest at midnight."
+          ],
+          "directions": [
+            "the bamboo forest to the north",
+            "the abandoned shrine by the mountain stream",
+            "the old stone bridge where spirits gather",
+            "the caves in the eastern hills where oni dwell"
+          ],
+          "objectives": [
+            "Follow the tracks to find the missing livestock",
+            "Safely return [ROLL 1d4+2] animals to the farm",
+            "Deal with whatever drove them away or lured them off"
+          ],
+          "complications": [
+            {"type": "wild_animals", "description": "Mountain bears have been stalking the herds"},
+            {"type": "bandits", "description": "Ronin are planning to sell the livestock in distant markets"},
+            {"type": "supernatural", "description": "Kitsune spirits led the animals away as a prank"}
+          ],
+          "rewards": {
+            "gold": "[ROLL 2d6*12]",
+            "items": [
+              {"item": "fresh_rice", "quantity": "[ROLL 1d6]"},
+              {"item": "travel_rations", "quantity": "[ROLL 2d4]"}
+            ],
+            "reputation": "+1 with village farmers"
+          },
+          "unicode_symbol": "🐂"
+        },
+        
+        "shrine_maintenance": {
+          "name": "Restore the [RANDOM_CHOICE shrine_types] Shrine",
+          "description": "The local [RANDOM_CHOICE shrine_types] shrine has fallen into disrepair. [RANDOM_CHOICE shrine_problems] The village needs brave souls to [RANDOM_CHOICE solutions].",
+          "shrine_types": [
+            "rice harvest",
+            "mountain kami",
+            "fox spirit",
+            "ancestral spirit",
+            "protective deity"
+          ],
+          "shrine_problems": [
+            "The torii gate has been damaged by storms and needs sacred wood for repair.",
+            "Offerings have been scattered and the altar stones overturned by wild animals.",
+            "The sacred fire has been extinguished and the blessing stones are missing.",
+            "Vandals have desecrated the holy space and angered the resident spirits."
+          ],
+          "solutions": [
+            "gather the proper materials and perform the restoration ritual",
+            "cleanse the sacred space and appease the offended kami",
+            "find the missing sacred items and return them to their proper places",
+            "discover who damaged the shrine and make proper amends"
+          ],
+          "objectives": [
+            "Gather [ROLL 1d3+1] specific materials for shrine restoration",
+            "Perform proper purification rituals",
+            "Deal with any spirits or creatures that may interfere",
+            "Complete restoration before the next new moon"
+          ],
+          "rewards": {
+            "gold": "[ROLL 3d6*10]",
+            "items": [
+              {"item": "shrine_blessing", "quantity": 1},
+              {"item": "ceremonial_green_tea", "quantity": "[ROLL 1d3]"}
+            ],
+            "reputation": "+2 with village, +1 with local spirits",
+            "spiritual_bonus": "Permanent blessing: +1 to spiritual resistance"
+          },
+          "unicode_symbol": "⛩️"
+        }
+      },
+      
+      "protection_quests": {
+        "bandit_troubles": {
+          "name": "Clear the [RANDOM_CHOICE locations] of Ronin Bandits",
+          "description": "A band of [RANDOM_CHOICE bandit_descriptions] masterless samurai has been [RANDOM_CHOICE activities] near [RANDOM_CHOICE locations]. The village needs brave souls to [RANDOM_CHOICE solutions].",
+          "locations": [
+            "old stone bridge",
+            "abandoned mountain temple",
+            "crossroads shrine",
+            "merchant rest station",
+            "bamboo grove crossroads"
+          ],
+          "bandit_descriptions": [
+            "desperate and honor-fallen",
+            "well-armed but masterless", 
+            "foreign ronin seeking fortune",
+            "former ashigaru turned outlaw"
+          ],
+          "activities": [
+            "demanding tribute from traveling merchants",
+            "stealing rice and supplies from farmers",
+            "threatening pilgrims visiting mountain shrines",
+            "dishonoring travelers and taking their possessions"
+          ],
+          "solutions": [
+            "drive them from our peaceful lands",
+            "bring their leader to face justice",
+            "recover the stolen goods and rice",
+            "ensure safe passage for all honest travelers"
+          ],
+          "objectives": [
+            "Locate the ronin hideout in the mountains",
+            "Defeat [ROLL 1d4+2] bandits and their leader",
+            "Recover stolen goods worth [ROLL 3d6*40] mon",
+            "Optional: Capture leader alive for bonus honor"
+          ],
+          "rewards": {
+            "gold": "[ROLL 3d6*20]",
+            "items": [
+              {"item": "iron_katana", "chance": 60},
+              {"item": "leather_armor", "chance": 40},
+              {"item": "healing_tea", "quantity": "[ROLL 1d3]"}
+            ],
+            "reputation": "+2 with village, +1 with merchants"
+          },
+          "escalation": "If not completed, bandits grow bolder and start raiding the village directly",
+          "unicode_symbol": "⚔️"
+        },
+        
+        "yokai_troubles": {
+          "name": "The [RANDOM_CHOICE yokai_types] of [RANDOM_CHOICE locations]",
+          "description": "A troublesome [RANDOM_CHOICE yokai_types] has been [RANDOM_CHOICE yokai_activities] in [RANDOM_CHOICE locations]. [RANDOM_CHOICE yokai_problems] The village elders seek those brave enough to [RANDOM_CHOICE yokai_solutions].",
+          "yokai_types": [
+            "mischievous kitsune",
+            "territorial tengu",
+            "hungry oni",
+            "restless spirit",
+            "corrupted mountain cat"
+          ],
+          "locations": [
+            "the rice paddies",
+            "the village well",
+            "the bamboo forest",
+            "the mountain path",
+            "the ancestral graveyard"
+          ],
+          "yokai_activities": [
+            "playing tricks on farmers and travelers",
+            "stealing food offerings from shrines",
+            "frightening children and livestock",
+            "disrupting important village ceremonies",
+            "blocking access to vital resources"
+          ],
+          "yokai_problems": [
+            "Crops are withering where it passes.",
+            "People are falling ill from supernatural exposure.",
+            "The creature grows bolder and more dangerous each day.",
+            "Traditional wards and protections have failed."
+          ],
+          "yokai_solutions": [
+            "appease the spirit with proper offerings and respect",
+            "drive it away to a more suitable dwelling place",
+            "discover what has angered it and make amends",
+            "seek the aid of a wise shrine maiden or monk"
+          ],
+          "objectives": [
+            "Investigate the nature and desires of the yokai",
+            "Attempt peaceful resolution through offerings or negotiation",
+            "If necessary, drive the creature away through force or cleverness",
+            "Perform proper rituals to prevent its return"
+          ],
+          "rewards": {
+            "gold": "[ROLL 2d6*18]",
+            "items": [
+              {"item": "spirit_ward", "chance": 70},
+              {"item": "yokai_charm", "chance": 50},
+              {"item": "sake_cup", "quantity": "[ROLL 1d4]"}
+            ],
+            "reputation": "+2 with village, +1 with local spirits"
+          },
+          "unicode_symbol": "👺"
+        }
+      }
+    },
+    
+    "town_quests": {
+      "investigation_quests": {
+        "mysterious_disappearances": {
+          "name": "The Mystery of [RANDOM_CHOICE locations]",
+          "description": "[RANDOM_CHOICE victims] have been disappearing near [RANDOM_CHOICE locations]. The town magistrate is baffled. [RANDOM_CHOICE clues] suggest [RANDOM_CHOICE theories].",
+          "victims": [
+            "Traveling merchants and their guards",
+            "Young people from prominent families",
+            "Pilgrims heading to sacred mountain shrines",
+            "Lone samurai traveling the main roads"
+          ],
+          "locations": [
+            "the ancient cemetery",
+            "the abandoned daimyo's summer palace",
+            "the sacred stone circle in the forest",
+            "the mist-shrouded mountain pass"
+          ],
+          "clues": [
+            "Strange fox-fire lights seen at midnight",
+            "Witnesses report hearing otherworldly flute music",
+            "Footprints that suddenly vanish at the forest edge",
+            "Torn kimono fabric found hanging on bamboo stalks"
+          ],
+          "theories": [
+            "supernatural yokai are claiming new territory",
+            "a secret ninja clan is practicing dark arts",
+            "wild oni have descended from the mountains",
+            "an ancient curse has been awakened by recent construction"
+          ],
+          "investigation_phases": [
+            {
+              "phase": 1,
+              "objective": "Interview [ROLL 1d3+2] witnesses in the town",
+              "clues_revealed": ["Time patterns", "Common locations", "Victim profiles"]
+            },
+            {
+              "phase": 2, 
+              "objective": "Search [RANDOM_CHOICE locations] for physical evidence",
+              "clues_revealed": ["Supernatural tracks", "Ritual symbols", "Personal belongings"]
+            },
+            {
+              "phase": 3,
+              "objective": "Confront the source of the disappearances",
+              "possible_culprits": ["Ninja cult circle", "Vengeful onryo", "Mountain oni pack", "Mad hermit sorcerer"]
+            }
+          ],
+          "rewards": {
+            "gold": "[ROLL 4d6*30]",
+            "items": [
+              {"item": "moonlight_blade", "chance": 30},
+              {"item": "protection_ward", "quantity": "[ROLL 1d3]"}
+            ],
+            "reputation": "+3 with town, title of 'Investigator'"
+          },
+          "unicode_symbol": "🔍"
+        },
+        
+        "clan_politics": {
+          "name": "The [RANDOM_CHOICE political_situations] in [RANDOM_CHOICE locations]",
+          "description": "Political tensions have erupted between [RANDOM_CHOICE factions]. [RANDOM_CHOICE political_problems] The town magistrate needs neutral parties to [RANDOM_CHOICE political_solutions].",
+          "political_situations": [
+            "Succession Dispute",
+            "Trade Route Conflict",
+            "Honor Debt Crisis",
+            "Marriage Alliance Gone Wrong"
+          ],
+          "locations": [
+            "the merchant quarter",
+            "the samurai residential district",
+            "the town's administrative buildings",
+            "the local daimyo's audience hall"
+          ],
+          "factions": [
+            "the established Merchant Guild and upstart traders",
+            "traditionalist samurai and progressive reformers",
+            "competing branches of the same noble family",
+            "local interests and representatives from the capital"
+          ],
+          "political_problems": [
+            "Accusations of dishonor threaten to escalate to violence.",
+            "Economic disputes are disrupting vital trade relationships.",
+            "Ancient obligations conflict with modern necessities.",
+            "Face-saving measures are needed to prevent clan warfare."
+          ],
+          "political_solutions": [
+            "mediate between the parties and find honorable compromise",
+            "investigate claims of wrongdoing and determine the truth",
+            "gather evidence to support the righteous party's position",
+            "facilitate negotiations that preserve everyone's honor"
+          ],
+          "objectives": [
+            "Meet with representatives from all parties involved",
+            "Gather evidence regarding the disputed claims",
+            "Propose a solution that satisfies honor requirements",
+            "Oversee the implementation of any agreements"
+          ],
+          "rewards": {
+            "gold": "[ROLL 5d6*25]",
+            "items": [
+              {"item": "political_favor", "chance": 80},
+              {"item": "fine_kimono", "chance": 60}
+            ],
+            "reputation": "+2 with multiple factions, political connections"
+          },
+          "unicode_symbol": "👑"
+        }
+      },
+      
+      "delivery_quests": {
+        "urgent_message": {
+          "name": "Urgent Dispatch to [RANDOM_CHOICE destinations]",
+          "description": "The [RANDOM_CHOICE sender] needs [RANDOM_CHOICE message_types] delivered to [RANDOM_CHOICE recipients] in [RANDOM_CHOICE destinations]. [RANDOM_CHOICE urgency] [RANDOM_CHOICE complications]",
+          "sender": [
+            "town magistrate",
+            "merchant guild leader",
+            "temple head priest",
+            "military captain"
+          ],
+          "message_types": [
+            "sealed official documents",
+            "trade agreements and contracts",
+            "warning of impending yokai activity",
+            "request for military reinforcements"
+          ],
+          "recipients": [
+            "the daimyo of the castle",
+            "the head of the provincial merchant association",
+            "the high priest of the mountain temple",
+            "the garrison commander at the border fort"
+          ],
+          "destinations": [
+            "Yamashiro Castle",
+            "the port city of Umidera",
+            "the mountain fortress of Tetsuzan",
+            "the temple city of Kinkaku"
+          ],
+          "urgency": [
+            "Time is of the essence -",
+            "Lives may depend on this message reaching its destination.",
+            "Clan warfare may be prevented if this arrives in time.",
+            "A trade deal worth thousands of mon hangs in the balance."
+          ],
+          "complications": [
+            "Ronin bandits are known to patrol the mountain roads.",
+            "Strange weather has made travel treacherous.",
+            "Ninja spies may try to intercept official communications.",
+            "Yokai have been seen along the forest routes."
+          ],
+          "objectives": [
+            "Safely deliver the message within [ROLL 1d3+2] days",
+            "Overcome [ROLL 1d3] obstacles along the journey",
+            "Return with confirmation of successful delivery"
+          ],
+          "time_pressure": {
+            "early_delivery": "Bonus reward for arriving ahead of schedule",
+            "on_time": "Standard reward and reputation gain",
+            "late_delivery": "Reduced reward and possible reputation loss"
+          },
+          "rewards": {
+            "gold": "[ROLL 3d6*35]",
+            "items": [
+              {"item": "premium_sake", "quantity": 1},
+              {"item": "travel_rations", "quantity": "[ROLL 2d6]"}
+            ],
+            "reputation": "+2 with sender's faction"
+          },
+          "unicode_symbol": "📜"
+        }
+      },
+      
+      "festival_quests": {
+        "cherry_blossom_festival": {
+          "name": "Preparations for the Cherry Blossom Festival",
+          "description": "The annual hanami festival approaches, but [RANDOM_CHOICE festival_problems]. The festival organizers need assistance to [RANDOM_CHOICE festival_solutions].",
+          "festival_problems": [
+            "the sacred cherry trees are mysteriously withering",
+            "bandits have stolen the ceremonial decorations and sake",
+            "a territorial yokai is disrupting the festival grounds",
+            "competing towns are trying to sabotage our celebration"
+          ],
+          "festival_solutions": [
+            "discover what is harming the trees and heal them",
+            "recover the stolen items and ensure festival security",
+            "negotiate with or relocate the troublesome spirit",
+            "protect the festival from interference and sabotage"
+          ],
+          "objectives": [
+            "Solve the main problem threatening the festival",
+            "Assist with [ROLL 1d3+1] additional festival preparations",
+            "Ensure the festival proceeds safely and successfully",
+            "Optional: Organize special entertainment or competitions"
+          ],
+          "rewards": {
+            "gold": "[ROLL 4d6*20]",
+            "items": [
+              {"item": "festival_kimono", "chance": 70},
+              {"item": "cherry_blossom_wine", "quantity": "[ROLL 1d4]"},
+              {"item": "festival_blessing", "chance": 50}
+            ],
+            "reputation": "+3 with town, +1 with regional visitors",
+            "special": "Invited as honored guest to future festivals"
+          },
+          "unicode_symbol": "🌸"
+        }
+      }
+    },
+    
+    "daimyo_quests": {
+      "political_intrigue": {
+        "clan_conspiracy": {
+          "name": "Shadows in the Court of Lord [RANDOM_CHOICE daimyo_names]",
+          "description": "Daimyo [RANDOM_CHOICE daimyo_names] suspects [RANDOM_CHOICE suspicions] within his court. [RANDOM_CHOICE evidence] points to [RANDOM_CHOICE conspirators]. Absolute discretion is required.",
+          "daimyo_names": ["Minamoto Yoshinao", "Taira Nobunaga", "Fujiwara Masayuki", "Tachibana Hideyoshi", "Ashikaga Tsunemoto"],
+          "suspicions": [
+            "treasonous correspondence with rival clans",
+            "embezzlement of domain tax revenues",
+            "plots against his life by jealous retainers",
+            "secret alliances with foreign powers"
+          ],
+          "evidence": [
+            "Intercepted coded messages written in Chinese characters",
+            "Unusual financial records showing missing rice stores",
+            "Witness testimony from loyal servants",
+            "Strange meetings held in the garden at midnight"
+          ],
+          "conspirators": [
+            "the chief retainer",
+            "the captain of the ashigaru",
+            "a trusted advisor and tea master",
+            "the daimyo's own younger brother"
+          ],
+          "investigation_methods": [
+            "Infiltrate court ceremonies to gather intelligence",
+            "Search private quarters for incriminating evidence",
+            "Follow suspects to clandestine meetings",
+            "Question servants and staff with utmost discretion"
+          ],
+          "objectives": [
+            "Gather concrete evidence of the conspiracy",
+            "Identify all conspirators and their motivations",
+            "Present findings to Daimyo [RANDOM_CHOICE daimyo_names]",
+            "Choose whether to expose publicly or handle quietly"
+          ],
+          "consequences": {
+            "public_exposure": "Political scandal, enemies made, but justice served",
+            "quiet_resolution": "Conspirators dealt with secretly, domain stability preserved",
+            "failed_investigation": "Conspiracy succeeds, daimyo may be overthrown or assassinated"
+          },
+          "rewards": {
+            "gold": "[ROLL 5d6*75]",
+            "items": [
+              {"item": "samurai_daisho", "chance": 40},
+              {"item": "noble_mon_ring", "chance": 60}
+            ],
+            "reputation": "+4 with nobility, possible hatamoto status"
+          },
+          "unicode_symbol": "👑"
+        }
+      },
+      
+      "monster_hunting": {
+        "legendary_beast": {
+          "name": "The [RANDOM_CHOICE beast_titles] of [RANDOM_CHOICE territories]",
+          "description": "A [RANDOM_CHOICE creatures] of enormous size and supernatural power has been [RANDOM_CHOICE depredations] in [RANDOM_CHOICE territories]. Daimyo [RANDOM_CHOICE daimyo_names] offers substantial reward for proof of its defeat.",
+          "beast_titles": [
+            "Terror",
+            "Shadow", 
+            "Demon",
+            "Curse",
+            "Nightmare"
+          ],
+          "territories": [
+            "the Darkwood Bamboo Forest",
+            "the Northern Mountain Passes",
+            "Ghostmist Valley",
+            "the Whispering Pine Hills"
+          ],
+          "creatures": [
+            "mountain oni",
+            "corrupted tengu",
+            "nine-tailed kitsune",
+            "ancient ryu dragon",
+            "demonic bear spirit"
+          ],
+          "depredations": [
+            "terrorizing entire villages and shrine communities",
+            "destroying merchant caravans and tax collectors",
+            "killing farmers and rice workers",
+            "desecrating sacred sites and ancient temples"
+          ],
+          "preparation_phase": [
+            "Research the creature's nature and traditional weaknesses",
+            "Gather specialized equipment (blessed weapons, protective wards, etc.)",
+            "Recruit local guides familiar with the dangerous territory",
+            "Prepare proper provisions and spiritual protection for extended hunt"
+          ],
+          "hunt_phases": [
+            {
+              "phase": "Tracking",
+              "description": "Follow the beast's trail through [RANDOM_CHOICE territories]",
+              "challenges": ["Environmental hazards", "False spiritual signs", "Territorial yokai"]
+            },
+            {
+              "phase": "Confrontation", 
+              "description": "Face the legendary creature in its domain",
+              "challenges": ["Enhanced supernatural abilities", "Lair effects", "Desperate supernatural tactics"]
+            },
+            {
+              "phase": "Proof",
+              "description": "Return with evidence of the victory",
+              "challenges": ["Preserving supernatural trophy", "Safe return journey", "Rival hunters"]
+            }
+          ],
+          "rewards": {
+            "gold": "[ROLL 6d6*150]",
+            "items": [
+              {"item": "legendary_weapon", "chance": 50},
+              {"item": "supernatural_trophy", "chance": 100}
+            ],
+            "reputation": "+5 with all factions, legendary status",
+            "title": "Granted title of 'Yokai Slayer' or similar honor"
+          },
+          "unicode_symbol": "🐉"
+        }
+      },
+      
+      "diplomatic_missions": {
+        "clan_alliance": {
+          "name": "Diplomatic Mission to [RANDOM_CHOICE target_clans]",
+          "description": "Daimyo [RANDOM_CHOICE daimyo_names] seeks [RANDOM_CHOICE diplomatic_goals] with [RANDOM_CHOICE target_clans]. [RANDOM_CHOICE diplomatic_complications] Skilled negotiators are needed to [RANDOM_CHOICE diplomatic_solutions].",
+          "target_clans": [
+            "the powerful Takeda clan",
+            "the merchant-focused Mitsui family",
+            "the scholarly Sugawara lineage",
+            "the mountain-dwelling Hatakeyama clan"
+          ],
+          "diplomatic_goals": [
+            "a marriage alliance between noble houses",
+            "mutual defense agreements against common enemies",
+            "trade concessions and commercial partnerships",
+            "territorial boundary agreements and resource sharing"
+          ],
+          "diplomatic_complications": [
+            "Ancient grievances between the clans create tension.",
+            "Competing suitors from other domains complicate negotiations.",
+            "Economic interests conflict with political necessities.",
+            "Religious differences affect ceremonial and cultural exchange."
+          ],
+          "diplomatic_solutions": [
+            "navigate the complex web of honor, obligation, and mutual benefit",
+            "propose creative solutions that address all parties' core concerns",
+            "demonstrate the superior character and culture of your domain",
+            "arrange ceremonial exchanges that build lasting relationships"
+          ],
+          "objectives": [
+            "Travel safely to the target clan's territory",
+            "Present your daimyo's proposal with proper ceremony",
+            "Negotiate terms that satisfy both parties' honor",
+            "Secure formal agreement and arrange implementation"
+          ],
+          "rewards": {
+            "gold": "[ROLL 4d6*100]",
+            "items": [
+              {"item": "diplomatic_gift", "chance": 90},
+              {"item": "clan_alliance_document", "chance": 100}
+            ],
+            "reputation": "+3 with both clans, diplomatic connections",
+            "special": "Access to allied clan resources and information"
+          },
+          "unicode_symbol": "🤝"
+        }
+      }
+    },
+    
+    "imperial_quests": {
+      "kingdom_threatening": {
+        "ancient_evil": {
+          "name": "The Awakening of [RANDOM_CHOICE ancient_evils]",
+          "description": "[RANDOM_CHOICE ancient_evils] stirs in [RANDOM_CHOICE ancient_locations]. [RANDOM_CHOICE dark_signs] herald its return. Only heroes of legend can prevent [RANDOM_CHOICE catastrophes].",
+          "ancient_evils": [
+            "the Demon Emperor Akuma-no-O",
+            "the Eight-Headed Dragon Yamata-no-Orochi",
+            "the Death God Yama-no-Kami",
+            "the Shadow Empress Kage-no-Kimi"
+          ],
+          "ancient_locations": [
+            "the Sunken Palace of Ryugu-jo",
+            "the Cursed Mountain of Oni-ga-take",
+            "the Twisted Shrine of Yami-no-mori",
+            "the Forbidden Valley of Shi-no-tani"
+          ],
+          "dark_signs": [
+            "The dead rise from their graves across the land",
+            "Rice crops wither and the sky turns blood red",
+            "Demons pour through rifts torn in reality",
+            "Eternal winter spreads from the cursed mountains"
+          ],
+          "catastrophes": [
+            "the entire realm falling to demonic hordes",
+            "all life being consumed by supernatural darkness",
+            "reality being twisted into nightmare realms",
+            "eternal winter and famine destroying civilization"
+          ],
+          "quest_stages": [
+            {
+              "stage": "Prophecy",
+              "description": "Consult ancient texts and wise oracles",
+              "objectives": ["Visit the Great Library at Kofuku-ji", "Speak with the Oracle of Mount Fuji", "Decipher ancient prophecies in the imperial archives"]
+            },
+            {
+              "stage": "Artifacts",
+              "description": "Gather legendary artifacts needed to face the evil",
+              "objectives": ["Retrieve the Sacred Sword Kusanagi", "Find the Divine Mirror Yata-no-Kagami", "Obtain the Jeweled Spear Ame-no-Nuboko"]
+            },
+            {
+              "stage": "Allies",
+              "description": "Unite the clans against the common threat",
+              "objectives": ["Convince rival daimyo to set aside feuds", "Rally the scattered armies of the realm", "Forge temporary alliances with yokai and spirits"]
+            },
+            {
+              "stage": "Confrontation",
+              "description": "Face the ancient evil in final battle",
+              "objectives": ["Breach the evil's supernatural stronghold", "Overcome legendary demonic guardians", "Destroy the source of corruption and darkness"]
+            }
+          ],
+          "rewards": {
+            "gold": "[ROLL 10d6*750]",
+            "items": [
+              {"item": "imperial_artifact", "chance": 100},
+              {"item": "legendary_armor", "chance": 100}
+            ],
+            "reputation": "Maximum with all factions",
+            "legacy": "Named in songs and legends for all time, shrines built in honor"
+          },
+          "unicode_symbol": "⚡"
+        }
+      },
+      
+      "divine_missions": {
+        "celestial_mandate": {
+          "name": "The Mandate of Heaven",
+          "description": "The [RANDOM_CHOICE celestial_crisis] threatens the divine order. [RANDOM_CHOICE heavenly_signs] indicate that [RANDOM_CHOICE divine_problems]. Only those chosen by fate can [RANDOM_CHOICE divine_solutions].",
+          "celestial_crisis": [
+            "balance between heaven and earth",
+            "imperial succession",
+            "cosmic harmony",
+            "connection between mortal and divine realms"
+          ],
+          "heavenly_signs": [
+            "Dragons have been seen weeping tears of pearl",
+            "The sacred mountains echo with the voices of ancestors",
+            "Cherry blossoms bloom out of season across the land",
+            "The moon has taken on an unnatural golden hue"
+          ],
+          "divine_problems": [
+            "the Emperor has lost the favor of the kami",
+            "an ancient covenant between gods and mortals is breaking",
+            "cosmic forces are falling out of alignment",
+            "the barrier between the spirit world and reality is weakening"
+          ],
+          "divine_solutions": [
+            "restore the proper relationship between heaven and earth",
+            "perform the ancient rituals that maintain cosmic balance",
+            "seek the blessing of all the great kami and Buddha",
+            "sacrifice themselves to preserve the realm's spiritual harmony"
+          ],
+          "objectives": [
+            "Consult with the highest priests and imperial advisors",
+            "Journey to all the most sacred sites in the realm",
+            "Perform elaborate rituals requiring perfect spiritual purity",
+            "Make the ultimate sacrifice to preserve the cosmic order"
+          ],
+          "rewards": {
+            "gold": "[ROLL 12d6*500]",
+            "items": [
+              {"item": "divine_blessing", "chance": 100},
+              {"item": "celestial_robe", "chance": 100}
+            ],
+            "reputation": "Transcendent - worshipped as living saints",
+            "legacy": "Enshrined as minor deities, temples built in honor",
+            "spiritual": "Ascension to higher plane of existence possible"
+          },
+          "unicode_symbol": "☀️"
+        }
+      }
+    }
+  },
+  
+  "quest_chains": {
+    "village_to_empire": {
+      "the_oni_conspiracy": {
+        "chain_description": "What starts as yokai troubles reveals a deeper conspiracy threatening the entire realm",
+        "quests": [
+          {
+            "level": "village",
+            "name": "Mischievous Spirits",
+            "description": "Deal with kitsune causing trouble in rice paddies",
+            "leads_to": "Discovery of unnatural organization among yokai"
+          },
+          {
+            "level": "town", 
+            "name": "The Missing Shrine Maiden",
+            "description": "Investigate disappearance of temple servants",
+            "leads_to": "Evidence of oni recruiting supernatural allies"
+          },
+          {
+            "level": "daimyo",
+            "name": "The Demon Alliance",
+            "description": "Uncover oni plotting to overthrow human rule",
+            "leads_to": "Links to ancient evil seeking to return"
+          },
+          {
+            "level": "imperial",
+            "name": "The Gate of Yomi",
+            "description": "Prevent the opening of the underworld portal",
+            "resolution": "Save the realm from demonic invasion"
+          }
+        ]
+      },
+      
+      "the_cursed_bloodline": {
+        "chain_description": "A family curse threatens to unleash ancient evil upon the land",
+        "quests": [
+          {
+            "level": "village",
+            "name": "The Sick Child",
+            "description": "Heal a child affected by mysterious spiritual illness",
+            "leads_to": "Symptoms suggest ancestral curse"
+          },
+          {
+            "level": "town",
+            "name": "Family Genealogy",
+            "description": "Research the family's history and spiritual connections",
+            "leads_to": "Discovery of ancient transgression against kami"
+          },
+          {
+            "level": "daimyo",
+            "name": "The Ancestral Sin", 
+            "description": "Uncover what the family's ancestor did to anger the spirits",
+            "leads_to": "Location of cursed artifact or sealed demon"
+          },
+          {
+            "level": "imperial",
+            "name": "Breaking the Curse",
+            "description": "Perform massive ritual to lift ancestral curse",
+            "resolution": "Save family and prevent demon's return to the world"
+          }
+        ]
+      },
+      
+      "the_ninja_shadow_war": {
+        "chain_description": "Secret ninja activities threaten the stability of the realm",
+        "quests": [
+          {
+            "level": "village",
+            "name": "Strange Disappearances",
+            "description": "Investigate people vanishing from their homes at night",
+            "leads_to": "Evidence of professional abductions"
+          },
+          {
+            "level": "town",
+            "name": "The Spy Network",
+            "description": "Uncover ninja infiltration of local government",
+            "leads_to": "Discovery of larger conspiracy"
+          },
+          {
+            "level": "daimyo",
+            "name": "The Shadow Master",
+            "description": "Hunt down the ninja clan leader",
+            "leads_to": "Revelation of foreign backing and imperial infiltration"
+          },
+          {
+            "level": "imperial",
+            "name": "The Hidden War",
+            "description": "Prevent foreign-backed ninja from assassinating the Emperor",
+            "resolution": "Expose and defeat the shadow conspiracy"
+          }
+        ]
+      }
+    }
+  },
+  
+  "seasonal_quests": {
+    "spring": {
+      "cherry_blossom_pilgrimage": {
+        "name": "Hanami Pilgrimage",
+        "description": "Guide pilgrims to the sacred cherry blossom viewing sites",
+        "objectives": ["Ensure safe passage", "Facilitate proper ceremonies", "Deal with jealous spirits"],
+        "seasonal_bonus": "Enhanced spiritual rewards and reputation with temples"
+      },
+      "rice_planting_ceremony": {
+        "name": "Sacred Rice Planting",
+        "description": "Protect the village's most important agricultural ritual",
+        "objectives": ["Guard against oni disruption", "Ensure proper spiritual observances", "Bless the new crop"],
+        "seasonal_bonus": "Guarantees good harvest and village prosperity"
+      }
+    },
+    
+    "summer": {
+      "obon_festival": {
+        "name": "Festival of the Ancestors",
+        "description": "Ensure the summer ancestor festival proceeds safely",
+        "objectives": ["Manage increased spiritual activity", "Protect festival-goers", "Honor ancestral spirits"],
+        "seasonal_bonus": "Increased reputation with spirits and enhanced spiritual powers"
+      },
+      "firefly_hunt": {
+        "name": "The Firefly Spirit Hunt",
+        "description": "Capture magical fireflies for summer healing ceremonies",
+        "objectives": ["Find firefly spirit gathering place", "Negotiate with nature spirits", "Gather magical essence"],
+        "seasonal_bonus": "Enhanced healing items and spirit ally connections"
+      }
+    },
+    
+    "autumn": {
+      "harvest_protection": {
+        "name": "Protecting the Sacred Harvest",
+        "description": "Guard the vital rice harvest from supernatural threats",
+        "objectives": ["Drive off crop-eating yokai", "Prevent oni raids on granaries", "Ensure ceremonial first rice offering"],
+        "seasonal_bonus": "Extra gold and food rewards, village prosperity blessing"
+      },
+      "moon_viewing_ceremony": {
+        "name": "Tsukimi Moon Festival",
+        "description": "Organize and protect the autumn moon viewing ceremony",
+        "objectives": ["Arrange proper decorations", "Protect from night yokai", "Facilitate poetry competition"],
+        "seasonal_bonus": "Enhanced charisma and cultural connections"
+      }
+    },
+    
+    "winter": {
+      "new_year_preparations": {
+        "name": "New Year Spiritual Cleansing",
+        "description": "Perform year-end purification and protection rituals",
+        "objectives": ["Banish accumulated negative spirits", "Prepare protective wards", "Ensure proper shrine maintenance"],
+        "seasonal_bonus": "Purification of curses and enhanced spiritual protection"
+      },
+      "snow_festival": {
+        "name": "Winter Spirit Appeasement",
+        "description": "Negotiate with winter spirits to ensure village survival",
+        "objectives": ["Appease mountain kami", "Secure permission for winter hunting", "Prevent supernatural blizzards"],
+        "seasonal_bonus": "Enhanced cold resistance and mountain spirit allies"
+      }
+    }
+  },
+  
+  "dynamic_quest_generation": {
+    "quest_templates": {
+      "fetch_template": {
+        "structure": "Retrieve [RANDOM_CHOICE objects] from [RANDOM_CHOICE locations] for [RANDOM_CHOICE npcs]",
+        "complications": ["Guarded by yokai", "Environmental hazards", "Time pressure", "Rival seekers"],
+        "objects": ["sacred artifact", "rare tea ingredient", "lost family heirloom", "important scroll"],
+        "locations": ["abandoned temple", "dangerous mountain pass", "oni territory", "cursed battlefield"]
+      },
+      
+      "escort_template": {
+        "structure": "Safely escort [RANDOM_CHOICE escorts] from [RANDOM_CHOICE origins] to [RANDOM_CHOICE destinations]",
+        "complications": ["Ronin ambushes", "Hostile yokai", "Political enemies", "Supernatural storms"],
+        "escorts": ["merchant caravan", "noble heir", "temple pilgrims", "diplomatic envoy"],
+        "origins": ["trading post", "allied domain", "friendly castle", "neutral temple"],
+        "destinations": ["enemy territory", "dangerous frontier", "sacred shrine", "diplomatic meeting"]
+      },
+      
+      "mystery_template": {
+        "structure": "Investigate [RANDOM_CHOICE mysteries] involving [RANDOM_CHOICE victims] in [RANDOM_CHOICE locations]",
+        "complications": ["False spiritual signs", "Unreliable witnesses", "Dangerous suspects", "Supernatural interference"],
+        "mysteries": ["disappearances", "murders", "thefts", "supernatural events"],
+        "victims": ["prominent citizens", "random travelers", "specific professions", "family members"],
+        "locations": ["bustling town", "remote village", "noble court", "sacred site"]
+      },
+      
+      "honor_template": {
+        "structure": "Restore honor to [RANDOM_CHOICE dishonored_parties] by [RANDOM_CHOICE honor_actions]",
+        "complications": ["Competing claims", "Political pressure", "Supernatural interference", "Time constraints"],
+        "dishonored_parties": ["fallen samurai family", "disgraced merchant house", "accused temple", "wrongly blamed village"],
+        "honor_actions": ["proving innocence", "avenging wrongdoing", "completing failed obligation", "making proper amends"]
+      }
+    }
+  },
+  
+  "reward_scaling": {
+    "by_quest_level": {
+      "village": {
+        "gold_range": "[ROLL 2d6*15] to [ROLL 4d6*20]",
+        "item_rarity": "Common to Uncommon",
+        "reputation": "+1 to +2",
+        "special_rewards": ["Free meals", "Discounted goods", "Local shrine blessings"]
+      },
+      "town": {
+        "gold_range": "[ROLL 3d6*35] to [ROLL 5d6*45]", 
+        "item_rarity": "Uncommon to Rare",
+        "reputation": "+2 to +3",
+        "special_rewards": ["Guild membership", "Property deed", "Political connections"]
+      },
+      "daimyo": {
+        "gold_range": "[ROLL 4d6*100] to [ROLL 6d6*150]",
+        "item_rarity": "Rare to Legendary", 
+        "reputation": "+3 to +4",
+        "special_rewards": ["Hatamoto status", "Land grants", "Noble title"]
+      },
+      "imperial": {
+        "gold_range": "[ROLL 6d6*300] to [ROLL 8d6*750]",
+        "item_rarity": "Legendary to Artifact",
+        "reputation": "+4 to Maximum",
+        "special_rewards": ["Daimyo appointment", "Imperial favor", "Legendary status"]
+      }
+    }
+  },
+  
+  "quest_complications": {
+    "random_events": [
+      {
+        "event": "Unexpected Yokai Aid",
+        "description": "Former spirit enemies offer to help for their own mysterious reasons",
+        "effect": "Moral choice: Accept supernatural aid or maintain purely human approach"
+      },
+      {
+        "event": "Innocent Civilians",
+        "description": "Common people are caught in the middle of supernatural conflict",
+        "effect": "Must protect innocents while completing dangerous objectives"
+      },
+      {
+        "event": "False Spiritual Signs",
+        "description": "Key supernatural information provided turns out to be deceptive",
+        "effect": "Must adapt plan and overcome spiritual misinformation"
+      },
+      {
+        "event": "Resource Shortage",
+        "description": "Expected supplies or spiritual aid are unavailable",
+        "effect": "Must complete quest with limited resources and preparation"
+      },
+      {
+        "event": "Honor Conflict",
+        "description": "Completing the quest requires actions that conflict with bushido",
+        "effect": "Must choose between success and maintaining perfect honor"
+      }
+    ],
+    
+    "moral_dilemmas": [
+      {
+        "dilemma": "Spirit vs Human",
+        "description": "Must choose between protecting spirits or humans",
+        "example": "Save village by driving away protective kami, or let crops fail"
+      },
+      {
+        "dilemma": "Honor vs Pragmatism",
+        "description": "Honorable solution conflicts with practical solution",
+        "example": "Follow bushido perfectly or use deception to save lives"
+      },
+      {
+        "dilemma": "Personal vs Duty",
+        "description": "Personal relationships conflict with official obligations",
+        "example": "Arrest a friend's relative who has committed crimes"
+      },
+      {
+        "dilemma": "Traditional vs Progressive",
+        "description": "Old ways conflict with necessary changes",
+        "example": "Preserve ancient but harmful traditions or force modernization"
+      }
+    ]
+  },
+  
+  "integration_systems": {
+    "world_connection": {
+      "location_integration": "Quests reference specific locations from japanese_world_db",
+      "npc_integration": "Quest givers and targets use npc templates from japanese_world_db", 
+      "monster_integration": "Quest enemies drawn from japanese_monsters_db encounters",
+      "item_integration": "Rewards use items from japanese_items_db with proper rarity scaling"
+    },
+    
+    "progression_tracking": {
+      "reputation_effects": "Quest completion affects standing with different clans and factions",
+      "consequence_system": "Quest choices have lasting effects on domain politics and spiritual balance",
+      "chain_unlocking": "Completing quests unlocks follow-up quests in chains",
+      "seasonal_availability": "Some quests only available during specific seasons and festivals"
+    },
+    
+    "difficulty_scaling": {
+      "party_level_scaling": "Quest difficulty adjusts based on character level and reputation",
+      "regional_scaling": "More dangerous areas offer more challenging quests",
+      "reputation_scaling": "Higher reputation unlocks more important and dangerous quests",
+      "failure_consequences": "Failed quests can lead to worse supernatural or political situations"
+    },
+    
+    "cultural_integration": {
+      "honor_system": "All quests consider bushido code and honor obligations",
+      "spiritual_balance": "Quest outcomes affect the balance between human and spirit worlds",
+      "clan_politics": "Quest choices influence relationships between different noble houses",
+      "seasonal_harmony": "Quest timing and completion methods affect seasonal spiritual cycles"
+    }
+  }
+}

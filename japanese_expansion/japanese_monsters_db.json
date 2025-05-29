@@ -1,0 +1,1451 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan Monsters",
+  "encounter_scaling": "Challenge Rating system from 1-20",
+  
+  "creature_categories": {
+    "wild_animals": {
+      "japanese_wolf": {
+        "name": "Mountain Wolf",
+        "challenge_rating": 2,
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "max_hp": "same as hp",
+          "damage": "1d6+1",
+          "defense": 1,
+          "agility": "[ROLL 2d6+6]",
+          "strength": "[ROLL 2d6+4]",
+          "intelligence": "[ROLL 1d6+2]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE wolf_descriptions] wolf emerges from [RANDOM_CHOICE locations], [RANDOM_CHOICE behaviors]",
+          "You hear a low growling as a [RANDOM_CHOICE wolf_descriptions] wolf steps into view, [RANDOM_CHOICE behaviors]"
+        ],
+        "wolf_descriptions": ["lean and cunning", "silver-furred", "battle-scarred pack leader", "ghostly pale", "amber-eyed"],
+        "locations": ["the bamboo grove", "behind a moss-covered boulder", "the mountain mist", "a shrine's shadow", "the cedar forest"],
+        "behaviors": [
+          "golden eyes fixed on you with predatory intelligence",
+          "hackles raised and fangs bared in ancient warning",
+          "circling slowly with the patience of mountain spirits",
+          "head low and ears back, ready to strike like lightning",
+          "sniffing the air and letting out a haunting howl"
+        ],
+        "ai_behavior": {
+          "combat_style": "Pack Hunter",
+          "tactics": [
+            "Attempts to flank prey if other wolves present",
+            "Uses hit-and-run attacks, retreating when injured",
+            "Howls to summon pack members ([PERCENTAGE_CHANCE 30] per round)",
+            "Focuses on weakest-looking target in group"
+          ],
+          "morale": "Flees when reduced to 25% HP unless protecting cubs",
+          "special_abilities": [
+            "Pack Tactics: +2 to hit if another wolf is adjacent to target",
+            "Mountain Senses: Can track wounded prey across great distances",
+            "Spirit Howl: [PERCENTAGE_CHANCE 30] to summon 1d3 additional wolves"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "wolf_pelt", "chance": 80, "quantity": 1},
+            {"item": "wolf_fang", "chance": 60, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "mountain_herbs", "chance": 20, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d4*2]"
+        },
+        "unicode_symbol": "🐺",
+        "encounter_environments": ["mountains", "forests", "bamboo_groves", "wilderness"],
+        "encounter_chance": 0.4,
+        "pack_size": "[ROLL 1d4+1]",
+        "seasonal_behavior": {
+          "winter": "More aggressive due to food scarcity (+2 damage)",
+          "spring": "Protecting cubs (will not flee)",
+          "summer": "Normal behavior",
+          "autumn": "Building fat reserves (larger pack sizes)"
+        }
+      },
+      
+      "asian_black_bear": {
+        "name": "Mountain Bear",
+        "challenge_rating": 4,
+        "stats": {
+          "hp": "[ROLL 4d6+12]",
+          "max_hp": "same as hp",
+          "damage": "1d8+3",
+          "defense": 2,
+          "agility": "[ROLL 2d6+3]",
+          "strength": "[ROLL 3d6+9]",
+          "intelligence": "[ROLL 1d6+3]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE bear_descriptions] black bear [RANDOM_CHOICE bear_actions], [RANDOM_CHOICE bear_moods]",
+          "The massive form of a [RANDOM_CHOICE bear_descriptions] bear blocks your path, [RANDOM_CHOICE bear_actions]"
+        ],
+        "bear_descriptions": ["enormous mountain", "scarred ancient", "powerful black-furred", "territorial forest", "spirit-touched"],
+        "bear_actions": [
+          "rears up on hind legs like a mountain",
+          "sniffs the air with its massive snout",
+          "paws at the ground with claws like tanto blades",
+          "lets out a roar that echoes through the valleys",
+          "sways back and forth with primal menace"
+        ],
+        "bear_moods": [
+          "clearly agitated by your intrusion into sacred territory",
+          "seemingly more curious than hostile for now",
+          "displaying aggressive protective behavior",
+          "guarding something precious behind it",
+          "looking for an easy meal among travelers"
+        ],
+        "ai_behavior": {
+          "combat_style": "Berserker",
+          "tactics": [
+            "Charges directly at strongest-looking opponent",
+            "Uses claw swipe that can hit multiple adjacent targets",
+            "Goes into rage when below 50% HP (+3 damage, -1 defense)",
+            "Attempts to grapple and maul prone targets"
+          ],
+          "morale": "Fights to the death when cornered or protecting cubs",
+          "special_abilities": [
+            "Claw Swipe: Can attack all adjacent enemies in single action",
+            "Bear Hug: Grapples target, deals automatic damage each round",
+            "Mountain Rage: When below 50% HP, +3 damage but -1 defense",
+            "Thick Hide: Reduces damage from small weapons by 1"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "bear_pelt", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "bear_fat", "chance": 70, "quantity": "[ROLL 1d3]"},
+            {"item": "bear_meat", "chance": 90, "quantity": "[ROLL 2d4]"}
+          ],
+          "rare": [
+            {"item": "bear_claw_amulet", "chance": 30, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d6*3]"
+        },
+        "unicode_symbol": "🐻",
+        "encounter_environments": ["mountains", "forests", "caves", "sacred_groves"],
+        "encounter_chance": 0.2,
+        "territorial_radius": "1 mile around den/cubs"
+      },
+      
+      "wild_boar": {
+        "name": "Wild Boar",
+        "challenge_rating": 3,
+        "stats": {
+          "hp": "[ROLL 3d6+6]",
+          "max_hp": "same as hp",
+          "damage": "1d6+2",
+          "defense": 1,
+          "agility": "[ROLL 2d6+4]",
+          "strength": "[ROLL 2d6+6]",
+          "intelligence": "[ROLL 1d6+1]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE boar_descriptions] wild boar [RANDOM_CHOICE boar_actions], [RANDOM_CHOICE boar_threat_displays]",
+          "Snorting and grunting, a [RANDOM_CHOICE boar_descriptions] boar [RANDOM_CHOICE boar_actions]"
+        ],
+        "boar_descriptions": ["bristling forest", "tusked mountain", "mud-covered", "fierce territorial", "massive wild"],
+        "boar_actions": [
+          "paws the earth with sharp hooves",
+          "lowers its head to display wicked curved tusks",
+          "charges through the bamboo underbrush",
+          "squeals angrily at your intrusion",
+          "roots around, tearing up sacred ground"
+        ],
+        "boar_threat_displays": [
+          "foam dripping from its snout",
+          "small eyes glinting with animal cunning",
+          "muscles bunched for a devastating charge",
+          "clearly protecting its feeding grounds",
+          "sizing you up as either threat or prey"
+        ],
+        "ai_behavior": {
+          "combat_style": "Charger",
+          "tactics": [
+            "Opens combat with devastating charge attack",
+            "Uses tusks to gore fallen enemies",
+            "Attempts to knock opponents prone with charge",
+            "Fights fiercely but retreats if severely outnumbered"
+          ],
+          "morale": "Retreats when reduced to 30% HP unless protecting young",
+          "special_abilities": [
+            "Charge: Double damage if moves at least 20 feet before attack",
+            "Gore: Prone enemies take +2 damage from tusk attacks",
+            "Thick Hide: Natural armor reduces damage by 1",
+            "Relentless: Can continue fighting for 1 round after reaching 0 HP"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "boar_meat", "chance": 100, "quantity": "[ROLL 2d6]"}
+          ],
+          "common": [
+            {"item": "boar_hide", "chance": 80, "quantity": 1},
+            {"item": "boar_tusks", "chance": 70, "quantity": 2}
+          ],
+          "rare": [],
+          "gold": "[ROLL 1d3*2]"
+        },
+        "unicode_symbol": "🐗",
+        "encounter_environments": ["forests", "bamboo_groves", "mountains"],
+        "encounter_chance": 0.3,
+        "group_size": "[ROLL 1d3]"
+      },
+      
+      "mountain_cat": {
+        "name": "Mountain Cat",
+        "challenge_rating": 2,
+        "stats": {
+          "hp": "[ROLL 2d6+2]",
+          "max_hp": "same as hp",
+          "damage": "1d4+2",
+          "defense": 3,
+          "agility": "[ROLL 2d6+8]",
+          "strength": "[ROLL 2d6+3]",
+          "intelligence": "[ROLL 1d6+4]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE cat_descriptions] mountain cat [RANDOM_CHOICE cat_actions], [RANDOM_CHOICE cat_behaviors]",
+          "From [RANDOM_CHOICE hiding_spots], a [RANDOM_CHOICE cat_descriptions] feline [RANDOM_CHOICE stalking_actions]"
+        ],
+        "cat_descriptions": ["sleek spotted", "golden-eyed", "shadow-silent", "lithe mountain", "amber-furred"],
+        "cat_actions": [
+          "crouches low among the rocks",
+          "pads silently through the undergrowth",
+          "watches from a high vantage point",
+          "flicks its tail with predatory focus",
+          "bares its fangs in warning"
+        ],
+        "cat_behaviors": [
+          "eyes reflecting an otherworldly intelligence",
+          "moving with fluid grace through difficult terrain",
+          "clearly stalking you as potential prey",
+          "defending its mountain territory",
+          "testing your awareness and reactions"
+        ],
+        "hiding_spots": ["a rocky outcrop", "dense bamboo", "a tree branch", "the morning mist"],
+        "stalking_actions": [
+          "emerges with silent paws",
+          "drops down with feline grace",
+          "materializes from the shadows",
+          "bounds forward with surprising speed"
+        ],
+        "ai_behavior": {
+          "combat_style": "Ambush Predator",
+          "tactics": [
+            "Uses stealth to approach undetected",
+            "Attempts to attack from high ground or behind",
+            "Retreats if initial ambush fails",
+            "Uses hit-and-run tactics from concealment"
+          ],
+          "morale": "Flees when reduced to 50% HP unless cornered",
+          "special_abilities": [
+            "Stealth: +4 to hiding in natural environments",
+            "Pounce: Double damage if attacking from concealment",
+            "Climbing: Can move on vertical surfaces easily",
+            "Night Vision: No penalties for fighting in darkness"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "cat_pelt", "chance": 70, "quantity": 1},
+            {"item": "cat_claw", "chance": 50, "quantity": "[ROLL 1d4]"}
+          ],
+          "rare": [
+            {"item": "amber_eyes", "chance": 25, "quantity": 2}
+          ],
+          "gold": "[ROLL 1d3]"
+        },
+        "unicode_symbol": "🐈",
+        "encounter_environments": ["mountains", "forests", "rocky_areas"],
+        "encounter_chance": 0.25,
+        "solitary": true
+      }
+    },
+    
+    "humanoid_enemies": {
+      "ronin_bandit": {
+        "name": "Masterless Ronin",
+        "challenge_rating": 3,
+        "stats": {
+          "hp": "[ROLL 3d6+6]",
+          "max_hp": "same as hp",
+          "damage": "1d8+2",
+          "defense": 3,
+          "agility": "[ROLL 2d6+5]",
+          "strength": "[ROLL 2d6+6]",
+          "intelligence": "[ROLL 2d6+4]",
+          "charisma": "[ROLL 2d6+3]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE ronin_descriptions] ronin [RANDOM_CHOICE ronin_actions], [RANDOM_CHOICE ronin_equipment]",
+          "[RANDOM_CHOICE ronin_greetings] calls a [RANDOM_CHOICE ronin_descriptions] masterless samurai, [RANDOM_CHOICE ronin_weapons]"
+        ],
+        "ronin_descriptions": ["dishonored", "desperate", "battle-hardened", "fallen from grace", "sake-stained"],
+        "ronin_actions": [
+          "steps from behind a torii gate",
+          "emerges from the bamboo forest",
+          "blocks the mountain path ahead",
+          "rises from meditation pose",
+          "draws steel with practiced ease"
+        ],
+        "ronin_equipment": [
+          "wearing tattered but functional armor",
+          "carrying a katana that has seen many battles",
+          "dressed in the remnants of samurai finery",
+          "bearing the mon of a disgraced clan",
+          "equipped with weapons of questionable origin"
+        ],
+        "ronin_greetings": [
+          "'Stand and face me, traveler!'",
+          "'Your purse or your honor!'",
+          "'This path demands a toll!'",
+          "'Draw steel or draw your last breath!'",
+          "'Let us test our blades!'"
+        ],
+        "ronin_weapons": [
+          "resting hand on katana hilt",
+          "brandishing a well-used wakizashi",
+          "twirling a naginata with expert skill",
+          "drawing twin blades in daisho style",
+          "preparing for an honorable duel"
+        ],
+        "ai_behavior": {
+          "combat_style": "Honorable Duelist",
+          "tactics": [
+            "Challenges to single combat before attacking ([PERCENTAGE_CHANCE 70])",
+            "Uses traditional samurai fighting techniques",
+            "Attempts to maintain honor even in defeat",
+            "May show mercy to worthy opponents"
+          ],
+          "morale": "Fights to the death rather than flee dishonorably",
+          "special_abilities": [
+            "Samurai Training: +2 to attack rolls with katana/wakizashi",
+            "Iaijutsu: First attack deals +1d6 damage if weapon was sheathed",
+            "Bushido Code: Cannot attack helpless opponents",
+            "Seppuku: When reduced to 0 HP, may choose death over capture"
+          ],
+          "surrender_conditions": [
+            "Offers to serve party for restoring lost honor",
+            "Reveals location of hidden treasure for mercy",
+            "Provides information about dangerous paths ahead"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "katana_or_wakizashi", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "worn_armor", "chance": 60, "quantity": 1},
+            {"item": "sake_bottle", "chance": 80, "quantity": 1},
+            {"item": "travel_rations", "chance": 50, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "clan_mon_item", "chance": 30, "quantity": 1},
+            {"item": "honor_debt_scroll", "chance": 15, "quantity": 1}
+          ],
+          "gold": "[ROLL 2d6*8]"
+        },
+        "unicode_symbol": "⚔️",
+        "encounter_environments": ["roads", "mountains", "shrines", "forests"],
+        "encounter_chance": 0.3,
+        "group_size": "[ROLL 1d3]",
+        "dialogue_options": {
+          "honor_challenge": "DC 14 to convince them to honorable single combat",
+          "negotiation": "DC 16 to avoid conflict through respect",
+          "intimidation": "DC 18 - dishonorable, may anger them further"
+        }
+      },
+      
+      "ninja_assassin": {
+        "name": "Shadow Ninja",
+        "challenge_rating": 4,
+        "stats": {
+          "hp": "[ROLL 3d6+3]",
+          "max_hp": "same as hp",
+          "damage": "1d6+3",
+          "defense": 2,
+          "agility": "[ROLL 2d6+9]",
+          "strength": "[ROLL 2d6+4]",
+          "intelligence": "[ROLL 2d6+7]",
+          "charisma": "[ROLL 2d6+2]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE ninja_descriptions] figure in [RANDOM_CHOICE ninja_garb] [RANDOM_CHOICE ninja_actions]",
+          "From [RANDOM_CHOICE hiding_places], a [RANDOM_CHOICE ninja_descriptions] assassin [RANDOM_CHOICE stealth_actions]"
+        ],
+        "ninja_descriptions": ["black-clad", "shadow-wrapped", "silent", "masked", "deadly"],
+        "ninja_garb": [
+          "dark cloth that seems to absorb light",
+          "traditional shinobi shozoku",
+          "mottled camouflage suitable for forests",
+          "hooded robes that conceal their features",
+          "gear designed for silent movement"
+        ],
+        "ninja_actions": [
+          "materializes from the darkness",
+          "drops silently from tree branches",
+          "emerges from concealment behind you",
+          "steps out of what seemed to be empty air",
+          "appears without making a sound"
+        ],
+        "hiding_places": ["the shadows", "a nearby tree", "beneath fallen leaves", "behind a shrine"],
+        "stealth_actions": [
+          "strikes without warning",
+          "moves with inhuman silence",
+          "attacks from an impossible angle",
+          "seems to flow like water"
+        ],
+        "ai_behavior": {
+          "combat_style": "Stealth Assassin",
+          "tactics": [
+            "Always attempts to attack from hiding first",
+            "Uses poison and thrown weapons",
+            "Attempts to separate strongest opponent from group",
+            "Retreats using smoke bombs when outmatched"
+          ],
+          "morale": "Flees when reduced to 40% HP unless mission-critical",
+          "special_abilities": [
+            "Sneak Attack: +2d6 damage when attacking from concealment",
+            "Poison Weapons: Targets must save vs poison or be paralyzed",
+            "Smoke Bomb: Can create concealment and escape",
+            "Wall Walking: Can climb any surface",
+            "Vanish: [PERCENTAGE_CHANCE 30] to disappear when reduced to 25% HP"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "ninja_tools", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "shuriken", "chance": 90, "quantity": "[ROLL 2d4]"},
+            {"item": "poison_vials", "chance": 70, "quantity": "[ROLL 1d3]"},
+            {"item": "smoke_bombs", "chance": 60, "quantity": "[ROLL 1d4]"}
+          ],
+          "rare": [
+            {"item": "assassination_contract", "chance": 25, "quantity": 1},
+            {"item": "clan_cipher", "chance": 15, "quantity": 1}
+          ],
+          "gold": "[ROLL 3d6*10]"
+        },
+        "unicode_symbol": "🥷",
+        "encounter_environments": ["anywhere", "especially_at_night"],
+        "encounter_chance": 0.15,
+        "stealth_bonus": "+6 to all hiding attempts"
+      },
+      
+      "corrupt_samurai": {
+        "name": "Corrupt Samurai",
+        "challenge_rating": 5,
+        "stats": {
+          "hp": "[ROLL 4d6+12]",
+          "max_hp": "same as hp",
+          "damage": "1d10+3",
+          "defense": 5,
+          "agility": "[ROLL 2d6+6]",
+          "strength": "[ROLL 2d6+8]",
+          "intelligence": "[ROLL 2d6+6]",
+          "charisma": "[ROLL 2d6+8]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE samurai_descriptions] samurai in [RANDOM_CHOICE armor_descriptions] [RANDOM_CHOICE samurai_actions]",
+          "The fallen warrior, a [RANDOM_CHOICE samurai_descriptions] [RANDOM_CHOICE gender], [RANDOM_CHOICE corruption_signs]"
+        ],
+        "samurai_descriptions": ["once-noble", "dishonored", "power-hungry", "gold-corrupted", "fallen"],
+        "armor_descriptions": [
+          "tarnished but functional armor",
+          "elaborate gear that speaks of wealth",
+          "blood-stained battle equipment",
+          "ornate armor bearing a corrupted clan mon",
+          "fine equipment gained through questionable means"
+        ],
+        "samurai_actions": [
+          "surveys the area with calculating eyes",
+          "issues commands to lesser followers",
+          "draws a masterwork katana with practiced ease",
+          "displays the arrogance of corrupted power",
+          "radiates the confidence of one used to winning"
+        ],
+        "gender": ["man", "woman"],
+        "corruption_signs": [
+          "shows clear signs of having abandoned the way of honor",
+          "wears the trappings of wealth gained through cruelty",
+          "speaks with the voice of one who has forgotten justice",
+          "carries themselves like a predator among sheep",
+          "has the cold eyes of someone who values only power"
+        ],
+        "ai_behavior": {
+          "combat_style": "Tactical Commander",
+          "tactics": [
+            "Commands other enemies to focus on one target",
+            "Uses superior equipment and training",
+            "Attempts to demoralize opponents with taunts",
+            "Fights strategically, not honorably"
+          ],
+          "morale": "Fights until 30% HP, then attempts to negotiate or flee",
+          "special_abilities": [
+            "Battle Commander: Allies within 30 feet get +1 to attack rolls",
+            "Masterwork Equipment: +1 to all attack and defense rolls",
+            "Intimidating Presence: Enemies must save vs fear on first encounter",
+            "Dishonored Strike: Can ignore bushido code for +2 damage",
+            "Wealth and Influence: May offer bribes or threaten consequences"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "masterwork_katana", "chance": 100, "quantity": 1},
+            {"item": "fine_armor", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "gold_koban", "chance": 90, "quantity": "[ROLL 2d6]"},
+            {"item": "stolen_goods", "chance": 80, "quantity": "[ROLL 1d4]"}
+          ],
+          "rare": [
+            {"item": "blackmail_documents", "chance": 40, "quantity": 1},
+            {"item": "corruption_evidence", "chance": 30, "quantity": 1}
+          ],
+          "gold": "[ROLL 4d6*25]"
+        },
+        "unicode_symbol": "👺",
+        "encounter_environments": ["roads", "towns", "castles", "corruption_sites"],
+        "faction_connections": "May have ties to corrupt officials or criminal organizations"
+      },
+      
+      "ashigaru_deserter": {
+        "name": "Ashigaru Deserter",
+        "challenge_rating": 2,
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "max_hp": "same as hp",
+          "damage": "1d6+1",
+          "defense": 2,
+          "agility": "[ROLL 2d6+3]",
+          "strength": "[ROLL 2d6+4]",
+          "intelligence": "[ROLL 2d6+3]",
+          "charisma": "[ROLL 2d6+2]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE deserter_descriptions] ashigaru [RANDOM_CHOICE deserter_actions], [RANDOM_CHOICE deserter_equipment]",
+          "This [RANDOM_CHOICE deserter_state] foot soldier [RANDOM_CHOICE deserter_behaviors]"
+        ],
+        "deserter_descriptions": ["frightened", "desperate", "war-weary", "half-starved", "paranoid"],
+        "deserter_actions": [
+          "clutches a yari spear with trembling hands",
+          "looks over shoulder constantly for pursuit",
+          "moves with the jerky motions of extreme stress",
+          "starts at every sound in the forest",
+          "begs for mercy before drawing weapon"
+        ],
+        "deserter_equipment": [
+          "wearing patched and dirty armor",
+          "carrying makeshift weapons and supplies",
+          "bearing the mon of their abandoned unit",
+          "equipped with standard ashigaru gear",
+          "showing signs of hasty flight from duty"
+        ],
+        "deserter_state": ["terrified", "guilt-ridden", "shell-shocked", "desperate"],
+        "deserter_behaviors": [
+          "pleads that they never wanted to fight",
+          "offers information in exchange for safe passage",
+          "attacks wildly out of fear and desperation",
+          "tries to surrender immediately"
+        ],
+        "ai_behavior": {
+          "combat_style": "Desperate Fighter",
+          "tactics": [
+            "Attempts to surrender or flee before fighting",
+            "Fights with wild, undisciplined attacks",
+            "May break and run after taking any damage",
+            "Could provide information if spared"
+          ],
+          "morale": "Very poor - flees at first sign of serious resistance",
+          "special_abilities": [
+            "Ashigaru Training: +1 to hit with yari spears",
+            "Desperate Fury: +2 damage when below 50% HP",
+            "Military Knowledge: Can provide info about army movements",
+            "Cowardly: -2 to all rolls when fighting alone"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "ashigaru_spear", "chance": 70, "quantity": 1},
+            {"item": "poor_armor", "chance": 50, "quantity": 1},
+            {"item": "travel_rations", "chance": 80, "quantity": "[ROLL 1d2]"}
+          ],
+          "rare": [
+            {"item": "military_orders", "chance": 25, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d4*3]"
+        },
+        "unicode_symbol": "🛡️",
+        "encounter_environments": ["roads", "forests", "abandoned_camps"],
+        "encounter_chance": 0.2,
+        "group_size": "[ROLL 1d3]"
+      }
+    },
+    
+    "undead": {
+      "jiangshi": {
+        "name": "Hopping Vampire",
+        "challenge_rating": 4,
+        "stats": {
+          "hp": "[ROLL 3d8+6]",
+          "max_hp": "same as hp",
+          "damage": "1d8+2",
+          "defense": 3,
+          "agility": "[ROLL 1d6+2]",
+          "strength": "[ROLL 2d6+8]",
+          "intelligence": "[ROLL 1d6+1]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE jiangshi_descriptions] corpse [RANDOM_CHOICE jiangshi_actions], [RANDOM_CHOICE decay_details]",
+          "The [RANDOM_CHOICE jiangshi_state] body of what was once [RANDOM_CHOICE former_identity] [RANDOM_CHOICE hopping_movement]"
+        ],
+        "jiangshi_descriptions": ["stiff-limbed", "pale blue", "mummified", "unnaturally preserved", "qi-drained"],
+        "jiangshi_actions": [
+          "hops forward with arms outstretched",
+          "moves in jerky, unnatural bounds",
+          "advances with the persistence of the unliving",
+          "breathes out visible clouds of death-qi",
+          "fixes you with clouded, lifeless eyes"
+        ],
+        "decay_details": [
+          "skin pale as winter moonlight",
+          "official burial robes now stained and torn",
+          "paper talismans clinging to its forehead",
+          "fingernails grown long and sharp like claws",
+          "an aura of supernatural cold surrounding it"
+        ],
+        "jiangshi_state": ["recently risen", "ancient", "qi-starved", "paper-bound"],
+        "former_identity": [
+          "a government official",
+          "a wealthy merchant",
+          "a temple priest",
+          "a noble's retainer",
+          "a scholar"
+        ],
+        "hopping_movement": [
+          "bounces toward you with terrifying determination",
+          "moves in the characteristic stiff-legged hop",
+          "advances with supernatural persistence",
+          "seems drawn to your life energy"
+        ],
+        "ai_behavior": {
+          "combat_style": "Relentless Pursuer",
+          "tactics": [
+            "Always moves toward nearest living creature",
+            "Attempts to drain qi with clawed touch",
+            "Cannot bend at joints, moves in straight lines",
+            "Continues pursuit until destroyed or target escapes"
+          ],
+          "morale": "Mindless - pursues until destroyed",
+          "special_abilities": [
+            "Qi Drain: Touch attacks steal [ROLL 1d4] temporary stat points",
+            "Undead Resilience: Immune to poison, disease, and fear",
+            "Stiff Joints: Cannot bend, must hop to move",
+            "Paper Weakness: Takes double damage if talisman is removed",
+            "Death Breath: Cold damage in short cone"
+          ],
+          "weaknesses": [
+            "Cannot cross running water",
+            "Repelled by mirrors and bright light",
+            "Stopped by holding breath (cannot sense living)"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "burial_robes", "chance": 60, "quantity": 1},
+            {"item": "paper_talisman", "chance": 80, "quantity": 1}
+          ],
+          "rare": [
+            {"item": "jade_burial_ornament", "chance": 25, "quantity": 1},
+            {"item": "official_seal", "chance": 15, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d6*5]"
+        },
+        "unicode_symbol": "🧟",
+        "encounter_environments": ["graveyards", "abandoned_temples", "old_battlefields"],
+        "encounter_chance": 0.15,
+        "creation_conditions": "Improper burial rites or unfinished business"
+      },
+      
+      "vengeful_spirit": {
+        "name": "Onryo",
+        "challenge_rating": 6,
+        "stats": {
+          "hp": "[ROLL 3d6+9]",
+          "max_hp": "same as hp",
+          "damage": "1d8+2 (spiritual)",
+          "defense": "Special (incorporeal)",
+          "agility": "[ROLL 2d6+8]",
+          "strength": "[ROLL 1d6]",
+          "intelligence": "[ROLL 2d6+6]",
+          "charisma": "[ROLL 2d6+8]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE spirit_descriptions] apparition [RANDOM_CHOICE manifestation] [RANDOM_CHOICE spirit_actions]",
+          "The [RANDOM_CHOICE spirit_emotion] spirit of [RANDOM_CHOICE spirit_identity] [RANDOM_CHOICE haunting_behavior]"
+        ],
+        "spirit_descriptions": ["pale", "ethereal", "wrathful", "sorrowful", "translucent"],
+        "manifestation": [
+          "materializes from swirling mist",
+          "phases through the solid wall",
+          "coalesces from wisps of spiritual energy",
+          "emerges from shadows like flowing water",
+          "appears with a sudden drop in temperature"
+        ],
+        "spirit_actions": [
+          "reaches out with ghostly fingers",
+          "wails with the voice of the wronged",
+          "floats just above the ground",
+          "flickers between visible and invisible",
+          "stares with eyes full of otherworldly fury"
+        ],
+        "spirit_emotion": ["vengeful", "tormented", "furious", "grief-stricken", "betrayed"],
+        "spirit_identity": [
+          "a murdered noblewoman",
+          "a dishonored samurai",
+          "a betrayed lover",
+          "a wrongfully executed peasant",
+          "a mother whose children were killed"
+        ],
+        "haunting_behavior": [
+          "seeks terrible vengeance for wrongs committed in life",
+          "guards a place of great personal tragedy",
+          "searches endlessly for her lost family",
+          "tries to communicate the injustice done to her",
+          "lashes out at the living in frustrated rage"
+        ],
+        "ai_behavior": {
+          "combat_style": "Spiritual Tormentor",
+          "tactics": [
+            "Phases in and out of reality to avoid attacks",
+            "Uses fear and possession abilities first",
+            "Attacks through walls and obstacles",
+            "Focuses on those resembling her killers"
+          ],
+          "morale": "Bound to haunt until vengeance is achieved",
+          "special_abilities": [
+            "Incorporeal: Physical weapons deal half damage",
+            "Possession: Can attempt to control target for [ROLL 1d4] rounds",
+            "Spiritual Touch: Ignores armor, deals direct damage to life force",
+            "Phase Walk: Can move through solid objects",
+            "Terrifying Wail: Causes fear in living creatures",
+            "Curse: Can inflict bad luck on enemies"
+          ],
+          "resolution_conditions": [
+            "Avenging the wrongs done to her in life",
+            "Proper funeral rites and appeasement",
+            "Bringing her killers to justice",
+            "Reuniting her with lost loved ones"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [],
+          "rare": [
+            {"item": "ectoplasm", "chance": 50, "quantity": "[ROLL 1d3]"},
+            {"item": "spiritual_essence", "chance": 30, "quantity": 1}
+          ],
+          "unique": [
+            {"item": "tragic_revelation", "description": "Knowledge of hidden injustice or secret"}
+          ],
+          "gold": 0
+        },
+        "unicode_symbol": "👻",
+        "encounter_environments": ["places_of_tragedy", "old_battlefields", "abandoned_homes"],
+        "encounter_chance": 0.1,
+        "communication": "May attempt to communicate through writing, moving objects, or possession"
+      },
+      
+      "skeletal_warrior": {
+        "name": "Skeletal Ashigaru",
+        "challenge_rating": 3,
+        "stats": {
+          "hp": "[ROLL 2d8+4]",
+          "max_hp": "same as hp",
+          "damage": "1d8+2",
+          "defense": 2,
+          "agility": "[ROLL 2d6+2]",
+          "strength": "[ROLL 2d6+4]",
+          "intelligence": "[ROLL 1d6]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE skeleton_descriptions] skeleton [RANDOM_CHOICE skeleton_actions], [RANDOM_CHOICE skeleton_equipment]",
+          "Rising from [RANDOM_CHOICE origins], a [RANDOM_CHOICE skeleton_descriptions] skeletal warrior [RANDOM_CHOICE skeleton_movements]"
+        ],
+        "skeleton_descriptions": ["ancient battlefield", "armor-clad", "weapon-bearing", "formation-fighting", "duty-bound"],
+        "skeleton_actions": [
+          "raises a rusted yari with bony fingers",
+          "turns empty eye sockets toward you",
+          "maintains perfect military posture",
+          "advances in formation with others",
+          "prepares weapons with mechanical precision"
+        ],
+        "skeleton_equipment": [
+          "clad in the remnants of ashigaru armor",
+          "wielding weapons from ancient wars",
+          "wearing a cracked jingasa helmet",
+          "carrying a battle-damaged naginata",
+          "armored in pieces from many campaigns"
+        ],
+        "origins": [
+          "a forgotten battlefield",
+          "beneath a war memorial",
+          "an ancient burial ground",
+          "a defiled shrine",
+          "the ruins of an old castle"
+        ],
+        "skeleton_movements": [
+          "clatters as it moves in formation",
+          "marches forward with military precision",
+          "maintains discipline despite death",
+          "moves with remembered martial training",
+          "advances with the relentless pace of duty"
+        ],
+        "ai_behavior": {
+          "combat_style": "Disciplined Formation Fighter",
+          "tactics": [
+            "Fights with remembered military training",
+            "Uses spear formations when multiple skeletons present",
+            "Never retreats or shows fear",
+            "Continues fighting even when severely damaged"
+          ],
+          "morale": "Fearless and fights to destruction",
+          "special_abilities": [
+            "Undead Resilience: Immune to fear, poison, and disease",
+            "Bone Armor: Reduces damage from slashing weapons by 1",
+            "Military Formation: +1 attack when fighting alongside others",
+            "Duty Beyond Death: [PERCENTAGE_CHANCE 20] to continue fighting for 1 round after reaching 0 HP"
+          ],
+          "vulnerabilities": [
+            "Buddhist sutras cause them to flee",
+            "Blunt weapons bypass bone armor",
+            "Proper burial rites permanently destroy them"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "ancient_weapon", "chance": 70, "quantity": 1},
+            {"item": "old_armor_pieces", "chance": 50, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "military_orders", "chance": 25, "quantity": 1},
+            {"item": "ancient_mon_coin", "chance": 15, "quantity": "[ROLL 1d6]"}
+          ],
+          "gold": "[ROLL 1d4*3]"
+        },
+        "unicode_symbol": "💀",
+        "encounter_environments": ["battlefields", "ruined_castles", "war_memorials"],
+        "encounter_chance": 0.25,
+        "group_behavior": "Forms military ranks and fights in formation when multiple skeletons present"
+      }
+    },
+    
+    "yokai_and_spirits": {
+      "kitsune": {
+        "name": "Fox Spirit",
+        "challenge_rating": 5,
+        "stats": {
+          "hp": "[ROLL 3d6+6]",
+          "max_hp": "same as hp",
+          "damage": "1d6+2",
+          "defense": 4,
+          "agility": "[ROLL 2d6+9]",
+          "strength": "[ROLL 2d6+3]",
+          "intelligence": "[ROLL 2d6+12]",
+          "charisma": "[ROLL 2d6+10]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE kitsune_descriptions] fox [RANDOM_CHOICE kitsune_features] [RANDOM_CHOICE kitsune_demeanor]",
+          "This [RANDOM_CHOICE tail_count]-tailed fox spirit [RANDOM_CHOICE magical_aspects] [RANDOM_CHOICE kitsune_behavior]"
+        ],
+        "kitsune_descriptions": ["beautiful silver", "ancient golden", "mysterious white", "elegant red", "ethereal blue"],
+        "kitsune_features": [
+          "with eyes that hold centuries of wisdom",
+          "whose multiple tails sway hypnotically",
+          "that seems to shimmer between fox and human form",
+          "radiating an aura of otherworldly intelligence",
+          "with fur that seems to hold starlight"
+        ],
+        "kitsune_demeanor": [
+          "regards you with calculating interest",
+          "tilts its head with curious intelligence",
+          "seems amused by your mortal concerns",
+          "evaluates your worth with ancient eyes",
+          "radiates both wisdom and mischief"
+        ],
+        "tail_count": ["three", "five", "seven", "nine"],
+        "magical_aspects": [
+          "flickers between fox and human appearance",
+          "leaves no footprints on the ground",
+          "seems to bend reality around itself",
+          "speaks in a voice like silver bells",
+          "commands illusions with casual ease"
+        ],
+        "kitsune_behavior": [
+          "tests your wisdom with riddles and challenges",
+          "offers bargains that may come with hidden costs",
+          "seeks entertainment through clever tricks",
+          "guards sacred knowledge and forest secrets",
+          "judges your character and intentions"
+        ],
+        "ai_behavior": {
+          "combat_style": "Trickster Mage",
+          "tactics": [
+            "Prefers tricks and illusions to direct combat",
+            "Uses shape-changing to confuse enemies",
+            "Attempts to bargain or negotiate first",
+            "Employs fox-fire and illusions in battle"
+          ],
+          "morale": "Flees if reduced to 50% HP unless protecting sacred sites",
+          "special_abilities": [
+            "Shape Change: Can take human form at will",
+            "Illusions: Can create false images and sounds",
+            "Fox-Fire: Ranged magical attack for [ROLL 2d6] damage",
+            "Charm Person: Can enchant mortals to serve temporarily",
+            "Invisibility: Can become unseen for short periods",
+            "Wisdom Test: May pose riddles; correct answers grant boons"
+          ],
+          "negotiation": "Highly intelligent and willing to make deals, especially for interesting stories or knowledge"
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "fox_fur", "chance": 50, "quantity": 1}
+          ],
+          "rare": [
+            {"item": "kitsune_charm", "chance": 60, "quantity": 1},
+            {"item": "wisdom_scroll", "chance": 40, "quantity": 1}
+          ],
+          "unique": [
+            {"item": "kitsune_blessing", "description": "Permanent +1 to Wisdom or Charisma"}
+          ],
+          "gold": "[ROLL 3d6*15]"
+        },
+        "unicode_symbol": "🦊",
+        "encounter_environments": ["forests", "shrines", "mountain_paths", "anywhere"],
+        "encounter_chance": 0.1,
+        "special_notes": "More likely to help than harm if approached respectfully"
+      },
+      
+      "tengu": {
+        "name": "Mountain Tengu",
+        "challenge_rating": 7,
+        "stats": {
+          "hp": "[ROLL 4d6+12]",
+          "max_hp": "same as hp",
+          "damage": "1d10+4",
+          "defense": 5,
+          "agility": "[ROLL 2d6+10]",
+          "strength": "[ROLL 2d6+8]",
+          "intelligence": "[ROLL 2d6+9]",
+          "charisma": "[ROLL 2d6+7]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE tengu_descriptions] tengu [RANDOM_CHOICE tengu_features] [RANDOM_CHOICE tengu_actions]",
+          "This [RANDOM_CHOICE tengu_type] warrior [RANDOM_CHOICE mountaineer_aspects] [RANDOM_CHOICE tengu_demeanor]"
+        ],
+        "tengu_descriptions": ["red-faced", "crow-winged", "long-nosed", "fierce-eyed", "mountain-dwelling"],
+        "tengu_features": [
+          "with magnificent black wings",
+          "carrying an ornate fan made of feathers",
+          "wielding a staff topped with sacred rings",
+          "dressed in the robes of a mountain ascetic",
+          "radiating the aura of a martial arts master"
+        ],
+        "tengu_actions": [
+          "perches on a high rock like a massive bird",
+          "demonstrates incredible swordsmanship",
+          "leaps between trees with inhuman agility",
+          "challenges you to test your martial skills",
+          "observes you with the eyes of a master teacher"
+        ],
+        "tengu_type": ["crow-winged", "long-nosed", "mountain", "warrior"],
+        "mountaineer_aspects": [
+          "moves through difficult terrain with ease",
+          "knows every secret path in the mountains",
+          "commands the winds and weather",
+          "teaches the deepest secrets of martial arts",
+          "guards the most sacred mountain shrines"
+        ],
+        "tengu_demeanor": [
+          "evaluates your worthiness as a student",
+          "seems both amused and impressed by mortals",
+          "radiates the confidence of a perfect warrior",
+          "judges your martial spirit and dedication",
+          "offers wisdom to those who prove themselves"
+        ],
+        "ai_behavior": {
+          "combat_style": "Aerial Martial Master",
+          "tactics": [
+            "Uses flight to gain positional advantage",
+            "Demonstrates superior swordsmanship",
+            "May offer to teach rather than kill worthy opponents",
+            "Uses wind magic to control battlefield"
+          ],
+          "morale": "Proud creature - will not flee unless severely outmatched",
+          "special_abilities": [
+            "Flight: Can take to the air and attack from above",
+            "Master Swordsmanship: +3 to all weapon attacks",
+            "Wind Magic: Can create gusts that knock opponents prone",
+            "Martial Teaching: May offer training to worthy students",
+            "Mountain Knowledge: Knows all paths and secrets of the region",
+            "Feather Storm: Area attack affecting multiple targets"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "tengu_feather", "chance": 100, "quantity": "[ROLL 1d4]"}
+          ],
+          "common": [
+            {"item": "masterwork_katana", "chance": 80, "quantity": 1},
+            {"item": "feather_fan", "chance": 70, "quantity": 1}
+          ],
+          "rare": [
+            {"item": "wind_scroll", "chance": 50, "quantity": 1},
+            {"item": "martial_arts_manual", "chance": 40, "quantity": 1}
+          ],
+          "unique": [
+            {"item": "tengu_training", "description": "Permanent +2 to combat skills"}
+          ],
+          "gold": "[ROLL 4d6*20]"
+        },
+        "unicode_symbol": "👺",
+        "encounter_environments": ["mountains", "sacred_peaks", "martial_arts_sites"],
+        "encounter_chance": 0.05,
+        "teaching_potential": "May offer martial arts training to worthy students"
+      },
+      
+      "oni": {
+        "name": "Red Oni",
+        "challenge_rating": 8,
+        "stats": {
+          "hp": "[ROLL 6d6+18]",
+          "max_hp": "same as hp",
+          "damage": "2d6+5",
+          "defense": 4,
+          "agility": "[ROLL 2d6+4]",
+          "strength": "[ROLL 3d6+15]",
+          "intelligence": "[ROLL 2d6+6]",
+          "charisma": "[ROLL 2d6+3]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE oni_descriptions] oni [RANDOM_CHOICE oni_features] [RANDOM_CHOICE oni_actions]",
+          "This [RANDOM_CHOICE oni_size] demon [RANDOM_CHOICE oni_coloration] [RANDOM_CHOICE threatening_behavior]"
+        ],
+        "oni_descriptions": ["massive", "fearsome", "club-wielding", "horn-crowned", "rage-filled"],
+        "oni_features": [
+          "with skin red as flowing lava",
+          "sporting wickedly curved horns",
+          "wielding an iron club the size of a tree",
+          "showing fangs like curved daggers",
+          "radiating an aura of primal violence"
+        ],
+        "oni_actions": [
+          "pounds its chest with massive fists",
+          "roars a challenge that shakes the mountains",
+          "hefts its tremendous iron club",
+          "glares with eyes like burning coals",
+          "stamps the ground hard enough to crack stone"
+        ],
+        "oni_size": ["enormous", "gigantic", "towering", "mountain-sized"],
+        "oni_coloration": [
+          "with skin like red-hot iron",
+          "whose hide gleams crimson in the light",
+          "with the color of spilled blood",
+          "radiating heat like a forge fire"
+        ],
+        "threatening_behavior": [
+          "blocks your path with malevolent intent",
+          "seeks to test your courage against demonic might",
+          "guards a treasure hoard with jealous fury",
+          "challenges all who dare enter its domain",
+          "hungers for the taste of mortal flesh"
+        ],
+        "ai_behavior": {
+          "combat_style": "Brutal Berserker",
+          "tactics": [
+            "Charges directly at strongest opponent",
+            "Uses massive club for devastating area attacks",
+            "Attempts to grapple and crush smaller enemies",
+            "Goes into berserker rage when injured"
+          ],
+          "morale": "Fights to the death unless offered greater treasure",
+          "special_abilities": [
+            "Club Sweep: Can attack all adjacent enemies in single action",
+            "Demon Strength: Can throw boulders for ranged attacks",
+            "Berserker Rage: When below 50% HP, +4 damage but -2 defense",
+            "Intimidating Roar: Causes fear in creatures with less than 6 HD",
+            "Treasure Sense: Can detect valuable items within 100 feet",
+            "Regeneration: Heals [ROLL 1d4] HP per round unless damaged by blessed weapons"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "oni_club", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "oni_horn", "chance": 80, "quantity": "[ROLL 1d2]"},
+            {"item": "demon_hide", "chance": 70, "quantity": 1}
+          ],
+          "rare": [
+            {"item": "strength_elixir", "chance": 60, "quantity": "[ROLL 1d3]"},
+            {"item": "demonic_essence", "chance": 40, "quantity": 1}
+          ],
+          "treasure_hoard": {
+            "gold": "[ROLL 8d6*50]",
+            "gems": "[ROLL 2d6]",
+            "magic_items": "[ROLL 1d4]"
+          },
+          "gold": "[ROLL 6d6*25]"
+        },
+        "unicode_symbol": "👹",
+        "encounter_environments": ["mountains", "caves", "demon_gates", "cursed_sites"],
+        "encounter_chance": 0.03,
+        "treasure_guardian": "Always guards a significant hoard of treasure"
+      },
+      
+      "ryu_dragon": {
+        "name": "Eastern Dragon",
+        "challenge_rating": 12,
+        "stats": {
+          "hp": "[ROLL 10d6+30]",
+          "max_hp": "same as hp",
+          "damage": "2d8+6",
+          "defense": 8,
+          "agility": "[ROLL 2d6+8]",
+          "strength": "[ROLL 3d6+12]",
+          "intelligence": "[ROLL 2d6+15]",
+          "charisma": "[ROLL 2d6+12]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE dragon_descriptions] dragon [RANDOM_CHOICE dragon_features] [RANDOM_CHOICE dragon_presence]",
+          "This [RANDOM_CHOICE dragon_aspects] serpentine wyrm [RANDOM_CHOICE elemental_power] [RANDOM_CHOICE dragon_demeanor]"
+        ],
+        "dragon_descriptions": ["magnificent", "ancient", "pearl-crowned", "cloud-wreathed", "celestial"],
+        "dragon_features": [
+          "with scales that shimmer like precious metals",
+          "sporting a flowing mane and magnificent whiskers",
+          "whose serpentine body coils through the air",
+          "crowned with antlers like those of a celestial stag",
+          "radiating wisdom accumulated over millennia"
+        ],
+        "dragon_presence": [
+          "commands respect through sheer majesty",
+          "speaks with the voice of rolling thunder",
+          "moves with fluid grace despite its enormous size",
+          "seems to embody the very forces of nature",
+          "regards mortals with ancient, knowing eyes"
+        ],
+        "dragon_aspects": ["water-commanding", "storm-bringing", "wisdom-bearing", "pearl-hoarding"],
+        "elemental_power": [
+          "controls the rains and rivers",
+          "summons mists and clouds at will",
+          "commands lightning and thunder",
+          "brings both drought and flood",
+          "shapes the very weather to its will"
+        ],
+        "dragon_demeanor": [
+          "tests the virtue and wisdom of mortals",
+          "offers great rewards to the truly worthy",
+          "seeks knowledge and beautiful treasures",
+          "guards sacred places and hidden wisdom",
+          "judges whether humans deserve divine favor"
+        ],
+        "ai_behavior": {
+          "combat_style": "Elemental Sovereign",
+          "tactics": [
+            "Uses weather control to dominate battlefield",
+            "Prefers negotiation to combat with respectful mortals",
+            "Employs devastating breath weapons sparingly",
+            "Tests opponents' character before attacking"
+          ],
+          "morale": "Ancient and wise - will retreat if convinced of opponent's virtue",
+          "special_abilities": [
+            "Weather Control: Can summon storms, rain, and lightning",
+            "Water Breathing: Breathes torrents of water for [ROLL 4d6] damage",
+            "Flight: Can soar through air and swim through clouds",
+            "Spell Casting: Can cast 5 spells per day from various schools",
+            "Dragon Fear: Frightens creatures with less than 8 HD",
+            "Wisdom Test: May challenge mortals to prove their worth",
+            "Pearl of Wisdom: Can grant knowledge or magical items to worthy souls"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "dragon_scale", "chance": 100, "quantity": "[ROLL 3d6]"}
+          ],
+          "common": [
+            {"item": "dragon_pearl", "chance": 80, "quantity": 1},
+            {"item": "storm_essence", "chance": 70, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "weather_control_scroll", "chance": 60, "quantity": 1},
+            {"item": "wisdom_gem", "chance": 50, "quantity": 1}
+          ],
+          "treasure_hoard": {
+            "gold": "[ROLL 10d6*200]",
+            "pearls": "[ROLL 3d6]",
+            "art_objects": "[ROLL 2d6]",
+            "magic_items": "[ROLL 2d4]"
+          },
+          "unique": [
+            {"item": "dragon_blessing", "description": "Permanent weather immunity and +3 Wisdom"}
+          ],
+          "gold": "[ROLL 8d6*100]"
+        },
+        "unicode_symbol": "🐉",
+        "encounter_environments": ["mountain_peaks", "sacred_lakes", "storm_clouds", "celestial_sites"],
+        "encounter_chance": 0.01,
+        "divine_connection": "May serve as messenger or agent of celestial powers"
+      }
+    }
+  },
+  
+  "encounter_tables": {
+    "forest_encounters": {
+      "common": [
+        {"creature": "japanese_wolf", "chance": 30, "group_size": "[ROLL 1d4+1]"},
+        {"creature": "wild_boar", "chance": 25, "group_size": "[ROLL 1d3]"},
+        {"creature": "ronin_bandit", "chance": 20, "group_size": "[ROLL 1d4+2]"}
+      ],
+      "uncommon": [
+        {"creature": "asian_black_bear", "chance": 15, "group_size": 1},
+        {"creature": "mountain_cat", "chance": 8, "group_size": 1},
+        {"creature": "kitsune", "chance": 2, "group_size": 1}
+      ]
+    },
+    
+    "mountain_encounters": {
+      "common": [
+        {"creature": "mountain_cat", "chance": 25, "group_size": 1},
+        {"creature": "asian_black_bear", "chance": 20, "group_size": 1},
+        {"creature": "ashigaru_deserter", "chance": 15, "group_size": "[ROLL 1d3]"}
+      ],
+      "uncommon": [
+        {"creature": "tengu", "chance": 20, "group_size": 1},
+        {"creature": "oni", "chance": 15, "group_size": 1},
+        {"creature": "ryu_dragon", "chance": 5, "group_size": 1}
+      ]
+    },
+    
+    "road_encounters": {
+      "common": [
+        {"creature": "ronin_bandit", "chance": 40, "group_size": "[ROLL 1d6+2]"},
+        {"creature": "ashigaru_deserter", "chance": 25, "group_size": "[ROLL 1d4]"},
+        {"creature": "japanese_wolf", "chance": 15, "group_size": "[ROLL 1d3+1]"}
+      ],
+      "uncommon": [
+        {"creature": "corrupt_samurai", "chance": 15, "group_size": "1 + [ROLL 1d4] followers"},
+        {"creature": "ninja_assassin", "chance": 5, "group_size": "[ROLL 1d3]"}
+      ]
+    },
+    
+    "graveyard_encounters": {
+      "common": [
+        {"creature": "skeletal_warrior", "chance": 35, "group_size": "[ROLL 1d6+1]"},
+        {"creature": "jiangshi", "chance": 30, "group_size": "[ROLL 1d4+1]"}
+      ],
+      "uncommon": [
+        {"creature": "vengeful_spirit", "chance": 25, "group_size": 1},
+        {"creature": "ninja_assassin", "chance": 10, "group_size": "[ROLL 1d2]"}
+      ]
+    },
+    
+    "shrine_encounters": {
+      "common": [
+        {"creature": "kitsune", "chance": 30, "group_size": 1},
+        {"creature": "vengeful_spirit", "chance": 20, "group_size": 1}
+      ],
+      "uncommon": [
+        {"creature": "tengu", "chance": 25, "group_size": 1},
+        {"creature": "oni", "chance": 15, "group_size": 1},
+        {"creature": "ryu_dragon", "chance": 10, "group_size": 1}
+      ]
+    }
+  },
+  
+  "behavioral_patterns": {
+    "pack_hunters": {
+      "creatures": ["japanese_wolf"],
+      "tactics": [
+        "Surround prey in coordinated attacks",
+        "Use pack leader to direct hunting behavior",
+        "Attempt to separate weakest member of party",
+        "Retreat if pack leader is killed or severely wounded"
+      ]
+    },
+    
+    "territorial_spirits": {
+      "creatures": ["kitsune", "tengu", "oni", "ryu_dragon"],
+      "tactics": [
+        "Test intruders before attacking",
+        "May offer challenges or bargains",
+        "Fight fiercely when sacred sites are threatened",
+        "Can be reasoned with if approached respectfully"
+      ]
+    },
+    
+    "honor_bound_warriors": {
+      "creatures": ["ronin_bandit", "corrupt_samurai"],
+      "tactics": [
+        "May challenge to single combat first",
+        "Fight with martial arts training",
+        "Prefer honorable death to shameful retreat",
+        "Can sometimes be reasoned with through appeals to bushido"
+      ]
+    },
+    
+    "undead_persisters": {
+      "creatures": ["skeletal_warrior", "jiangshi", "vengeful_spirit"],
+      "tactics": [
+        "Pursue specific goals beyond mere destruction",
+        "Never retreat or show fear",
+        "May be laid to rest through proper rituals",
+        "Often connected to unfinished business or injustice"
+      ]
+    },
+    
+    "stealth_ambushers": {
+      "creatures": ["ninja_assassin", "mountain_cat"],
+      "tactics": [
+        "Use environment and concealment",
+        "Strike from unexpected angles",
+        "Retreat when ambush fails",
+        "Prefer hit-and-run to prolonged combat"
+      ]
+    }
+  },
+  
+  "special_encounter_events": {
+    "legendary_variants": {
+      "white_wolf_spirit": {
+        "description": "A massive wolf with pure white fur and eyes like winter stars",
+        "stat_bonuses": {
+          "hp": "+[ROLL 3d6]",
+          "damage": "+3",
+          "defense": "+2"
+        },
+        "special_abilities": ["Spirit Howl: Summons spectral wolf pack", "Ice Breath: Freezes enemies"],
+        "loot_bonus": "Guaranteed spirit essence and double normal drops"
+      },
+      
+      "nine_tailed_kitsune": {
+        "description": "An ancient kitsune of legendary power with nine magnificent tails",
+        "stat_bonuses": {
+          "hp": "+[ROLL 4d6]",
+          "all_stats": "+5"
+        },
+        "special_abilities": ["Reality Shaping: Can alter local environment", "Time Manipulation: Can slow or haste"],
+        "unique_loot": ["Cosmic Fox Orb", "Scroll of Infinite Wisdom", "Kitsune Transformation"]
+      }
+    },
+    
+    "cursed_variants": {
+      "blood_oni": {
+        "description": "An oni corrupted by consuming too much human blood, with crimson-black skin",
+        "stat_changes": {
+          "damage": "+1d6 life drain",
+          "special": "Heals when dealing damage"
+        }
+      },
+      
+      "plague_jiangshi": {
+        "description": "A hopping vampire carrying supernatural disease with green-tinged skin",
+        "stat_changes": {
+          "special": "Aura of disease affects all nearby living creatures"
+        }
+      }
+    },
+    
+    "environmental_modifiers": {
+      "full_moon": {
+        "effect": "All yokai and spirits gain +2 to all stats and enhanced abilities",
+        "description": "The full moon empowers supernatural creatures"
+      },
+      
+      "sacred_ground": {
+        "effect": "Undead take 1 damage per round and attack at -3",
+        "description": "Blessed shrine grounds weaken the unliving"
+      },
+      
+      "spiritual_storm": {
+        "effect": "All magical creatures gain +2 to magic-related abilities",
+        "description": "Spiritual energy crackles through the air, empowering yokai"
+      },
+      
+      "cherry_blossom_season": {
+        "effect": "Kitsune and other nature spirits are more likely to be helpful",
+        "description": "The beauty of spring makes spirits more benevolent"
+      }
+    }
+  },
+  
+  "monster_lore": {
+    "identification_system": {
+      "wisdom_check_results": {
+        "basic_success": "Learn creature type, rough abilities, and cultural significance",
+        "good_success": "Learn special abilities, weaknesses, and traditional countermeasures",
+        "excellent_success": "Learn complete abilities, lore, and optimal negotiation strategies"
+      }
+    },
+    
+    "creature_knowledge": {
+      "folklore": [
+        "Kitsune grow additional tails with age and wisdom",
+        "Iron and blessed items are effective against most yokai",
+        "Dragons of the East bring good fortune to the virtuous",
+        "Oni can be driven away by throwing beans at them"
+      ],
+      
+      "scholarly_texts": [
+        "Jiangshi cannot bend their joints and must hop to move",
+        "Tengu are master swordsmen who may teach worthy students",
+        "Onryo are created by intense emotions at the moment of death",
+        "Mountain spirits often test mortals before revealing themselves"
+      ]
+    }
+  },
+  
+  "integration_systems": {
+    "experience_rewards": {
+      "challenge_rating_1_3": "[ROLL 1d6+20] XP",
+      "challenge_rating_4_6": "[ROLL 2d6+40] XP",
+      "challenge_rating_7_9": "[ROLL 3d6+80] XP",
+      "challenge_rating_10_plus": "[ROLL 4d6+150] XP"
+    },
+    
+    "scaling_encounters": {
+      "party_level_1_2": "Use CR 1-3 creatures primarily",
+      "party_level_3_4": "Use CR 2-5 creatures, occasional CR 6",
+      "party_level_5_plus": "Use CR 4+ creatures, introduce legendary yokai"
+    },
+    
+    "cultural_encounters": {
+      "honor_system": "Many creatures respond to demonstrations of honor and respect",
+      "spiritual_awareness": "Understanding Japanese spiritual concepts affects interactions",
+      "seasonal_influences": "Creature behavior changes with traditional seasonal celebrations"
+    },
+    
+    "random_generation": {
+      "encounter_frequency": "[PERCENTAGE_CHANCE 25] per exploration turn",
+      "creature_condition": {
+        "healthy": "[PERCENTAGE_CHANCE 70]",
+        "wounded": "[PERCENTAGE_CHANCE 20] (-25% HP)",
+        "cursed": "[PERCENTAGE_CHANCE 8] (-1 to all stats, unusual behavior)",
+        "blessed": "[PERCENTAGE_CHANCE 2] (+2 to all stats, enhanced abilities)"
+      }
+    }
+  }
+}
