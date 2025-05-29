@@ -1,4 +1,4 @@
-# Medieval Overworld RPG System
+# Crawl RPG System
 
 ```
  ███▄ ▄███▓▓█████ ▓█████▄  ██▓▓█████  ██▒   █▓ ▄▄▄       ██▓    
@@ -38,7 +38,7 @@ This tome before you contains the very essence of a living, breathing medieval w
 
 ---
 
-## 📜 **The Grimoire's Contents**
+## 📜 **The Contents**
 
 ### 🏰 **The Core Engine** - `crawl2.llm_app`
 At the heart of this system lies the **Enhanced Dungeon Crawler Engine**—a mystical framework that breathes life into static data. Like the clockwork of a master artificer, it orchestrates:
@@ -178,10 +178,10 @@ This system is designed to work with:
 ## ⚗️ **The Alchemical Formula**
 
 At its essence, this system combines:
-- **40% Carefully Crafted Content** (NPCs, locations, items, creatures)
-- **30% Procedural Variation** (random choices, dice rolls, dynamic generation)
-- **20% Player Agency** (choices, consequences, character development)
-- **10% Emergent Storytelling** (unexpected combinations, serendipitous moments)
+- **Carefully Crafted Content** (NPCs, locations, items, creatures)
+- **Procedural Variation** (random choices, dice rolls, dynamic generation)
+- **Player Agency** (choices, consequences, character development)
+- **Emergent Storytelling** (unexpected combinations, serendipitous moments)
 
 The result is adventures that feel both familiar and surprising, structured yet organic, mechanical yet magical.
 
