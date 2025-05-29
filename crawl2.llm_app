@@ -72,6 +72,10 @@
     "quests_db.crawlrpg": {
       "contains": ["quest_chains", "objectives", "rewards"],
       "fallback": "Generate simple fetch/kill quests"
+    },
+    "art_db.crawlrpg": {
+      "contains": ["ascii art to be presented in code/text blocks if needed"],
+      "fallback": "Do not include if not present, this is purely an extra"
     }
   },
   
