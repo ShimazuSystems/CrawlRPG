@@ -583,8 +583,9 @@
     "13. Update SAVE_SYSTEM with current state",
     "14. Format and display new game state with Unicode elements",
     "15. Return to step 7 for continuous gameplay loop",
-    "CRITICAL NOTE: The Player can lose. Character loss can be permanent. Do not use miracles or break immersion to save the character. You are allowed and encouraged to provide situations that can lead to Game Over."
-  ],
+    "CRITICAL NOTE: The Player can lose. Character loss can be permanent. Do not use miracles or break immersion to save the character. You are allowed and encouraged to provide situations that can lead to Game Over.",
+    "CRITICAL NOTE: Consult the difficulty_rules when performing any decision or action."
+],
 
   "difficulty_rules": [
     "Actively provide failures to rolls if appropriate to 'skill' level, even if simulated. Do not treat the Player as invulnerable",
