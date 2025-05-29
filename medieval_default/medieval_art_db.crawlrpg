@@ -1,0 +1,261 @@
+{
+  "database_version": "1.0",
+  "world_theme": "Mythic Feudal Japan ASCII Art",
+  "art_style": "Unicode + Emoji Small Format (4-5 lines)",
+  
+  "buildings_and_structures": {
+    "castle_standard": {
+      "name": "Castle",
+      "art": [
+		" [][][] /""\ [][][] ",
+		"  |::| /____\ |::|  ",
+		"  |[]|_|::::|_|[]|  ",
+		"  |::::::__::::::|  ",
+		"  |:::::/||\:::::|  ",
+		"  |:#:::||||::#::|  ",
+		" #%*###&*##&*&#*&## ",
+		"##%%*####*%%%###*%*#"
+      ],
+      "usage": ["castle scenes", "fortified locations", "quest markers"]
+    },
+    
+    "church": {
+      "name": "Church",
+      "art": [
+		"   +		",
+		"   A_		",
+		"  /\-\		",
+		" _||'|_	",
+		"~^~^~^~^	"
+      ],
+      "usage": ["church locations", "priest encounters", "healing areas"]
+    },
+    
+    "tavern": {
+      "name": "Tavern",
+      "art": [
+		"       ':.                   ",
+		"         []_____             ",
+		"        /\      \            ",
+		"    ___/  \__/\__\__         ",
+		"---/\___\ |''''''|__\-- ---  ",
+		"   ||'''| |''||''|''|        ",
+		"   ``"""`"`""))""`""`        "
+      ],
+      "usage": ["rest locations", "NPC encounters", "tavern scenes"]
+    },
+    
+    "shrine": {
+      "name": "Wizards Tower",
+      "art": [
+		"             +",
+		"             A             ",
+		"          __/_\__          ",
+		"         /\-'o'-/\         ",
+		"        _||:<_>:||_        ",
+		"       /\_/=====\_/\       ",
+		"      _|:_:_[I]_:_:|_      ",
+		"   _/::::::::::::::::\_    ",
+		" _/::::::::::::::::::::\_  ",
+		"/::::::::::::::::::::::::\ "
+      ]
+      "usage": ["wizards tower", "magic encounters", "blessing scenes"]
+    },
+    
+    "city_outskirts": {
+      "name": "city outskirts",
+      "art": [
+		"             |   _   _		",
+		"       . | . x .|.|-|.|	",
+		"    |\ ./.\-/.\-|.|.|.|	",
+		" ~~~|.|_|.|_|.|.|.|_|.|~~~ "
+      ],
+      "usage": ["city outskirts", "travelling to city", "semi rural"]
+    }
+  },
+  
+  "characters": {
+    "wizard_standing": {
+      "name": "Wizard",
+      "art": [
+		"              _,-'|        ",
+		"           ,-'._  |        ",
+		" .||,      |####\ |        ",
+		"\.`',/     \####| |        ",
+		"= ,. =      |###| |        ",
+		"/ || \    ,-'\#/,'`.       ",
+		"  ||     ,'   `,,. `.      ",
+		"  ,|____,' , ,;' \| |      ",
+		" (3|\    _/|/'   _| |      ",
+		"  ||/,-''  | >-'' _,\\     ",
+		"  ||'      ==\ ,-'  ,'     ",
+		"  ||       |  V \ ,|       ",
+		"  ||       |    |` |       ",
+		"  ||       |    |   \      ",
+		"  ||       |    \    \     ",
+		"  ||       |     |    \    ",
+		"  ||       |      \_,-'    ",
+		"  ||       |___,,--')_\    ",
+		"  ||         |_|   ccc/    ",
+		"  ||        ccc/           ",
+		"  ||                hjm    "
+      ],
+      "usage": ["Wizard NPCs", "Magic Quests", "combat ready"]
+    },
+    
+    "knight_standing": {
+      "name": "Knight",
+      "art": [
+"  / \					",
+"  | |					",
+"  |.|					",
+"  |.|					",
+"  |:|      __			",
+",_|:|_,   /  )			",
+"  (Oo    / _I_			",
+"   +\ \  || __|		",
+"      \ \||___|		",
+"        \ /.:.\-\		",
+"         |.:. /-----\	",
+"         |___|::oOo::|	",
+"         /   |:<_T_>:|	",
+"        |_____\ ::: /	",
+"         | |  \ \:/	",
+"         | |   | |		",
+"         \ /   | \___	",
+"         / |   \_____\	",
+"         `-'			"
+      ],
+      "usage": ["knight encounters", "knight NPCs", "castle interior guards"]
+    },
+    
+    "king_standing": {
+      "name": "King",
+      "art": [
+		"                      ____		",
+		"                     / ___`\	",
+		"         /|         ( (   \ \	",
+		"    |^v^v  V|        \ \/) ) )	",
+		"    \  ____ /         \_/ / /	",
+		"    ,Y`    `,            / /	",
+		"    ||  -  -)           { }	",
+		"    \\   _\ |           | |	",
+		"     \\ / _`\_         / /		",
+		"     / |  ~ | ``\     _|_|		",
+		"  ,-`  \    |  \ \  ,//(_}		",
+		" /      |   |   | \/  \| |		",
+		"|       |   |   | '   ,\ \		",
+		"|     | \   /  /\  _/`  | |	",
+		"\     |  | |   | ``     | |	",
+		" |    \  \ |   |        | |	",
+		" |    |   |/   |        / /	",
+		" |    |        |        | |	",
+      ],
+      "usage": ["king encounters", "king NPCs"]
+    },
+    
+    "shrine_maiden": {
+      "name": "Shrine Maiden",
+      "art": [
+		"          ,  ,				",
+		"          \\ \\           	",
+		"          ) \\ \\    _p_ 	",
+		"          )^\))\))  /  *\ 	",
+		"           \_|| || / /^`-' ",
+		"  __       -\ \\--/ / 		",
+		"<'  \\___/   ___. )'		",
+		"     `====\ )___/\\ 		",
+		"          //     `"		",
+		"          \\    /  \		",
+		"          `"				"
+      ],
+      "usage": ["dragon encounters", "dragon NPCs"]
+    },
+    
+  "status_displays": {
+    "health_critical": {
+      "name": "Critical Health",
+      "art": [
+		"	  (¯`·.¸¸.·´¯`·.¸¸.·´¯)			",
+		"	  ( \                 / )		",
+		"	 ( \ )               ( / )		",
+		"	( ) (      HEALTH     ) ( )		",
+		"	 ( / )    CRITICAL   ( \ )		",
+		"	  ( /                 \ )		",
+		"	   (_.·´¯`·.¸¸.·´¯`·.¸_)		"
+      ],
+      "usage": ["low health warning", "emergency status", "danger alerts"]
+    },
+    
+    "victory": {
+      "name": "Victory Banner",
+      "art": [
+		"	  (¯`·.¸¸.·´¯`·.¸¸.·´¯)			",
+		"	  ( \                 / )		",
+		"	 ( \ )               ( / )		",
+		"	( ) (     VICTORY     ) ( )		",
+		"	 ( / )               ( \ )		",
+		"	  ( /                 \ )		",
+		"	   (_.·´¯`·.¸¸.·´¯`·.¸_)		"
+      ],
+      "usage": ["combat victory", "quest completion", "success celebration"]
+    }
+  },
+  
+  "environment_art": {
+    "mountain": {
+      "name": "Mountain Scene",
+      "art": [
+		"        _    .  ,   .           	",
+		"    *  / \_ *  / \_      _  *   	",
+		"      /    \  /    \,   ((      	",
+		" .   /\/\  /\/ :' __ \_  `      	",
+		"    /    \/  \  _/  \-'\      * 	",
+		"  /\  .-   `. \/     \ /==~=-=~=	",
+		" /  `-.__ ^   / .-'.--\ =-=~_=-=~	",
+		"/jgs     `.  / /       `.~-^=-=~=^	"
+      ],
+      "usage": ["mountain encounters", "mountain themes", "mountain scenes"]
+    },
+    
+    "sunset": {
+      "name": "Sunset",
+      "art": [
+"            .   :  ;   ,          ___		",
+"""------.__  \.      ,/    .----'"   ""`--.",
+"____.------'-   ,--.  -    ""-------'""""	",
+"\_______-_-=___/____\__=-_-_______/";\.____",
+"`\.              --           .--'   \"-.	",
+". `\._          "" --          """\""/""	",
+" `    `"--..    _--                "		",
+"     --',.---'   - "						",
+"----'"""         "_-						",
+"  /                                ____,,.."
+      ],
+      "usage": ["sunset", "hot weather", "festival seasons"]
+    },
+  
+  "integration_system": {
+    "display_rules": {
+      "code_block_required": "All ASCII art must be displayed in ```text code blocks",
+      "context_appropriate": "Choose art based on current game situation",
+      "size_consistent": "Maintain 4-5 line height for consistency",
+      "unicode_safe": "Use widely supported unicode characters"
+    },
+    
+    "usage_triggers": {
+      "location_entry": "Display appropriate building/nature art when entering new areas",
+      "combat_start": "Show relevant combat scene art at battle beginning",
+      "character_encounter": "Display character art when meeting important NPCs",
+      "item_discovery": "Show item art when finding treasure or quest objects",
+      "status_change": "Display status art for important health/honor changes",
+      "seasonal_events": "Use seasonal art during festivals and weather changes"
+    },
+    
+    "randomization": {
+      "atmospheric_variety": "Use [RANDOM_CHOICE] to vary atmospheric elements",
+      "seasonal_selection": "Choose appropriate seasonal art based on game calendar",
+      "mood_matching": "Select art that matches current scene mood and tone"
+    }
+  }
+}
