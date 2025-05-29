@@ -1,0 +1,1029 @@
+{
+  "database_version": "1.0",
+  "world_theme": "European Medieval Items",
+  "currency": "Gold Coins",
+  
+  "weapons": {
+    "melee_weapons": {
+      "swords": {
+        "rusty_sword": {
+          "name": "Rusty Sword",
+          "damage": "1d6",
+          "cost": 15,
+          "weight": 3,
+          "description": "A well-worn blade showing signs of age and battle. Still serviceable for those who know how to use it.",
+          "rarity": "common",
+          "unicode_symbol": "⚔️"
+        },
+        "iron_sword": {
+          "name": "Iron Sword",
+          "damage": "1d8",
+          "cost": 50,
+          "weight": 4,
+          "description": "A sturdy blade of good iron, properly balanced and sharp. The choice of seasoned warriors.",
+          "rarity": "common",
+          "unicode_symbol": "⚔️"
+        },
+        "steel_sword": {
+          "name": "Steel Sword",
+          "damage": "1d8+1",
+          "cost": 150,
+          "weight": 4,
+          "description": "Forged from quality steel with a keen edge that holds true. Bears the mark of a master smith.",
+          "rarity": "uncommon",
+          "unicode_symbol": "⚔️"
+        },
+        "knights_sword": {
+          "name": "Knight's Longsword",
+          "damage": "1d10",
+          "cost": 300,
+          "weight": 5,
+          "description": "A noble blade fit for chivalrous combat. The crossguard bears heraldic engravings.",
+          "rarity": "uncommon",
+          "unicode_symbol": "⚔️",
+          "special": "Bonus damage vs evil creatures"
+        },
+        "silver_blade": {
+          "name": "Silver-Edged Blade",
+          "damage": "1d8+2",
+          "cost": 500,
+          "weight": 4,
+          "description": "Steel core with silver inlay along the cutting edge. Particularly effective against supernatural foes.",
+          "rarity": "rare",
+          "unicode_symbol": "⚔️",
+          "special": "Double damage vs undead and lycanthropes"
+        }
+      },
+      
+      "axes": {
+        "woodsman_axe": {
+          "name": "Woodsman's Axe",
+          "damage": "1d6+1",
+          "cost": 25,
+          "weight": 4,
+          "description": "A practical tool that doubles as a weapon. Shows wear from splitting logs and felling trees.",
+          "rarity": "common",
+          "unicode_symbol": "🪓"
+        },
+        "battle_axe": {
+          "name": "Battle Axe",
+          "damage": "1d8+2",
+          "cost": 75,
+          "weight": 6,
+          "description": "A warrior's weapon with a heavy head and long handle. Designed to cleave through armor.",
+          "rarity": "common",
+          "unicode_symbol": "🪓"
+        },
+        "war_hammer": {
+          "name": "War Hammer",
+          "damage": "1d10",
+          "cost": 100,
+          "weight": 8,
+          "description": "A massive hammer with a steel head. Crushing force that ignores most armor.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🔨",
+          "special": "Ignores 2 points of armor"
+        }
+      },
+      
+      "daggers": {
+        "hunting_knife": {
+          "name": "Hunting Knife",
+          "damage": "1d4+1",
+          "cost": 10,
+          "weight": 1,
+          "description": "A versatile blade good for skinning game or close combat. Every traveler should carry one.",
+          "rarity": "common",
+          "unicode_symbol": "🗡️"
+        },
+        "thieves_dagger": {
+          "name": "Thief's Dagger",
+          "damage": "1d4+2",
+          "cost": 35,
+          "weight": 1,
+          "description": "A slim blade designed for stealth and precision. The grip is wrapped in black leather.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🗡️",
+          "special": "Can be thrown, +2 to sneak attacks"
+        },
+        "poisoned_blade": {
+          "name": "Poisoned Blade",
+          "damage": "1d4+1",
+          "cost": 200,
+          "weight": 1,
+          "description": "A wickedly sharp dagger with a hollow groove for poison. Handle with extreme care.",
+          "rarity": "rare",
+          "unicode_symbol": "🗡️",
+          "special": "Target must save vs poison or take [ROLL 1d4] additional damage per round for 3 rounds"
+        }
+      },
+      
+      "polearms": {
+        "spear": {
+          "name": "Spear",
+          "damage": "1d6+1",
+          "cost": 20,
+          "weight": 3,
+          "description": "A long wooden shaft tipped with iron. Simple, effective, and reaches beyond sword range.",
+          "rarity": "common",
+          "unicode_symbol": "🗡️",
+          "special": "Can attack from second rank in formation"
+        },
+        "halberd": {
+          "name": "Halberd",
+          "damage": "1d10+1",
+          "cost": 80,
+          "weight": 7,
+          "description": "Axe, spear, and hook combined on a long pole. The choice weapon of professional soldiers.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🗡️",
+          "special": "Can trip mounted opponents"
+        }
+      }
+    },
+    
+    "ranged_weapons": {
+      "bows": {
+        "hunting_bow": {
+          "name": "Hunting Bow",
+          "damage": "1d6",
+          "cost": 30,
+          "weight": 2,
+          "description": "A simple bow of yew wood, used by hunters and foresters. Reliable and well-balanced.",
+          "rarity": "common",
+          "unicode_symbol": "🏹",
+          "ammunition": "arrows"
+        },
+        "longbow": {
+          "name": "Longbow",
+          "damage": "1d8",
+          "cost": 75,
+          "weight": 3,
+          "description": "A tall bow requiring strength to draw. In skilled hands, it can pierce mail at long range.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🏹",
+          "ammunition": "arrows",
+          "special": "Extended range"
+        },
+        "elven_bow": {
+          "name": "Elven Recurve Bow",
+          "damage": "1d8+2",
+          "cost": 400,
+          "weight": 2,
+          "description": "Crafted from rare wood with intricate carvings. Shoots with supernatural accuracy.",
+          "rarity": "rare",
+          "unicode_symbol": "🏹",
+          "ammunition": "arrows",
+          "special": "+2 to hit rolls"
+        }
+      },
+      
+      "crossbows": {
+        "light_crossbow": {
+          "name": "Light Crossbow",
+          "damage": "1d8",
+          "cost": 60,
+          "weight": 4,
+          "description": "A mechanical bow that requires less training than traditional archery. Popular with militia.",
+          "rarity": "common",
+          "unicode_symbol": "🏹",
+          "ammunition": "bolts"
+        },
+        "heavy_crossbow": {
+          "name": "Heavy Crossbow",
+          "damage": "1d10+1",
+          "cost": 120,
+          "weight": 8,
+          "description": "A powerful siege weapon that can punch through plate armor. Slow to reload.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🏹",
+          "ammunition": "bolts",
+          "special": "Ignores 3 points of armor, takes 2 rounds to reload"
+        }
+      },
+      
+      "thrown_weapons": {
+        "throwing_knife": {
+          "name": "Throwing Knife",
+          "damage": "1d4",
+          "cost": 8,
+          "weight": 0.5,
+          "description": "Balanced for throwing with a weighted pommel. Often carried in sets of three or more.",
+          "rarity": "common",
+          "unicode_symbol": "🗡️",
+          "special": "Can be thrown or used in melee"
+        },
+        "hand_axe": {
+          "name": "Hand Axe",
+          "damage": "1d6",
+          "cost": 15,
+          "weight": 2,
+          "description": "A small axe that can be thrown with deadly accuracy or used in close combat.",
+          "rarity": "common",
+          "unicode_symbol": "🪓",
+          "special": "Can be thrown or used in melee"
+        }
+      }
+    },
+    
+    "magical_weapons": {
+      "staffs": {
+        "oak_staff": {
+          "name": "Oak Staff",
+          "damage": "1d4+1",
+          "cost": 25,
+          "weight": 3,
+          "description": "A walking stick of seasoned oak. Simple but effective for both travel and defense.",
+          "rarity": "common",
+          "unicode_symbol": "🏷️"
+        },
+        "wizard_staff": {
+          "name": "Wizard's Staff",
+          "damage": "1d6+INT",
+          "cost": 200,
+          "weight": 3,
+          "description": "Carved with mystical runes and topped with a crystal focus. Channels magical energy.",
+          "rarity": "uncommon",
+          "unicode_symbol": "🏷️",
+          "special": "Can cast [RANDOM_CHOICE ['Light', 'Shield', 'Magic Missile']] once per day"
+        },
+        "staff_of_power": {
+          "name": "Staff of Power",
+          "damage": "1d8+INT",
+          "cost": 1000,
+          "weight": 4,
+          "description": "A legendary focus of incredible magical might. The crystal pulses with inner fire.",
+          "rarity": "legendary",
+          "unicode_symbol": "🏷️",
+          "special": "Spell damage +2, can cast 3 different spells per day"
+        }
+      },
+      
+      "enchanted_blades": {
+        "flame_sword": {
+          "name": "Flaming Sword",
+          "damage": "1d8+1d4 fire",
+          "cost": 800,
+          "weight": 4,
+          "description": "The blade flickers with magical flames that never consume the metal. Warm to the touch.",
+          "rarity": "rare",
+          "unicode_symbol": "⚔️",
+          "special": "Fire damage, provides light in darkness"
+        },
+        "frost_blade": {
+          "name": "Frost Blade",
+          "damage": "1d8+1d4 cold",
+          "cost": 750,
+          "weight": 4,
+          "description": "Ice crystals form along this blade's edge. The air grows cold in its presence.",
+          "rarity": "rare",
+          "unicode_symbol": "⚔️",
+          "special": "Cold damage, may slow enemies"
+        }
+      }
+    }
+  },
+  
+  "armor": {
+    "light_armor": {
+      "padded_cloth": {
+        "name": "Padded Cloth",
+        "defense": 1,
+        "cost": 20,
+        "weight": 5,
+        "description": "Layers of cloth and leather sewn together. Better than nothing, barely.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "leather_vest": {
+        "name": "Leather Vest",
+        "defense": 2,
+        "cost": 50,
+        "weight": 8,
+        "description": "Boiled leather hardened into a protective vest. Favored by scouts and rangers.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "studded_leather": {
+        "name": "Studded Leather",
+        "defense": 3,
+        "cost": 85,
+        "weight": 10,
+        "description": "Leather armor reinforced with metal studs. Good protection without sacrificing mobility.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      }
+    },
+    
+    "medium_armor": {
+      "chain_shirt": {
+        "name": "Chain Shirt",
+        "defense": 4,
+        "cost": 150,
+        "weight": 15,
+        "description": "Interlocked metal rings protecting the torso. Standard protection for professional soldiers.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️"
+      },
+      "scale_mail": {
+        "name": "Scale Mail",
+        "defense": 5,
+        "cost": 200,
+        "weight": 18,
+        "description": "Metal scales sewn onto leather backing. Provides excellent protection against slashing weapons.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️"
+      },
+      "chain_mail": {
+        "name": "Chain Mail",
+        "defense": 6,
+        "cost": 300,
+        "weight": 25,
+        "description": "Full suit of interlocked rings from neck to knee. The standard of medieval warfare.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️"
+      }
+    },
+    
+    "heavy_armor": {
+      "banded_mail": {
+        "name": "Banded Mail",
+        "defense": 7,
+        "cost": 500,
+        "weight": 35,
+        "description": "Chain mail reinforced with metal bands. Heavy but provides excellent protection.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "penalty": "-1 to agility rolls"
+      },
+      "plate_mail": {
+        "name": "Plate Mail",
+        "defense": 8,
+        "cost": 800,
+        "weight": 45,
+        "description": "Articulated plates of steel covering the entire body. The pinnacle of armorer's craft.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "penalty": "-2 to agility rolls"
+      },
+      "knights_plate": {
+        "name": "Knight's Plate",
+        "defense": 9,
+        "cost": 1500,
+        "weight": 50,
+        "description": "Masterwork plate decorated with heraldic symbols. Worn only by nobility and their champions.",
+        "rarity": "legendary",
+        "unicode_symbol": "🛡️",
+        "penalty": "-2 to agility rolls",
+        "special": "Resistance to critical hits"
+      }
+    },
+    
+    "shields": {
+      "wooden_buckler": {
+        "name": "Wooden Buckler",
+        "defense": 1,
+        "cost": 15,
+        "weight": 3,
+        "description": "A small round shield of hardwood bound with iron. Quick to maneuver in combat.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "iron_shield": {
+        "name": "Iron Shield",
+        "defense": 2,
+        "cost": 40,
+        "weight": 8,
+        "description": "A sturdy shield of wood reinforced with iron bands. Reliable protection for any warrior.",
+        "rarity": "common",
+        "unicode_symbol": "🛡️"
+      },
+      "knights_shield": {
+        "name": "Knight's Shield",
+        "defense": 3,
+        "cost": 120,
+        "weight": 10,
+        "description": "A heater shield bearing noble heraldry. As much a symbol of honor as protection.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🛡️",
+        "special": "Reduces damage from ranged attacks by additional 1 point"
+      }
+    },
+    
+    "magical_armor": {
+      "enchanted_leather": {
+        "name": "Enchanted Leather",
+        "defense": 4,
+        "cost": 400,
+        "weight": 8,
+        "description": "Leather armor blessed by forest spirits. Light as cloth but strong as steel.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "special": "No movement penalty, +1 to stealth"
+      },
+      "mage_robes": {
+        "name": "Robes of Protection",
+        "defense": "2+INT bonus",
+        "cost": 600,
+        "weight": 3,
+        "description": "Silk robes woven with protective wards. Intelligence enhances the magical defenses.",
+        "rarity": "rare",
+        "unicode_symbol": "🛡️",
+        "special": "Magic resistance, spell focus bonus"
+      }
+    }
+  },
+  
+  "consumables": {
+    "potions": {
+      "healing_potion": {
+        "name": "Healing Potion",
+        "effect": "Restores [ROLL 2d4+2] HP",
+        "cost": 50,
+        "weight": 0.5,
+        "description": "A crimson liquid in a small glass vial. Tastes bitter but mends wounds quickly.",
+        "rarity": "common",
+        "unicode_symbol": "🧪"
+      },
+      "greater_healing": {
+        "name": "Greater Healing Potion",
+        "effect": "Restores [ROLL 3d6+6] HP",
+        "cost": 150,
+        "weight": 0.5,
+        "description": "A ruby-red elixir that glows with inner light. Heals even grievous wounds.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🧪"
+      },
+      "strength_elixir": {
+        "name": "Elixir of Strength",
+        "effect": "+[ROLL 1d4+1] STR for [ROLL 1d6+3] rounds",
+        "cost": 100,
+        "weight": 0.5,
+        "description": "A golden potion that makes muscles swell with power. Effects fade gradually.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🧪"
+      },
+      "agility_draught": {
+        "name": "Draught of Agility",
+        "effect": "+[ROLL 1d4+1] AGI for [ROLL 1d6+3] rounds",
+        "cost": 100,
+        "weight": 0.5,
+        "description": "A silver-blue liquid that quickens reflexes and sharpens coordination.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🧪"
+      },
+      "poison_antidote": {
+        "name": "Antidote",
+        "effect": "Neutralizes poison and cures disease",
+        "cost": 75,
+        "weight": 0.5,
+        "description": "A clear fluid with a medicinal smell. Essential for treating venomous bites and toxic magic.",
+        "rarity": "common",
+        "unicode_symbol": "🧪"
+      }
+    },
+    
+    "food_and_drink": {
+      "travel_rations": {
+        "name": "Travel Rations",
+        "effect": "Prevents hunger penalties for 1 day",
+        "cost": 5,
+        "weight": 2,
+        "description": "Dried meat, hardtack, and preserved fruit. Not tasty but keeps you going.",
+        "rarity": "common",
+        "unicode_symbol": "🍞"
+      },
+      "fresh_bread": {
+        "name": "Fresh Bread",
+        "effect": "Restores 1 HP, prevents hunger for 1 day",
+        "cost": 2,
+        "weight": 1,
+        "description": "A warm loaf from the village baker. The smell alone lifts spirits.",
+        "rarity": "common",
+        "unicode_symbol": "🍞"
+      },
+      "ale_mug": {
+        "name": "Mug of Ale",
+        "effect": "Restores 1 HP, +1 CHA for 1 hour, -1 INT for 1 hour",
+        "cost": 3,
+        "weight": 1,
+        "description": "Frothy brown ale in a pewter mug. Loosens the tongue and lifts the mood.",
+        "rarity": "common",
+        "unicode_symbol": "🍺"
+      },
+      "fine_wine": {
+        "name": "Fine Wine",
+        "effect": "+2 CHA for 2 hours",
+        "cost": 25,
+        "weight": 2,
+        "description": "Vintage wine from the lord's vineyard. Smooth and warming to the soul.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🍷"
+      },
+      "feast_meal": {
+        "name": "Feast Meal",
+        "effect": "Restores [ROLL 1d6+2] HP, prevents hunger for 3 days",
+        "cost": 15,
+        "weight": 0,
+        "description": "A hearty meal of roasted meat, vegetables, and fresh bread. Fills both belly and spirit.",
+        "rarity": "common",
+        "unicode_symbol": "🍖"
+      }
+    },
+    
+    "scrolls": {
+      "scroll_of_light": {
+        "name": "Scroll of Light",
+        "effect": "Creates bright light for [ROLL 1d6+6] hours",
+        "cost": 25,
+        "weight": 0.1,
+        "description": "Parchment inscribed with glowing runes. Banishes darkness when read aloud.",
+        "rarity": "common",
+        "unicode_symbol": "📜"
+      },
+      "scroll_of_healing": {
+        "name": "Scroll of Healing",
+        "effect": "Restores [ROLL 2d6+4] HP",
+        "cost": 75,
+        "weight": 0.1,
+        "description": "Sacred words written in silver ink. Channels divine healing power.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📜"
+      },
+      "scroll_of_protection": {
+        "name": "Scroll of Protection",
+        "effect": "+3 DEF for [ROLL 1d6+4] rounds",
+        "cost": 100,
+        "weight": 0.1,
+        "description": "Mystical wards written on blessed parchment. Creates a shimmering barrier.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📜"
+      },
+      "scroll_of_fireball": {
+        "name": "Scroll of Fireball",
+        "effect": "Deals [ROLL 3d6] fire damage to target",
+        "cost": 150,
+        "weight": 0.1,
+        "description": "Dangerous magic bound in writing. The parchment feels warm to the touch.",
+        "rarity": "rare",
+        "unicode_symbol": "📜"
+      }
+    }
+  },
+  
+  "tools_and_utilities": {
+    "adventuring_gear": {
+      "torch": {
+        "name": "Torch",
+        "effect": "Provides light for [ROLL 1d4+2] hours",
+        "cost": 1,
+        "weight": 1,
+        "description": "A wooden stick wrapped in pitch-soaked cloth. Essential for exploring dark places.",
+        "rarity": "common",
+        "unicode_symbol": "🔥"
+      },
+      "rope": {
+        "name": "Hemp Rope (50 ft)",
+        "effect": "Climbing aid, binding tool",
+        "cost": 10,
+        "weight": 10,
+        "description": "Strong hemp rope that's saved many an adventurer from a nasty fall.",
+        "rarity": "common",
+        "unicode_symbol": "🪢"
+      },
+      "grappling_hook": {
+        "name": "Grappling Hook",
+        "effect": "Climbing aid, can catch ledges",
+        "cost": 25,
+        "weight": 4,
+        "description": "Iron hooks attached to a length of chain. Perfect for scaling walls.",
+        "rarity": "common",
+        "unicode_symbol": "⚓"
+      },
+      "lockpicks": {
+        "name": "Lockpicks",
+        "effect": "+2 to lock picking attempts",
+        "cost": 50,
+        "weight": 0.5,
+        "description": "A set of fine tools for the discerning burglar. Ownership may raise questions.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🗝️"
+      },
+      "spyglass": {
+        "name": "Spyglass",
+        "effect": "See distant objects clearly",
+        "cost": 200,
+        "weight": 2,
+        "description": "Polished lenses in a brass tube. See your enemies before they see you.",
+        "rarity": "rare",
+        "unicode_symbol": "🔭"
+      }
+    },
+    
+    "crafting_materials": {
+      "iron_ingot": {
+        "name": "Iron Ingot",
+        "effect": "Smithing material",
+        "cost": 15,
+        "weight": 5,
+        "description": "A bar of good iron ready for the forge. The foundation of all metalwork.",
+        "rarity": "common",
+        "unicode_symbol": "📦"
+      },
+      "steel_ingot": {
+        "name": "Steel Ingot",
+        "effect": "Superior smithing material",
+        "cost": 50,
+        "weight": 5,
+        "description": "Refined steel of excellent quality. Worth its weight in finished goods.",
+        "rarity": "uncommon",
+        "unicode_symbol": "📦"
+      },
+      "leather_hide": {
+        "name": "Cured Leather Hide",
+        "effect": "Armor crafting material",
+        "cost": 25,
+        "weight": 3,
+        "description": "Properly tanned leather ready for crafting. Tough and flexible.",
+        "rarity": "common",
+        "unicode_symbol": "📦"
+      },
+      "rare_herbs": {
+        "name": "Rare Herbs",
+        "effect": "Potion brewing ingredient",
+        "cost": 30,
+        "weight": 0.5,
+        "description": "Carefully preserved medicinal plants. Essential for brewing healing potions.",
+        "rarity": "uncommon",
+        "unicode_symbol": "🌿"
+      }
+    }
+  },
+  
+  "treasure": {
+    "coins_and_gems": {
+      "gold_coins": {
+        "name": "Gold Coins",
+        "effect": "Standard currency",
+        "value": 1,
+        "weight": 0.02,
+        "description": "The realm's standard currency, bearing the king's likeness.",
+        "rarity": "common",
+        "unicode_symbol": "💰"
+      },
+      "silver_coins": {
+        "name": "Silver Coins", 
+        "effect": "Lesser currency",
+        "value": 0.1,
+        "weight": 0.02,
+        "description": "Ten silver equals one gold. Used for smaller transactions.",
+        "rarity": "common",
+        "unicode_symbol": "💰"
+      },
+      "ruby": {
+        "name": "Ruby",
+        "effect": "Valuable gem",
+        "value": "[ROLL 2d6*25]",
+        "weight": 0.1,
+        "description": "A blood-red gem that catches the light beautifully. Highly prized by nobility.",
+        "rarity": "rare",
+        "unicode_symbol": "💎"
+      },
+      "sapphire": {
+        "name": "Sapphire",
+        "effect": "Valuable gem",
+        "value": "[ROLL 2d6*30]",
+        "weight": 0.1,
+        "description": "A brilliant blue stone said to bring wisdom and favor to its owner.",
+        "rarity": "rare",
+        "unicode_symbol": "💎"
+      },
+      "emerald": {
+        "name": "Emerald",
+        "effect": "Valuable gem",
+        "value": "[ROLL 2d6*35]",
+        "weight": 0.1,
+        "description": "A green gem rumored to have healing properties. Favored by forest folk.",
+        "rarity": "rare",
+        "unicode_symbol": "💎"
+      },
+      "diamond": {
+        "name": "Diamond",
+        "effect": "Extremely valuable gem",
+        "value": "[ROLL 3d6*50]",
+        "weight": 0.1,
+        "description": "The hardest and most brilliant of gems. A king's ransom in a tiny package.",
+        "rarity": "legendary",
+        "unicode_symbol": "💎"
+      }
+    },
+    
+    "art_objects": {
+      "silver_chalice": {
+        "name": "Silver Chalice",
+        "effect": "Valuable art object",
+        "value": "[ROLL 2d6*40]",
+        "weight": 2,
+        "description": "An ornate drinking cup of polished silver, engraved with religious symbols.",
+        "rarity": "rare",
+        "unicode_symbol": "🏆"
+      },
+      "golden_statuette": {
+        "name": "Golden Statuette",
+        "effect": "Valuable art object",
+        "value": "[ROLL 3d6*60]",
+        "weight": 3,
+        "description": "A small figure cast in gold, depicting an ancient hero or forgotten god.",
+        "rarity": "rare",
+        "unicode_symbol": "🏆"
+      },
+      "illuminated_manuscript": {
+        "name": "Illuminated Manuscript",
+        "effect": "Valuable knowledge",
+        "value": "[ROLL 2d6*80]",
+        "weight": 1,
+        "description": "Hand-copied text with beautiful illustrations. Contains knowledge of [RANDOM_CHOICE ['history', 'magic', 'alchemy', 'herbalism']].",
+        "rarity": "rare",
+        "unicode_symbol": "📖"
+      }
+    }
+  },
+  
+  "artifacts": {
+    "legendary_items": {
+      "crown_of_kings": {
+        "name": "Crown of the Ancient Kings",
+        "effect": "+3 CHA, +2 INT, Command Presence",
+        "cost": "Priceless",
+        "weight": 3,
+        "description": "A golden circlet set with seven gems, each representing a virtue of rulership.",
+        "rarity": "legendary",
+        "unicode_symbol": "👑",
+        "special": "NPCs more likely to follow commands, +5 to leadership rolls"
+      },
+      "blade_of_heroes": {
+        "name": "Durandal, Blade of Heroes",
+        "damage": "2d8+3",
+        "cost": "Priceless",
+        "weight": 4,
+        "description": "A legendary sword that has never known defeat. The blade glows with inner light.",
+        "rarity": "legendary",
+        "unicode_symbol": "⚔️",
+        "special": "Double damage vs evil, cannot be broken, glows in darkness"
+      },
+      "shield_of_faith": {
+        "name": "Aegis, Shield of Faith",
+        "defense": 5,
+        "cost": "Priceless", 
+        "weight": 8,
+        "description": "A divine shield that has protected champions of good for centuries.",
+        "rarity": "legendary",
+        "unicode_symbol": "🛡️",
+        "special": "Immunity to fear, reflects hostile magic 25% of the time"
+      },
+      "staff_of_the_archmage": {
+        "name": "Staff of the Archmage",
+        "damage": "1d8+INT+3",
+        "cost": "Priceless",
+        "weight": 4,
+        "description": "The legendary focus of the realm's greatest wizard. Power crackles along its length.",
+        "rarity": "legendary",
+        "unicode_symbol": "🏷️",
+        "special": "All spells cost 1 less MP, can cast any spell scroll without consuming it"
+      },
+      "ring_of_power": {
+        "name": "Ring of Ancient Power",
+        "effect": "+2 to all stats",
+        "cost": "Priceless",
+        "weight": 0.1,
+        "description": "A simple band that radiates immense magical energy. Its true origin is lost to time.",
+        "rarity": "legendary",
+        "unicode_symbol": "💍",
+        "special": "Regenerate 1 HP per hour, see invisible creatures"
+      }
+    }
+  },
+  
+  "loot_tables": {
+    "common_enemy_drops": {
+      "bandit": {
+        "gold": "[ROLL 1d6*5]",
+        "items": [
+          {"item": "rusty_sword", "chance": 60},
+          {"item": "leather_vest", "chance": 40},
+          {"item": "travel_rations", "chance": 80},
+          {"item": "torch", "chance": 30}
+        ]
+      },
+      "wild_animal": {
+        "gold": 0,
+        "items": [
+          {"item": "leather_hide", "chance": 70},
+          {"item": "travel_rations", "chance": 40},
+          {"item": "rare_herbs", "chance": 20}
+        ]
+      },
+      "goblin": {
+        "gold": "[ROLL 1d4*3]",
+        "items": [
+          {"item": "hunting_knife", "chance": 50},
+          {"item": "silver_coins", "chance": 60},
+          {"item": "strange_trinket", "chance": 30}
+        ]
+      }
+    },
+    
+    "merchant_inventories": {
+      "blacksmith": {
+        "weapons": [
+          {"item": "iron_sword", "stock": "[ROLL 1d3]"},
+          {"item": "battle_axe", "stock": "[ROLL 1d2]"},
+          {"item": "spear", "stock": "[ROLL 1d4]"},
+          {"item": "hunting_knife", "stock": "[ROLL 1d6]"}
+        ],
+        "armor": [
+          {"item": "chain_shirt", "stock": "[ROLL 1d2]"},
+          {"item": "iron_shield", "stock": "[ROLL 1d3]"},
+          {"item": "studded_leather", "stock": "[ROLL 1d2]"}
+        ],
+        "materials": [
+          {"item": "iron_ingot", "stock": "[ROLL 2d6]"}
+        ]
+      },
+      
+      "general_store": {
+        "consumables": [
+          {"item": "healing_potion", "stock": "[ROLL 1d4+1]"},
+          {"item": "travel_rations", "stock": "[ROLL 2d6]"},
+          {"item": "torch", "stock": "[ROLL 3d6]"}
+        ],
+        "tools": [
+          {"item": "rope", "stock": "[ROLL 1d3]"},
+          {"item": "grappling_hook", "stock": "[ROLL 1d2]"}
+        ]
+      },
+      
+      "tavern": {
+        "food_drink": [
+          {"item": "ale_mug", "stock": "unlimited"},
+          {"item": "feast_meal", "stock": "[ROLL 2d6]"},
+          {"item": "fresh_bread", "stock": "[ROLL 1d6+3]"}
+        ],
+        "rooms": {
+          "common_room": {"cost": 2, "description": "Straw mattress in shared room"},
+          "private_room": {"cost": 5, "description": "Small room with bed and washbasin"}
+        }
+      },
+      
+      "apothecary": {
+        "potions": [
+          {"item": "healing_potion", "stock": "[ROLL 1d6+2]"},
+          {"item": "greater_healing", "stock": "[ROLL 1d3]"},
+          {"item": "strength_elixir", "stock": "[ROLL 1d2+1]"},
+          {"item": "poison_antidote", "stock": "[ROLL 1d4]"}
+        ],
+        "scrolls": [
+          {"item": "scroll_of_light", "stock": "[ROLL 1d4]"},
+          {"item": "scroll_of_healing", "stock": "[ROLL 1d3]"}
+        ],
+        "materials": [
+          {"item": "rare_herbs", "stock": "[ROLL 1d6]"}
+        ]
+      }
+    },
+    
+    "treasure_hoards": {
+      "small_cache": {
+        "gold": "[ROLL 2d6*10]",
+        "items": [
+          {"type": "common_item", "chance": 80},
+          {"type": "uncommon_item", "chance": 40},
+          {"type": "gem", "chance": 30}
+        ]
+      },
+      
+      "medium_hoard": {
+        "gold": "[ROLL 3d6*25]",
+        "items": [
+          {"type": "uncommon_item", "chance": 70},
+          {"type": "rare_item", "chance": 40}, 
+          {"type": "gem", "chance": 60},
+          {"type": "art_object", "chance": 30}
+        ]
+      },
+      
+      "large_treasure": {
+        "gold": "[ROLL 4d6*50]",
+        "items": [
+          {"type": "rare_item", "chance": 80},
+          {"type": "legendary_item", "chance": 20},
+          {"type": "gem", "chance": 90},
+          {"type": "art_object", "chance": 60}
+        ]
+      },
+      
+      "dragon_hoard": {
+        "gold": "[ROLL 6d6*100]",
+        "items": [
+          {"type": "legendary_item", "chance": 60},
+          {"type": "rare_item", "chance": 100},
+          {"type": "gem", "chance": 100},
+          {"type": "art_object", "chance": 80},
+          {"type": "artifact", "chance": 30}
+        ]
+      }
+    },
+    
+    "quest_rewards": {
+      "village_quest": {
+        "gold": "[ROLL 2d6*20]",
+        "items": [
+          {"item": "healing_potion", "quantity": "[ROLL 1d3]"},
+          {"type": "common_equipment", "chance": 60}
+        ],
+        "reputation": "+1 with village"
+      },
+      
+      "town_quest": {
+        "gold": "[ROLL 3d6*50]",
+        "items": [
+          {"type": "uncommon_equipment", "chance": 80},
+          {"item": "greater_healing", "quantity": "[ROLL 1d2]"}
+        ],
+        "reputation": "+2 with town, access to better merchants"
+      },
+      
+      "noble_quest": {
+        "gold": "[ROLL 4d6*100]",
+        "items": [
+          {"type": "rare_equipment", "chance": 60},
+          {"type": "magical_item", "chance": 40}
+        ],
+        "reputation": "+3 with nobility, title granted"
+      },
+      
+      "royal_quest": {
+        "gold": "[ROLL 6d6*200]",
+        "items": [
+          {"type": "legendary_item", "chance": 80},
+          {"type": "artifact", "chance": 30}
+        ],
+        "reputation": "Knighthood, lands granted"
+      }
+    }
+  },
+  
+  "special_item_properties": {
+    "magical_effects": [
+      "Glows with soft light in darkness",
+      "Never rusts or dulls",
+      "Feels warm to the touch",
+      "Whispers encouragement to wielder",
+      "Changes color with wielder's mood",
+      "Repels insects and vermin",
+      "Self-repairing over time"
+    ],
+    
+    "cursed_effects": [
+      "Cannot be willingly discarded",
+      "Slowly drains wielder's luck",
+      "Attracts hostile magic",
+      "Whispers dark thoughts",
+      "Makes wielder prone to anger",
+      "Causes nightmares when carried"
+    ],
+    
+    "enhancement_types": [
+      "+1 to attack rolls",
+      "+1 to damage",
+      "+1 to defense",
+      "Resistance to one damage type",
+      "Bonus to one skill or stat",
+      "Special ability once per day"
+    ]
+  },
+  
+  "item_generation_rules": {
+    "random_item_by_rarity": {
+      "common": "[PERCENTAGE_CHANCE 60]",
+      "uncommon": "[PERCENTAGE_CHANCE 25]", 
+      "rare": "[PERCENTAGE_CHANCE 12]",
+      "legendary": "[PERCENTAGE_CHANCE 3]"
+    },
+    
+    "condition_modifiers": {
+      "broken": {"cost_modifier": 0.1, "effectiveness": 0.5},
+      "worn": {"cost_modifier": 0.5, "effectiveness": 0.8},
+      "good": {"cost_modifier": 1.0, "effectiveness": 1.0},
+      "excellent": {"cost_modifier": 1.5, "effectiveness": 1.1},
+      "masterwork": {"cost_modifier": 2.0, "effectiveness": 1.2}
+    },
+    
+    "naming_conventions": {
+      "weapon_prefixes": ["Sharp", "Keen", "Swift", "Heavy", "Light", "Cold", "Burning"],
+      "weapon_suffixes": ["of Striking", "of Power", "of Speed", "of the Warrior", "of Glory"],
+      "armor_prefixes": ["Strong", "Light", "Heavy", "Blessed", "Sturdy", "Fine"],
+      "armor_suffixes": ["of Protection", "of the Guardian", "of Courage", "of Endurance"]
+    }
+  }
+}

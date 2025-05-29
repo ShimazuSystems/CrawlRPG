@@ -1,0 +1,693 @@
+{
+  "database_version": "1.0",
+  "world_theme": "European Medieval Overworld",
+  "default_starting_location": "village_square",
+  
+  "rooms": {
+    "outdoor_areas": {
+      "forest_clearing": {
+        "description_template": "You stand in a [RANDOM_CHOICE sizes] clearing surrounded by [RANDOM_CHOICE tree_types]. [RANDOM_CHOICE atmosphere]",
+        "sizes": ["small", "peaceful", "sun-dappled", "moss-covered", "ancient"],
+        "tree_types": ["towering oaks", "dense pines", "silver birches", "gnarled willows", "ancient elms"],
+        "atmosphere": [
+          "Sunlight filters through the canopy, creating dancing patterns on the forest floor",
+          "The air is thick with the scent of pine and wildflowers",
+          "Strange mushrooms glow faintly in the shadows between trees",
+          "Birds chirp overhead while squirrels chatter in the branches",
+          "A gentle breeze rustles the leaves, carrying the sound of distant water"
+        ],
+        "common_features": ["fallen logs", "berry bushes", "mushroom circles", "animal tracks", "hidden paths"],
+        "encounter_chance": 0.3,
+        "loot_chance": 0.4,
+        "exits": ["north", "south", "east", "west", "path"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🌲    🌲    🌲 ║",
+          "║               ║",
+          "║   🌸   🧙   🍄 ║",
+          "║               ║",
+          "║ 🌲    🌲    🌲 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "village_square": {
+        "description_template": "The heart of [RANDOM_CHOICE village_names] spreads before you. [RANDOM_CHOICE square_features]",
+        "village_names": ["Millhaven", "Oakenford", "Thornwick", "Greendale", "Bramblewood"],
+        "square_features": [
+          "A weathered stone well sits at the center, surrounded by cobblestones",
+          "Market stalls line the edges, filled with local goods and produce",
+          "A wooden notice board displays bounties and local announcements",
+          "Children play while adults conduct their daily business",
+          "The local militia practices formations near the old oak tree"
+        ],
+        "common_features": ["market stalls", "stone well", "notice board", "village folk", "merchant carts"],
+        "encounter_chance": 0.1,
+        "loot_chance": 0.2,
+        "exits": ["tavern", "blacksmith", "chapel", "north_road", "south_road", "east_path", "west_path"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🏪   🏠   ⛪ ║",
+          "║               ║",
+          "║     🧙🚰     ║",
+          "║               ║",
+          "║ 🏪   🏠   🔨 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "country_road": {
+        "description_template": "A [RANDOM_CHOICE road_types] road stretches [RANDOM_CHOICE directions]. [RANDOM_CHOICE road_features]",
+        "road_types": ["well-worn dirt", "cobblestone", "muddy", "winding", "ancient stone"],
+        "directions": ["north to south", "east to west", "into the distance", "toward the horizon"],
+        "road_features": [
+          "Merchant wagons have left deep ruts in the packed earth",
+          "Wildflowers grow along the roadside, attracting butterflies",
+          "Old milestones mark the distance to nearby settlements",
+          "A gentle brook runs parallel to the road, babbling softly",
+          "Travelers have worn smooth stones into the path over centuries"
+        ],
+        "common_features": ["wagon ruts", "milestones", "roadside flowers", "traveler's rest", "signposts"],
+        "encounter_chance": 0.4,
+        "loot_chance": 0.3,
+        "exits": ["north", "south", "east", "west", "forest_path", "village_entrance"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║       │       ║",
+          "║   🌼  │  🌼   ║",
+          "║       🧙       ║",
+          "║   🌼  │  🌼   ║",
+          "║       │       ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "meadow": {
+        "description_template": "Rolling [RANDOM_CHOICE meadow_types] stretch as far as the eye can see. [RANDOM_CHOICE meadow_atmosphere]",
+        "meadow_types": ["green pastures", "wildflower fields", "golden grasslands", "herb-filled meadows"],
+        "meadow_atmosphere": [
+          "Sheep graze peacefully while a shepherd watches from afar",
+          "Butterflies dance among the colorful wildflowers",
+          "The sweet scent of clover and lavender fills the air",
+          "A gentle breeze creates waves across the tall grass",
+          "Bees buzz lazily from flower to flower in the warm sunshine"
+        ],
+        "common_features": ["wildflowers", "grazing animals", "bee hives", "shepherd's hut", "stone fences"],
+        "encounter_chance": 0.2,
+        "loot_chance": 0.5,
+        "exits": ["north", "south", "east", "west", "farmstead", "forest_edge"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🌸 🐑 🌸 🐑 🌸 ║",
+          "║               ║",
+          "║ 🌼     🧙     🌼 ║",
+          "║               ║",
+          "║ 🌸 🐑 🌸 🐑 🌸 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "riverside": {
+        "description_template": "A [RANDOM_CHOICE river_types] flows [RANDOM_CHOICE flow_direction] beside a [RANDOM_CHOICE bank_types] bank. [RANDOM_CHOICE water_features]",
+        "river_types": ["crystal-clear stream", "rushing river", "babbling brook", "lazy river", "mountain stream"],
+        "flow_direction": ["swiftly eastward", "gently southward", "toward the distant sea", "through the valley"],
+        "bank_types": ["grassy", "rocky", "muddy", "flower-lined", "tree-shaded"],
+        "water_features": [
+          "Trout dart between the smooth river stones",
+          "A wooden dock extends into the deeper water",
+          "Cattails and reeds sway gently in the current",
+          "An old water wheel turns slowly at the river's edge",
+          "Stepping stones cross to the opposite bank"
+        ],
+        "common_features": ["fishing spots", "water wheel", "dock", "stepping stones", "river crossing"],
+        "encounter_chance": 0.3,
+        "loot_chance": 0.4,
+        "exits": ["upstream", "downstream", "bridge", "ford", "mill", "fishing_village"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🌲           🌲 ║",
+          "║   ≋≋≋≋≋≋≋≋≋   ║",
+          "║   ≋≋≋🧙≋≋≋≋   ║",
+          "║   ≋≋≋≋≋≋≋≋≋   ║",
+          "║ 🌲           🌲 ║",
+          "╚═══════════════╝"
+        ]
+      }
+    },
+    
+    "building_interiors": {
+      "tavern_common_room": {
+        "description_template": "The [RANDOM_CHOICE tavern_names] buzzes with [RANDOM_CHOICE tavern_atmosphere]. [RANDOM_CHOICE tavern_details]",
+        "tavern_names": ["Prancing Pony", "Golden Griffin", "Wanderer's Rest", "Stag and Hound", "Merry Miller"],
+        "tavern_atmosphere": [
+          "lively conversation and the clink of ale mugs",
+          "warm firelight and the smell of hearty stew",
+          "traveling merchants sharing tales of distant lands",
+          "local farmers discussing the weather and crops",
+          "the sound of dice rattling and coins changing hands"
+        ],
+        "tavern_details": [
+          "A massive stone fireplace dominates one wall, casting dancing shadows",
+          "Wooden tables and benches fill the room, worn smooth by countless patrons",
+          "Trophy heads of boars and deer hang from the timber beams",
+          "A curved bar serves ale from wooden kegs lined along the wall",
+          "Upstairs rooms offer respite for weary travelers"
+        ],
+        "common_features": ["fireplace", "bar", "tables", "stairs to rooms", "kitchen door"],
+        "encounter_chance": 0.6,
+        "loot_chance": 0.2,
+        "exits": ["outside", "upstairs", "kitchen", "cellar", "stables"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🍺   🍺   🍺 ║",
+          "║   🪑 🪑 🪑   ║",
+          "║ 🔥     🧙     ║",
+          "║   🪑 🪑 🪑   ║",
+          "║ 🚪         ⬆️ ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "blacksmith_workshop": {
+        "description_template": "The village smithy rings with [RANDOM_CHOICE forge_sounds]. [RANDOM_CHOICE smithy_details]",
+        "forge_sounds": [
+          "the rhythmic hammering of metal on anvil",
+          "the roar of the forge fire and hiss of cooling steel",
+          "the steady bellows pumping air into glowing coals",
+          "the scrape of files shaping heated iron"
+        ],
+        "smithy_details": [
+          "Sparks fly as the blacksmith works red-hot iron into shape",
+          "Completed weapons and tools hang from hooks along the walls",
+          "A massive stone forge dominates the center of the workshop",
+          "Barrels of water stand ready to quench heated metal",
+          "The acrid smell of coal smoke and hot metal fills the air"
+        ],
+        "common_features": ["forge", "anvil", "bellows", "weapon racks", "tool displays"],
+        "encounter_chance": 0.3,
+        "loot_chance": 0.7,
+        "exits": ["outside", "back_room", "storage"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ ⚔️   ⚔️   ⚔️ ║",
+          "║               ║",
+          "║ 🔥 ⚒️ 🧙 ⚒️   ║",
+          "║               ║",
+          "║ 🛡️   🛡️   🛡️ ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "village_chapel": {
+        "description_template": "The modest [RANDOM_CHOICE chapel_dedication] radiates [RANDOM_CHOICE holy_atmosphere]. [RANDOM_CHOICE chapel_features]",
+        "chapel_dedication": [
+          "chapel dedicated to the harvest goddess",
+          "shrine to the patron saint of travelers",
+          "temple honoring the light of knowledge",
+          "sanctuary blessed by healing spirits"
+        ],
+        "holy_atmosphere": [
+          "peace and tranquility",
+          "warmth and comfort",
+          "divine presence",
+          "sacred serenity"
+        ],
+        "chapel_features": [
+          "Stained glass windows cast colorful patterns across stone floors",
+          "Wooden pews face a simple altar adorned with fresh flowers",
+          "Candles flicker in wall sconces, casting gentle shadows",
+          "A small bell tower rises above the peaked roof",
+          "Offerings of grain and fruit rest before painted icons"
+        ],
+        "common_features": ["altar", "pews", "candles", "holy symbols", "donation box"],
+        "encounter_chance": 0.1,
+        "loot_chance": 0.3,
+        "exits": ["outside", "bell_tower", "vestry", "cemetery"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║       ✝️       ║",
+          "║   🕯️     🕯️   ║",
+          "║       🧙       ║",
+          "║ 🪑 🪑 🪑 🪑 🪑 ║",
+          "║       🚪       ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "merchant_shop": {
+        "description_template": "The [RANDOM_CHOICE shop_types] displays [RANDOM_CHOICE shop_contents]. [RANDOM_CHOICE shop_atmosphere]",
+        "shop_types": [
+          "general goods store",
+          "apothecary's shop",
+          "clothier's boutique",
+          "trader's emporium"
+        ],
+        "shop_contents": [
+          "shelves packed with useful items and curiosities",
+          "bolts of fine cloth and leather goods",
+          "bottles of potions and herbal remedies",
+          "imported goods from distant kingdoms"
+        ],
+        "shop_atmosphere": [
+          "The shopkeeper greets you with a practiced smile",
+          "Dust motes dance in sunbeams streaming through the windows",
+          "The scent of spices and old parchment fills the air",
+          "Customers browse while the merchant tallies accounts"
+        ],
+        "common_features": ["counter", "shelves", "storage boxes", "scales", "cash box"],
+        "encounter_chance": 0.4,
+        "loot_chance": 0.8,
+        "exits": ["outside", "back_room", "storage"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 📦 📦 📦 📦 📦 ║",
+          "║               ║",
+          "║ 🧙     💰     ║",
+          "║               ║",
+          "║ 📦 📦 📦 📦 📦 ║",
+          "╚═══════════════╝"
+        ]
+      },
+      
+      "village_home": {
+        "description_template": "A [RANDOM_CHOICE home_types] cottage welcomes you with [RANDOM_CHOICE home_atmosphere]. [RANDOM_CHOICE home_details]",
+        "home_types": ["cozy thatched-roof", "modest stone", "timber-framed", "whitewashed"],
+        "home_atmosphere": [
+          "the warmth of family life",
+          "the smell of baking bread",
+          "comfortable simplicity",
+          "well-worn hospitality"
+        ],
+        "home_details": [
+          "A spinning wheel sits by the window, basket of wool nearby",
+          "Clay pots and wooden bowls line the simple kitchen shelves",
+          "A small garden visible through the back door grows herbs and vegetables",
+          "Children's toys scattered on the rushes covering the floor",
+          "A cat sleeps peacefully by the glowing hearth"
+        ],
+        "common_features": ["hearth", "table", "chairs", "beds", "kitchen items"],
+        "encounter_chance": 0.2,
+        "loot_chance": 0.4,
+        "exits": ["outside", "upstairs", "garden", "cellar"],
+        "unicode_map": [
+          "╔═══════════════╗",
+          "║ 🛏️         🛏️ ║",
+          "║               ║",
+          "║ 🔥   🧙   🪑 ║",
+          "║               ║",
+          "║ 🚪   🪑   🍞 ║",
+          "╚═══════════════╝"
+        ]
+      }
+    }
+  },
+  
+  "locations": {
+    "settlements": {
+      "village": {
+        "name_templates": ["[RANDOM_CHOICE prefixes][RANDOM_CHOICE suffixes]"],
+        "prefixes": ["Green", "Oak", "Thorn", "Mill", "Stone", "River", "Bramble", "Golden", "Silver", "Elm"],
+        "suffixes": ["haven", "ford", "wick", "dale", "wood", "field", "bridge", "town", "mere", "hill"],
+        "population": "[ROLL 2d6*25]",
+        "buildings": [
+          "Village Square",
+          "Tavern/Inn",
+          "Blacksmith",
+          "Chapel/Shrine", 
+          "General Store",
+          "[ROLL 1d6+3] Houses",
+          "[RANDOM_CHOICE special_buildings]"
+        ],
+        "special_buildings": ["Mill", "Stable", "Healer's Hut", "Elder's House", "Granary", "Market Hall"],
+        "notable_features": [
+          "Ancient oak tree in the square",
+          "Stone well blessed by local priest",
+          "Wooden palisade with watch towers",
+          "Small shrine to protective spirits",
+          "Market day brings traders from afar"
+        ]
+      },
+      
+      "town": {
+        "name_templates": ["[RANDOM_CHOICE town_prefixes] [RANDOM_CHOICE town_suffixes]"],
+        "town_prefixes": ["King's", "Lord's", "New", "Old", "High", "West", "East", "North", "South"],
+        "town_suffixes": ["market", "town", "borough", "port", "crossing", "haven", "gate", "hold"],
+        "population": "[ROLL 3d6*100]",
+        "buildings": [
+          "Town Square with fountain",
+          "Multiple Taverns and Inns",
+          "Blacksmith Guild",
+          "Large Church or Cathedral",
+          "Market Hall",
+          "Town Hall",
+          "Multiple Shops and Crafters",
+          "[ROLL 2d6+10] Houses"
+        ],
+        "special_features": [
+          "Stone walls with iron gates",
+          "Cobblestone streets",
+          "Guild halls for various crafts",
+          "Town guard barracks",
+          "Weekly market bringing distant traders"
+        ]
+      }
+    },
+    
+    "wilderness": {
+      "forest": {
+        "name_templates": ["[RANDOM_CHOICE forest_names] [RANDOM_CHOICE forest_types]"],
+        "forest_names": ["Whispering", "Ancient", "Darkwood", "Silverleaf", "Thornwood", "Misty"],
+        "forest_types": ["Woods", "Forest", "Grove", "Thicket", "Woodland"],
+        "characteristics": [
+          "Dense canopy blocks most sunlight",
+          "Ancient trees tower overhead",
+          "Winding paths lead deeper in",
+          "Wildlife sounds echo from shadows",
+          "Streams and clearings break the trees"
+        ],
+        "dangers": [
+          "Wild animals defending territory",
+          "Bandits hiding in the underbrush", 
+          "Easy to become lost without landmarks",
+          "Strange lights leading travelers astray"
+        ]
+      },
+      
+      "plains": {
+        "name_templates": ["[RANDOM_CHOICE plain_names] [RANDOM_CHOICE plain_types]"],
+        "plain_names": ["Golden", "Emerald", "Endless", "Windswept", "Sunlit", "Rolling"],
+        "plain_types": ["Plains", "Grasslands", "Meadows", "Fields", "Steppes"],
+        "characteristics": [
+          "Vast open spaces stretching to horizon",
+          "Tall grass waves in constant breeze",
+          "Occasional groves of trees provide shade",
+          "Farming communities dot the landscape",
+          "Well-traveled roads connect settlements"
+        ],
+        "features": [
+          "Herds of cattle and sheep",
+          "Windmills grinding grain",
+          "Stone circles of ancient origin",
+          "Merchant caravans on main roads"
+        ]
+      }
+    }
+  },
+  
+  "npcs": {
+    "villagers": {
+      "farmer": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE farmer_surnames]"],
+        "first_names": ["Thomas", "William", "Robert", "John", "Mary", "Elizabeth", "Margaret", "Catherine"],
+        "farmer_surnames": ["Barley", "Wheat", "Harvest", "Plowman", "Fields", "Acres", "Shepherd"],
+        "descriptions": [
+          "A weather-beaten [RANDOM_CHOICE gender] with calloused hands and earth-stained clothes",
+          "A sturdy [RANDOM_CHOICE gender] whose face shows years of working under the sun",
+          "A practical [RANDOM_CHOICE gender] with the quiet wisdom of one who knows the land"
+        ],
+        "gender": ["man", "woman"],
+        "dialogue": [
+          "Been a good year for the harvest, praise be.",
+          "The weather's been strange lately, mark my words.",
+          "Saw some odd lights in the forest last night.",
+          "Wolves been bothering the sheep again.",
+          "You look like you could use a hot meal and rest."
+        ],
+        "trades": ["grain", "vegetables", "livestock", "dairy", "wool"],
+        "stats": {
+          "hp": "[ROLL 2d6+6]",
+          "str": "[ROLL 2d6+6]",
+          "agi": "[ROLL 2d6+3]",
+          "int": "[ROLL 2d6+4]",
+          "con": "[ROLL 2d6+8]"
+        }
+      },
+      
+      "blacksmith": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE smith_surnames]"],
+        "smith_surnames": ["Smith", "Ironwright", "Hammerfall", "Steelborn", "Forgefire", "Anvil"],
+        "descriptions": [
+          "A powerful [RANDOM_CHOICE gender] with arms like tree trunks and soot-stained apron",
+          "A skilled [RANDOM_CHOICE gender] whose hammer rings true and whose steel never breaks",
+          "A master [RANDOM_CHOICE gender] craftsperson whose reputation draws customers from far lands"
+        ],
+        "dialogue": [
+          "Fine steel takes time and patience, no rushing quality work.",
+          "Bring me good ore and I'll craft you something special.",
+          "These old hands have shaped more metal than you've seen.",
+          "Adventurers always need good weapons, dangerous times ahead.",
+          "The forge burns hot today, perfect for weapon work."
+        ],
+        "trades": ["weapons", "armor", "tools", "horseshoes", "metal goods"],
+        "stats": {
+          "hp": "[ROLL 3d6+9]",
+          "str": "[ROLL 3d6+12]",
+          "agi": "[ROLL 2d6+3]",
+          "int": "[ROLL 2d6+6]",
+          "con": "[ROLL 3d6+9]"
+        }
+      },
+      
+      "tavern_keeper": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE tavern_surnames]"],
+        "tavern_surnames": ["Ale", "Brewster", "Innkeeper", "Hearth", "Barrel", "Mug", "Cellar"],
+        "descriptions": [
+          "A jovial [RANDOM_CHOICE gender] with a ready smile and generous spirit",
+          "A sharp-eyed [RANDOM_CHOICE gender] who knows every story and secret in town",
+          "A welcoming [RANDOM_CHOICE gender] whose establishment feels like home to weary travelers"
+        ],
+        "dialogue": [
+          "Welcome friend! What'll it be tonight?",
+          "Best ale in three villages, or your coin back!",
+          "Heard tell of strange happenings on the old road.",
+          "Travelers bring the most interesting stories.",
+          "Room and board for honest folk, no questions asked."
+        ],
+        "trades": ["ale", "wine", "meals", "lodging", "information"],
+        "stats": {
+          "hp": "[ROLL 2d6+8]",
+          "str": "[ROLL 2d6+6]",
+          "agi": "[ROLL 2d6+4]",
+          "int": "[ROLL 2d6+8]",
+          "con": "[ROLL 2d6+6]"
+        }
+      },
+      
+      "merchant": {
+        "name_templates": ["[RANDOM_CHOICE first_names] [RANDOM_CHOICE merchant_surnames]"],
+        "merchant_surnames": ["Goldsworth", "Silverberg", "Trader", "Coinpurse", "Merchant", "Goods"],
+        "descriptions": [
+          "A well-dressed [RANDOM_CHOICE gender] with keen eyes and many pouches",
+          "A traveled [RANDOM_CHOICE gender] whose cart holds wonders from distant lands",
+          "A shrewd [RANDOM_CHOICE gender] who knows the value of everything"
+        ],
+        "dialogue": [
+          "Quality goods at fair prices, something for everyone!",
+          "Came all the way from the capital with these fine wares.",
+          "Special discount for brave adventurers like yourself.",
+          "Dangerous roads these days, but profitable for those who dare.",
+          "Heard rumors of ancient treasures in the old ruins."
+        ],
+        "trades": ["general goods", "exotic items", "potions", "maps", "information"],
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "str": "[ROLL 2d6+3]",
+          "agi": "[ROLL 2d6+6]",
+          "int": "[ROLL 2d6+9]",
+          "con": "[ROLL 2d6+4]"
+        }
+      }
+    },
+    
+    "special_npcs": {
+      "village_elder": {
+        "name_templates": ["Elder [RANDOM_CHOICE first_names]"],
+        "descriptions": [
+          "An ancient [RANDOM_CHOICE gender] whose eyes hold decades of wisdom",
+          "A respected [RANDOM_CHOICE gender] whose word carries weight in all matters",
+          "A venerable [RANDOM_CHOICE gender] who remembers when things were different"
+        ],
+        "dialogue": [
+          "In my years, I've seen many changes come to this land.",
+          "The old ways are fading, but some knowledge must be preserved.",
+          "You have the look of one touched by destiny, young [adventurer].",
+          "There are things in these lands older than human memory.",
+          "Seek the old shrines if you would understand the true history."
+        ],
+        "special_abilities": ["Ancient Knowledge", "Village Authority", "Blessing Ritual"],
+        "stats": {
+          "hp": "[ROLL 1d6+3]",
+          "str": "[ROLL 1d6+1]",
+          "agi": "[ROLL 1d6+1]",
+          "int": "[ROLL 3d6+15]",
+          "con": "[ROLL 1d6+2]"
+        }
+      },
+      
+      "traveling_minstrel": {
+        "name_templates": ["[RANDOM_CHOICE first_names] the [RANDOM_CHOICE minstrel_titles]"],
+        "minstrel_titles": ["Songweaver", "Storyteller", "Wanderer", "Bard", "Lorekeeper", "Melodious"],
+        "descriptions": [
+          "A charismatic [RANDOM_CHOICE gender] with a lute and a voice like honey",
+          "A well-traveled [RANDOM_CHOICE gender] whose songs carry news from distant lands",
+          "An entertaining [RANDOM_CHOICE gender] who trades stories for coin and comfort"
+        ],
+        "dialogue": [
+          "Would you care to hear a song of heroes from ages past?",
+          "Every land has its legends, and I know them all.",
+          "Music soothes the savage beast, and the weary traveler too.",
+          "I've seen wonders beyond imagining in my travels.",
+          "A coin for a song, or a story for a story?"
+        ],
+        "special_abilities": ["Inspiring Song", "Lore Knowledge", "Persuasive Tale"],
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "str": "[ROLL 2d6+3]",
+          "agi": "[ROLL 2d6+6]",
+          "int": "[ROLL 2d6+9]",
+          "con": "[ROLL 2d6+3]"
+        }
+      }
+    }
+  },
+  
+  "world_lore": {
+    "kingdom": {
+      "name": "Realm of Aethermoor",
+      "ruler": "King Aldric the Just",
+      "capital": "Goldenhall",
+      "history": [
+        "Founded three centuries ago by warrior-king Aldric the First",
+        "Known for its fertile farmlands and skilled craftsmen",
+        "Protected by a network of fortified towns and loyal knights",
+        "Ancient magic still flows through sacred groves and stone circles",
+        "Recent troubles with bandits and strange creatures in the wilderness"
+      ],
+      "current_events": [
+        "Harvest festival approaching in three weeks",
+        "Increased patrols due to bandit activity on trade routes",
+        "Strange lights seen in the Darkwood Forest",
+        "Rumors of an ancient treasure buried in the old ruins",
+        "Traveling merchants report unusual animal behavior"
+      ]
+    },
+    
+    "local_legends": [
+      "The Ghost of Silverbridge appears on foggy nights",
+      "Treasure buried beneath the Old Oak during the last war",
+      "The Witch of Thornwood grants wishes for a price",
+      "Ancient knights sleep in the Barrow Hills, waiting for need",
+      "The Golden Stag leads worthy souls to hidden wisdom"
+    ],
+    
+    "points_of_interest": {
+      "ancient_ruins": {
+        "description": "Crumbling stone foundations of a civilization lost to time",
+        "danger_level": "Medium",
+        "rumors": [
+          "Built by a race that mastered both magic and stonework",
+          "Hidden passages lead to underground chambers",
+          "Guardians still protect the most sacred areas",
+          "Valuable artifacts remain for those brave enough to claim them"
+        ]
+      },
+      
+      "sacred_grove": {
+        "description": "A circle of ancient trees where druids once gathered",
+        "danger_level": "Low",
+        "rumors": [
+          "The trees whisper secrets to those who listen",
+          "Healing herbs grow nowhere else in the kingdom",
+          "Wild animals are strangely peaceful within the grove",
+          "The old gods still hold power in this place"
+        ]
+      },
+      
+      "bandit_camp": {
+        "description": "Hidden stronghold of outlaws who prey on travelers",
+        "danger_level": "High", 
+        "rumors": [
+          "Led by a former knight turned to darkness",
+          "Stolen goods from a dozen villages stored within",
+          "They know the secret paths through every forest",
+          "Local authorities offer substantial bounties for their capture"
+        ]
+      }
+    }
+  },
+  
+  "random_encounters": {
+    "road_encounters": [
+      {
+        "name": "Merchant Caravan",
+        "description": "A small convoy of traders protected by hired guards",
+        "reaction": "Friendly",
+        "outcomes": ["Trade opportunity", "Job offer as guard", "News and rumors"]
+      },
+      {
+        "name": "Traveling Pilgrims",
+        "description": "Religious folk on their way to a distant shrine",
+        "reaction": "Neutral",
+        "outcomes": ["Blessing ceremony", "Shared meal", "Religious lore"]
+      },
+      {
+        "name": "Bandits",
+        "description": "Desperate outlaws seeking easy prey",
+        "reaction": "Hostile",
+        "outcomes": ["Combat encounter", "Negotiation", "Chase scene"]
+      },
+      {
+        "name": "Wild Animals",
+        "description": "Wolves or bears defending their territory",
+        "reaction": "Cautious",
+        "outcomes": ["Animal taming", "Peaceful withdrawal", "Territorial fight"]
+      }
+    ],
+    
+    "forest_encounters": [
+      {
+        "name": "Hermit's Hut", 
+        "description": "A wise old recluse living alone in the woods",
+        "reaction": "Wary",
+        "outcomes": ["Ancient knowledge", "Herbal remedies", "Cryptic warnings"]
+      },
+      {
+        "name": "Fairy Ring",
+        "description": "A circle of mushrooms with strange properties",
+        "reaction": "Magical",
+        "outcomes": ["Magical blessing", "Teleportation", "Fey encounter"]
+      },
+      {
+        "name": "Poacher's Camp",
+        "description": "Illegal hunters working noble lands",
+        "reaction": "Suspicious",
+        "outcomes": ["Information trade", "Conflict with law", "Hunting partnership"]
+      }
+    ]
+  },
+  
+  "weather_system": {
+    "seasons": {
+      "spring": {
+        "description": "Mild weather with frequent rain showers",
+        "effects": ["Muddy roads", "Blooming flowers", "Active wildlife"],
+        "encounter_modifiers": {"animals": "+20%", "bandits": "-10%"}
+      },
+      "summer": {
+        "description": "Warm days with clear skies",
+        "effects": ["Dry roads", "Abundant food", "Increased travel"],
+        "encounter_modifiers": {"merchants": "+30%", "pilgrims": "+20%"}
+      },
+      "autumn": {
+        "description": "Cool air with harvest preparations",
+        "effects": ["Golden landscapes", "Harvest festivals", "Migrating animals"],
+        "encounter_modifiers": {"festivals": "+50%", "food_shortage": "-20%"}
+      },
+      "winter": {
+        "description": "Cold winds with occasional snow",
+        "effects": ["Dangerous travel", "Scarce food", "Desperate bandits"],
+        "encounter_modifiers": {"bandits": "+30%", "merchants": "-40%"}
+      }
+    }
+  }
+}

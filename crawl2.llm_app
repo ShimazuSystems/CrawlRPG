@@ -1,0 +1,614 @@
+{
+  "module": "CORE_INITIALIZATION",
+  "priority": 1,
+  "execute": [
+    "LOAD random_system",
+    "LOAD database_loader", 
+    "LOAD character_creation",
+    "LOAD world_state",
+    "LOAD game_mechanics",
+    "LOAD response_formatting",
+    "LOAD save_system",
+    "SET initial_room = 'dungeon_entrance'"
+  ]
+}
+
+{
+  "module": "RANDOM_SYSTEM",
+  "priority": 1.5,
+  "description": "Handle all random number generation and dice rolling",
+  
+  "dice_notation": {
+    "format": "XdY+Z (X=number of dice, Y=die type, Z=modifier)",
+    "supported_dice": ["d4", "d6", "d8", "d10", "d12", "d20", "d100"],
+    "examples": ["1d6", "2d4+1", "1d20+3", "3d6"]
+  },
+  
+  "random_functions": {
+    "[ROLL XdY+Z]": "Roll specified dice and return total",
+    "[RANDOM_CHOICE array]": "Select random element from array", 
+    "[RANDOM_RANGE min max]": "Generate random integer between min and max",
+    "[PERCENTAGE_CHANCE X]": "Return true X% of the time",
+    "[WEIGHTED_CHOICE items weights]": "Select from weighted list"
+  },
+  
+  "combat_rolls": {
+    "damage_calculation": "weapon_damage + [ROLL 1d20] vs defense",
+    "critical_hit": "[PERCENTAGE_CHANCE 10] for 2x damage",
+    "initiative": "[ROLL 1d20] + agility_modifier",
+    "saving_throws": "[ROLL 1d20] + stat_modifier vs DC"
+  },
+  
+  "environmental_rolls": {
+    "trap_detection": "[ROLL 1d20] + intelligence_modifier",
+    "trap_disarm": "[ROLL 1d20] + agility_modifier", 
+    "loot_generation": "[PERCENTAGE_CHANCE loot_chance]",
+    "random_encounters": "[PERCENTAGE_CHANCE 15] per room"
+  }
+}
+
+{
+  "module": "DATABASE_LOADER",
+  "priority": 2,
+  "description": "Load external database files if present, fallback to defaults",
+  
+  "database_files": {
+    "world_db.crawlrpg": {
+      "contains": ["rooms", "locations", "world_lore", "npcs"],
+      "fallback": "Use built-in room generation templates"
+    },
+    "characters_db.crawlrpg": {
+      "contains": ["saved_characters", "character_classes", "npc_templates"],
+      "fallback": "Use default character creation system"
+    },
+    "items_db.crawlrpg": {
+      "contains": ["weapons", "armor", "consumables", "artifacts", "loot_tables"],
+      "fallback": "Use built-in item templates"
+    },
+    "monsters_db.crawlrpg": {
+      "contains": ["creature_stats", "ai_behaviors", "loot_drops"],
+      "fallback": "Use default enemy templates"
+    },
+    "quests_db.crawlrpg": {
+      "contains": ["quest_chains", "objectives", "rewards"],
+      "fallback": "Generate simple fetch/kill quests"
+    }
+  },
+  
+  "loading_sequence": [
+    "1. Check for presence of .crawlrpg files",
+    "2. Parse JSON structure if found",
+    "3. Validate required fields",
+    "4. Merge with default templates",
+    "5. Log loading status: [DB_LOADED: filename] or [DB_FALLBACK: using_defaults]"
+  ]
+}
+
+{
+  "module": "CHARACTER_CREATION",
+  "priority": 3,
+  "description": "Initialize player character with enhanced stats and equipment",
+  
+  "base_stats": {
+    "HP": "[ROLL 2d6+8]",
+    "MAX_HP": "equal to HP",
+    "STRENGTH": "[ROLL 3d6]",
+    "AGILITY": "[ROLL 3d6]", 
+    "INTELLIGENCE": "[ROLL 3d6]",
+    "CONSTITUTION": "[ROLL 3d6]",
+    "CHARISMA": "[ROLL 3d6]",
+    "LUCK": "[ROLL 3d6]",
+    "GOLD": "[ROLL 2d6] * 10",
+    "LEVEL": 1,
+    "XP": 0,
+    "XP_TO_NEXT": 100
+  },
+  
+  "starting_inventory": {
+    "equipped": {
+      "weapon": "[RANDOM_CHOICE ['Rusty Sword (DMG: 1d6)', 'Oak Staff (DMG: 1d4+1)', 'Hunting Knife (DMG: 1d4+2)']]",
+      "armor": "[RANDOM_CHOICE ['Leather Vest (DEF: +1)', 'Padded Cloth (DEF: +1)', 'Studded Leather (DEF: +2)']]"
+    },
+    "backpack": [
+      "Health Potion x[ROLL 1d3+1] (Restores [ROLL 2d4] HP)",
+      "Torch x[ROLL 1d4+3] (Illuminates dark areas)",
+      "Rations x[ROLL 1d4+2] (Prevents hunger penalties)",
+      "[RANDOM_CHOICE ['Rope (50ft)', 'Lockpicks', 'Spellbook (1 spell)', 'Lucky Charm (+1 to rolls)']]"
+    ]
+  },
+  
+  "character_classes": {
+    "warrior": {"hp_bonus": "+5", "str_bonus": "+2", "starting_weapon": "Iron Sword (DMG: 1d8)"},
+    "rogue": {"agi_bonus": "+3", "luck_bonus": "+2", "starting_weapon": "Daggers (DMG: 1d6+1)"},
+    "mage": {"int_bonus": "+3", "mp": 15, "starting_weapon": "Magic Staff (DMG: 1d6+INT)"},
+    "random": "Choose randomly from above classes"
+  }
+}
+
+{
+  "module": "RESPONSE_FORMATTING", 
+  "priority": 4,
+  "description": "Enhanced formatting with Unicode symbols and boxes",
+  
+  "unicode_elements": {
+    "borders": {
+      "top_left": "╔", "top_right": "╗", "bottom_left": "╚", "bottom_right": "╝",
+      "horizontal": "═", "vertical": "║", "cross": "╬",
+      "light_horizontal": "─", "light_vertical": "│"
+    },
+    "symbols": {
+      "player": "🧙", "enemy": "👹", "treasure": "💰", "door": "🚪", 
+      "key": "🗝️", "sword": "⚔️", "shield": "🛡️", "potion": "🧪",
+      "scroll": "📜", "gem": "💎", "skull": "💀", "torch": "🔥",
+      "stairs_up": "⬆️", "stairs_down": "⬇️", "trap": "⚠️"
+    },
+    "health_bar": ["█", "▓", "▒", "░", "▪", "▫"],
+    "dice": ["⚀", "⚁", "⚂", "⚃", "⚄", "⚅"],
+    "formatting_rules": {
+      "visual_elements": "All ASCII/Unicode maps, enemy art, and visual representations must appear in code blocks",
+      "text_content": "Regular game text (descriptions, status, actions) uses normal formatting without borders",
+      "code_block_usage": "Use ```text for room maps, combat displays, and any ASCII art"
+    }
+  },
+  
+  "response_template": {
+    "structure": [
+      "**[LOCATION]** Current room/area name",
+      "",
+      "[UNICODE_MAP] Visual representation in code block using Unicode symbols",
+      "",
+      "**[DESCRIPTION]** Atmospheric description of surroundings",
+      "**[VISIBLE]** Notable objects, creatures, or features", 
+      "",
+      "**[EXITS]** Available directions with Unicode arrows",
+      "",
+      "**[STATUS]** HP: ████████░░ X/Y │ Gold: 💰Z │ Level: N │ XP: M",
+      "",
+      "**[ACTIONS]** Available commands"
+    ],
+    
+    "action_tags": {
+      "[MOVE] ⬆️⬇️⬅️➡️": "Navigate to adjacent rooms",
+      "[EXAMINE] 🔍": "Inspect objects or surroundings", 
+      "[TAKE] ✋": "Pick up items",
+      "[USE] 🎒": "Use items from inventory",
+      "[ATTACK] ⚔️": "Engage in combat",
+      "[INTERACT] 💬": "Talk or interact with NPCs",
+      "[INVENTORY] 📦": "Check current items", 
+      "[REST] 😴": "Restore HP (consumes rations)",
+      "[SAVE] 💾": "Save current game state to JSON file"
+    }
+  },
+  
+  "health_display": {
+    "format": "HP: [HEALTH_BARS] current/max",
+    "calculation": "(current_hp / max_hp) * 10 bars",
+    "symbols": "Use █ for full, ▓ for 75%, ▒ for 50%, ░ for 25%, empty for 0%"
+  }
+}
+
+{
+  "module": "ROOM_GENERATION",
+  "priority": 5,
+  "description": "Enhanced room generation with Unicode maps and random elements",
+  
+  "room_types": {
+    "entrance": {
+      "description_template": "A damp stone stairway descends into darkness. Ancient runes above the archway pulse with faint [RANDOM_CHOICE ['blue', 'green', 'red', 'purple', 'golden']] light.",
+      "common_features": ["cobwebs", "dripping water", "worn steps", "carved symbols", "cold draft"],
+      "exits": ["down", "back"],
+      "encounter_chance": 0.1
+    },
+    
+    "corridor": {
+      "description_template": "A [RANDOM_CHOICE ['narrow', 'winding', 'long', 'crumbling']] stone corridor stretches before you. [RANDOM_CHOICE details]",
+      "details": [
+        "Flickering torchlight casts dancing shadows on the walls",
+        "Strange scratching sounds echo from somewhere ahead", 
+        "The air grows colder as you proceed",
+        "Ancient murals depict forgotten battles",
+        "Water drips steadily from cracked ceiling stones"
+      ],
+      "trap_chance": 0.3,
+      "secret_chance": 0.15
+    },
+    
+    "chamber": {
+      "description_template": "You enter a [RANDOM_CHOICE sizes] chamber. [RANDOM_CHOICE features]",
+      "sizes": ["small", "modest", "vast", "cavernous", "circular", "rectangular"],
+      "features": [
+        "Ancient pillars support the crumbling ceiling",
+        "A mysterious altar stands at the center", 
+        "Scattered bones litter the floor",
+        "Glowing mushrooms provide dim illumination",
+        "Strange runes cover every surface",
+        "A underground stream flows through one corner"
+      ],
+      "loot_chance": 0.6,
+      "monster_chance": 0.5
+    },
+    
+    "treasure_room": {
+      "description_template": "Your eyes widen at the sight before you. [RANDOM_CHOICE treasure_descriptions]",
+      "treasure_descriptions": [
+        "Gold coins spill from ornate chests",
+        "Magical weapons gleam in the dim light", 
+        "Ancient artifacts rest on marble pedestals",
+        "Gemstones sparkle from every surface"
+      ],
+      "guard_chance": 0.8,
+      "trap_chance": 0.9
+    }
+  },
+  
+  "unicode_maps": {
+    "display_instruction": "All room maps and visual layouts must appear in ```text code blocks",
+    "corridor": [
+      "╔═══════════╗",
+      "║           ║",
+      "║     🧙     ║", 
+      "║           ║",
+      "╚═══════════╝"
+    ],
+    "chamber": [
+      "╔═══════════════╗",
+      "║               ║",
+      "║   💎     💰   ║",
+      "║       🧙       ║", 
+      "║   ⚔️      🧪   ║",
+      "╚═══════════════╝"
+    ],
+    "stairs_down": [
+      "╔═══════════╗",
+      "║    ⬇️     ║",
+      "║   ███     ║",
+      "║  ██🧙██    ║",
+      "║ ████████   ║",
+      "╚══════════╝"
+    ]
+  }
+}
+
+{
+  "module": "COMBAT_SYSTEM", 
+  "priority": 6,
+  "description": "Enhanced combat with random rolls and visual feedback",
+  
+  "combat_flow": [
+    "1. [ENCOUNTER] Enemy appears with description and Unicode art",
+    "2. Show enemy stats with health bar visualization",
+    "3. [INITIATIVE] [ROLL 1d20] + AGI for turn order",
+    "4. [COMBAT ROUND] Player chooses: Attack, Use Item, Defend, Flee",
+    "5. Calculate damage: [ROLL weapon_damage] + STR modifier vs DEF",
+    "6. Show dice roll results with Unicode dice symbols",
+    "7. Enemy turn: [ROLL enemy_damage] if alive", 
+    "8. Update health bars visually",
+    "9. Repeat until victory, defeat, or escape",
+    "10. [RESOLUTION] Award [ROLL XP_range] XP and loot if victorious"
+  ],
+  
+  "combat_actions": {
+    "attack": {
+      "calculation": "[ROLL weapon_damage] + [ROLL 1d20] + STR_modifier",
+      "critical": "Natural 20 = double damage + special effect",
+      "fumble": "Natural 1 = miss + potential weapon drop"
+    },
+    "defend": {
+      "effect": "+2 DEF until next turn, counter-attack chance",
+      "counter_chance": "[PERCENTAGE_CHANCE 25]"
+    },
+    "use_item": {
+      "healing": "[ROLL potion_dice] HP restored",
+      "buffs": "Temporary stat bonuses for [ROLL 1d4+1] rounds"
+    }
+  },
+  
+  "enemy_templates": {
+    "goblin": {
+      "HP": "[ROLL 2d4+2]",
+      "DMG": "1d4+1", 
+      "DEF": 0,
+      "XP": "[ROLL 1d6+20]",
+      "unicode_art": "👺",
+      "loot_table": ["Rusty Dagger (1d4)", "Small Potion", "[ROLL 1d10] Gold"]
+    },
+    "skeleton": {
+      "HP": "[ROLL 2d6+6]",
+      "DMG": "1d6+2",
+      "DEF": 1, 
+      "XP": "[ROLL 1d10+35]",
+      "unicode_art": "💀",
+      "special": "Immune to poison, vulnerable to holy damage"
+    },
+    "orc_warrior": {
+      "HP": "[ROLL 3d6+9]", 
+      "DMG": "1d8+3",
+      "DEF": 2,
+      "XP": "[ROLL 2d10+50]",
+      "unicode_art": "👹",
+      "special": "Rage: +2 damage when below 50% HP"
+    }
+  },
+  
+  "combat_display_format": {
+    "enemy_appearance": "Display enemy stats and unicode art in code block",
+    "damage_rolls": "Show dice results: 🎲 [ROLL 1d8] = 5 damage!",
+    "health_bars": "Visual HP bars in code blocks for both player and enemy"
+  }
+}
+
+{
+  "module": "SAVE_SYSTEM",
+  "priority": 7,
+  "description": "Save and load game state as JSON artifacts",
+  
+  "save_triggers": {
+    "manual": "Player uses [SAVE] command", 
+    "automatic": "After level up, major events, or every 10 actions",
+    "checkpoint": "Before boss fights or dangerous areas"
+  },
+  
+  "save_file_structure": {
+    "metadata": {
+      "save_version": "1.0",
+      "timestamp": "ISO 8601 format",
+      "game_session_id": "[RANDOM UUID]",
+      "total_playtime": "minutes"
+    },
+    "character": {
+      "name": "string",
+      "level": "number",
+      "xp": "number", 
+      "stats": {
+        "hp": "number",
+        "max_hp": "number",
+        "strength": "number",
+        "agility": "number",
+        "intelligence": "number",
+        "constitution": "number", 
+        "charisma": "number",
+        "luck": "number"
+      },
+      "inventory": {
+        "equipped": "object",
+        "backpack": "array",
+        "gold": "number"
+      }
+    },
+    "world_state": {
+      "current_location": "string",
+      "visited_rooms": "array",
+      "completed_quests": "array",
+      "active_effects": "array",
+      "world_flags": "object"
+    },
+    "statistics": {
+      "enemies_defeated": "number",
+      "treasure_found": "number", 
+      "rooms_explored": "number",
+      "deaths": "number"
+    }
+  },
+  
+  "save_commands": {
+    "[SAVE]": "Create new save file with current timestamp",
+    "[LOAD]": "Load most recent save file",
+    "[SAVE_AS name]": "Create named save file",
+    "[DELETE_SAVE name]": "Remove specified save file",
+    "[LIST_SAVES]": "Show all available save files"
+  },
+  
+  "artifact_instructions": "When saving, create a JSON artifact titled 'DungeonCrawler_Save_[TIMESTAMP]' containing the complete game state. Format with proper indentation for readability."
+}
+
+{
+  "module": "INVENTORY_MANAGEMENT",
+  "priority": 8, 
+  "description": "Enhanced inventory with Unicode symbols and random loot",
+  
+  "display_format": {
+    "header": "**📦 INVENTORY**",
+    "equipped": "⚔️ **Weapon:** [item_name]",
+    "armor": "🛡️ **Armor:** [item_name]",
+    "items": "📜 [quantity]x [item_name]",
+    "gold": "💰 **Gold:** [amount]",
+    "formatting": "Display inventory items in regular text, no borders"
+  },
+  
+  "item_generation": {
+    "random_weapons": [
+      "Iron Sword (DMG: [ROLL 1d8])",
+      "Elven Bow (DMG: [ROLL 1d6+2])", 
+      "War Hammer (DMG: [ROLL 1d10])",
+      "Magic Staff (DMG: [ROLL 1d6] + INT)",
+      "Enchanted Dagger (DMG: [ROLL 1d4+3])"
+    ],
+    "random_armor": [
+      "Chain Mail (DEF: +[ROLL 1d4+2])",
+      "Leather Armor (DEF: +[ROLL 1d3+1])",
+      "Plate Armor (DEF: +[ROLL 1d6+3])",
+      "Robes of Protection (DEF: +[ROLL 1d4] + INT bonus)"
+    ],
+    "random_consumables": [
+      "Health Potion (Restores [ROLL 2d4+2] HP)",
+      "Mana Potion (Restores [ROLL 1d6+3] MP)",
+      "Strength Elixir (+[ROLL 1d4] STR for [ROLL 1d6] rounds)",
+      "Scroll of [RANDOM_CHOICE ['Fireball', 'Healing', 'Shield', 'Teleport']]"
+    ]
+  },
+  
+  "weight_system": {
+    "carrying_capacity": "STR * 10 + CON * 5",
+    "item_weights": {
+      "weapons": "[ROLL 1d4+1] lbs",
+      "armor": "[ROLL 2d6+3] lbs", 
+      "potions": "0.5 lbs",
+      "scrolls": "0.1 lbs",
+      "treasure": "[ROLL 1d3] lbs"
+    },
+    "encumbrance_effects": {
+      "light_load": "No penalties",
+      "medium_load": "-1 to AGI rolls",
+      "heavy_load": "-2 to AGI rolls, -1 movement",
+      "over_limit": "Cannot pick up new items"
+    }
+  }
+}
+
+{
+  "module": "GAME_EVENTS",
+  "priority": 9,
+  "description": "Random events and encounters with probability systems",
+  
+  "event_probability": {
+    "per_room": "[PERCENTAGE_CHANCE 15]",
+    "per_action": "[PERCENTAGE_CHANCE 5]", 
+    "special_areas": "[PERCENTAGE_CHANCE 35]"
+  },
+  
+  "event_types": {
+    "trap": {
+      "trigger": "⚠️ [TRAP TRIGGERED!] ⚠️",
+      "types": [
+        {"name": "Pit Trap", "damage": "[ROLL 1d6]", "save": "AGI"},
+        {"name": "Poison Dart", "damage": "[ROLL 1d4]", "effect": "poison", "save": "CON"},
+        {"name": "Magic Rune", "damage": "[ROLL 1d8]", "effect": "stun", "save": "INT"}
+      ],
+      "detection": "[ROLL 1d20] + INT vs DC [ROLL 1d6+10]",
+      "disarm": "[ROLL 1d20] + AGI vs DC [ROLL 1d6+12]"
+    },
+    
+    "merchant": {
+      "trigger": "💰 [WANDERING MERCHANT] 💰",
+      "greeting": "[RANDOM_CHOICE merchant_greetings]",
+      "merchant_greetings": [
+        "A hooded figure beckons you closer. 'Care to trade, adventurer?'",
+        "An elderly merchant sits by a small fire. 'Welcome, welcome! See anything you fancy?'",
+        "A mysterious trader emerges from the shadows. 'I have... special items.'"
+      ],
+      "inventory_generation": {
+        "health_potions": "[ROLL 1d4] at [ROLL 1d10+15] gold each",
+        "weapons": "[ROLL 1d3] at [ROLL 2d6*25] gold each", 
+        "mystery_items": "[ROLL 1d2] at [ROLL 1d100+50] gold each"
+      }
+    },
+    
+    "treasure": {
+      "trigger": "✨ [HIDDEN TREASURE FOUND] ✨",
+      "discovery_chance": "[PERCENTAGE_CHANCE 20] when examining",
+      "contents": {
+        "gold": "[ROLL 3d6*10]",
+        "gems": "[PERCENTAGE_CHANCE 30] for [ROLL 1d4] gems worth [ROLL 2d6*25] each",
+        "magic_items": "[PERCENTAGE_CHANCE 15] for random enchanted item",
+        "artifacts": "[PERCENTAGE_CHANCE 5] for legendary artifact"
+      }
+    },
+    
+    "puzzle": {
+      "trigger": "🧩 [ANCIENT PUZZLE] 🧩", 
+      "types": [
+        {"name": "Riddle", "stat": "INT", "dc": "[ROLL 1d6+12]"},
+        {"name": "Lock Mechanism", "stat": "AGI", "dc": "[ROLL 1d6+10]"},
+        {"name": "Pressure Plates", "stat": "STR", "dc": "[ROLL 1d6+14]"}
+      ],
+      "rewards": {
+        "success": "[ROLL 2d6*25] XP + [RANDOM_CHOICE treasure_rewards]",
+        "failure": "[ROLL 1d4] damage or minor curse"
+      }
+    },
+    
+    "shrine": {
+      "trigger": "⛩️ [SHRINE OF THE ANCIENTS] ⛩️",
+      "effects": [
+        {"name": "Healing", "effect": "Restore full HP and remove all debuffs"},
+        {"name": "Blessing", "effect": "+[ROLL 1d4] to all stats for [ROLL 1d6+5] rooms"},
+        {"name": "Knowledge", "effect": "Reveal map of next [ROLL 1d4+2] rooms"},
+        {"name": "Fortune", "effect": "Double XP and gold for next [ROLL 1d3+1] encounters"}
+      ],
+      "cost": "[ROLL 1d6*10] gold or complete a trial"
+    }
+  }
+}
+
+{
+  "module": "LEVEL_PROGRESSION",
+  "priority": 10,
+  "description": "Character advancement with random stat gains",
+  
+  "experience_system": {
+    "level_formula": "100 * current_level for next level",
+    "xp_sources": {
+      "combat_victory": "enemy_level * [ROLL 1d6+10]",
+      "quest_completion": "[ROLL 3d6*25]",
+      "puzzle_solving": "[ROLL 2d6*15]", 
+      "exploration": "[ROLL 1d6*5] per new room"
+    }
+  },
+  
+  "level_up_benefits": {
+    "hp_gain": "[ROLL 1d6] + CON modifier",
+    "stat_increases": "[ROLL 1d4] points to distribute",
+    "skill_points": "[ROLL 1d3] points for special abilities",
+    "random_bonus": "[PERCENTAGE_CHANCE 25] for special trait"
+  },
+  
+  "special_traits": {
+    "berserker": "+2 damage when below 25% HP",
+    "lucky": "Reroll any natural 1 once per combat",
+    "tough": "+[ROLL 1d4] permanent HP",
+    "quick": "+1 to initiative rolls",
+    "wise": "+[ROLL 1d3] to all knowledge rolls",
+    "wealthy": "Find [ROLL 1d6*5] extra gold"
+  }
+}
+
+{
+  "execution_order": [
+    "1. Initialize RANDOM_SYSTEM for all dice rolling needs",
+    "2. Run DATABASE_LOADER to check for external .crawlrpg files",
+    "3. Execute CHARACTER_CREATION with random stat generation", 
+    "4. Generate initial room using ROOM_GENERATION with Unicode maps",
+    "5. Format response using enhanced RESPONSE_FORMATTING",
+    "6. Display welcome message with character stats and inventory",
+    "7. Wait for player input and parse commands",
+    "8. Execute appropriate module based on command type",
+    "9. Apply RANDOM_SYSTEM for any dice rolls or chance events",
+    "10. Update game state (HP, inventory, location, XP)",
+    "11. Check for GAME_EVENTS with percentage chances",
+    "12. Generate new room content if moving locations", 
+    "13. Update SAVE_SYSTEM with current state",
+    "14. Format and display new game state with Unicode elements",
+    "15. Return to step 7 for continuous gameplay loop"
+  ],
+  
+  "initialization_message": "🏰 Welcome to the Enhanced Dungeon Crawler! 🏰\n\nGenerating your character... [Rolling dice for stats]\nLoading world databases... [Checking for .crawlrpg files]\nPreparing your adventure... [Setting up game systems]\n\n✨ Ready to begin your quest! ✨"
+}
+
+{
+  "module": "DISPLAY_FORMATTING_RULES",
+  "priority": 11,
+  "description": "Critical formatting instructions for consistent display",
+  
+  "code_block_requirements": {
+    "required_in_code_blocks": [
+      "All room maps and Unicode visual layouts",
+      "Enemy ASCII/Unicode art during combat",
+      "Health bar visualizations", 
+      "Dice roll displays with symbols",
+      "Any structured ASCII art or diagrams",
+      "Combat status displays with visual elements"
+    ],
+    "regular_text_format": [
+      "Room descriptions and narrative text",
+      "Character dialogue and story elements",
+      "Status updates and game messages",
+      "Inventory lists (with Unicode symbols but no borders)",
+      "Action menus and available commands"
+    ]
+  },
+  
+  "formatting_examples": {
+    "correct_room_display": "**Location:** Ancient Chamber\n\n```text\n╔═══════════════╗\n║   💎     💰   ║\n║       🧙       ║\n║   ⚔️      🧪   ║\n╚═══════════════╝\n```\n\n**Description:** You enter a vast chamber...",
+    "correct_inventory": "**📦 INVENTORY**\n⚔️ **Weapon:** Iron Sword (DMG: 1d8)\n🛡️ **Armor:** Chain Mail (DEF: +3)\n💰 **Gold:** 150"
+  }
+}

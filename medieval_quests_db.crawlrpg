@@ -1,0 +1,672 @@
+{
+  "database_version": "1.0",
+  "world_theme": "European Medieval Quests",
+  "quest_scaling": "Village to Royal difficulty progression",
+  
+  "quest_categories": {
+    "village_quests": {
+      "fetch_quests": {
+        "herb_gathering": {
+          "name": "Healing Herbs for [RANDOM_CHOICE npc_names]",
+          "description": "The village [RANDOM_CHOICE healers] needs [RANDOM_CHOICE herb_types] to treat [RANDOM_CHOICE ailments]. They grow in [RANDOM_CHOICE locations] but beware of [RANDOM_CHOICE dangers].",
+          "npc_names": ["Healer Martha", "Elder Thomas", "Wise Woman Agnes", "Herbalist Edmund"],
+          "healers": ["healer", "wise woman", "village elder", "apothecary"],
+          "herb_types": [
+            "silverleaf (cures fever)",
+            "moonblossom (mends broken bones)", 
+            "dragon's breath moss (treats poison)",
+            "starflower petals (restores vitality)"
+          ],
+          "ailments": [
+            "a sick child",
+            "the blacksmith's infected wound",
+            "a mysterious plague affecting livestock",
+            "soldiers returning from battle"
+          ],
+          "locations": [
+            "the ancient grove north of town",
+            "the misty swamplands to the east",
+            "the abandoned monastery ruins",
+            "the peak of Thornwood Mountain"
+          ],
+          "dangers": [
+            "wild wolves protecting their territory",
+            "poisonous bog creatures",
+            "restless spirits of dead monks",
+            "a territorial forest troll"
+          ],
+          "objectives": [
+            "Collect [ROLL 1d4+2] bundles of the required herbs",
+            "Return safely to the quest giver",
+            "Optional: Clear out [RANDOM_CHOICE dangers] for bonus reward"
+          ],
+          "rewards": {
+            "gold": "[ROLL 2d6*10]",
+            "items": [
+              {"item": "healing_potion", "quantity": "[ROLL 1d3]"},
+              {"item": "rare_herbs", "quantity": "[ROLL 1d4]"}
+            ],
+            "reputation": "+1 with village"
+          },
+          "failure_conditions": ["Herbs spoil if not returned within 3 days"],
+          "unicode_symbol": "🌿"
+        },
+        
+        "lost_livestock": {
+          "name": "The Missing [RANDOM_CHOICE animals] of Farmer [RANDOM_CHOICE farmer_names]",
+          "description": "Farmer [RANDOM_CHOICE farmer_names]'s prized [RANDOM_CHOICE animals] have gone missing! [RANDOM_CHOICE circumstances] Tracks lead toward [RANDOM_CHOICE directions].",
+          "animals": ["cattle", "sheep", "goats", "prize bull", "breeding sow"],
+          "farmer_names": ["Barley", "Wheat", "Shepherd", "Fields", "Acres"],
+          "circumstances": [
+            "They broke through the fence during last night's storm.",
+            "Strange howling was heard from the forest before they vanished.",
+            "The gate was found open - could bandits be involved?",
+            "Mysterious lights were seen near the pasture."
+          ],
+          "directions": [
+            "the dark forest to the north",
+            "the abandoned mill by the river",
+            "the old stone bridge",
+            "the caves in the eastern hills"
+          ],
+          "objectives": [
+            "Follow the tracks to find the missing livestock",
+            "Safely return [ROLL 1d4+2] animals to the farm",
+            "Deal with whatever drove them away"
+          ],
+          "complications": [
+            {"type": "wild_animals", "description": "Wolves have been stalking the herd"},
+            {"type": "bandits", "description": "Rustlers are planning to sell the livestock"},
+            {"type": "supernatural", "description": "Will-o'-wisps led the animals astray"}
+          ],
+          "rewards": {
+            "gold": "[ROLL 2d6*8]",
+            "items": [
+              {"item": "fresh_bread", "quantity": "[ROLL 1d6]"},
+              {"item": "travel_rations", "quantity": "[ROLL 2d4]"}
+            ],
+            "reputation": "+1 with village farmers"
+          },
+          "unicode_symbol": "🐑"
+        }
+      },
+      
+      "protection_quests": {
+        "bandit_troubles": {
+          "name": "Clear the [RANDOM_CHOICE locations] of Bandits",
+          "description": "A band of [RANDOM_CHOICE bandit_descriptions] bandits has been [RANDOM_CHOICE activities] near [RANDOM_CHOICE locations]. The village needs brave souls to [RANDOM_CHOICE solutions].",
+          "locations": [
+            "old stone bridge",
+            "abandoned watchtower",
+            "crossroads shrine",
+            "merchant's rest waystation"
+          ],
+          "bandit_descriptions": [
+            "desperate and hungry",
+            "well-armed and organized", 
+            "foreign mercenaries",
+            "former soldiers turned outlaw"
+          ],
+          "activities": [
+            "robbing traveling merchants",
+            "demanding tribute from farmers",
+            "stealing livestock and supplies",
+            "threatening pilgrims and travelers"
+          ],
+          "solutions": [
+            "drive them away from our lands",
+            "bring their leader to justice",
+            "recover the stolen goods",
+            "ensure safe passage for all travelers"
+          ],
+          "objectives": [
+            "Locate the bandit hideout",
+            "Defeat [ROLL 1d4+2] bandits and their leader",
+            "Recover stolen goods worth [ROLL 3d6*25] gold",
+            "Optional: Capture leader alive for bonus"
+          ],
+          "rewards": {
+            "gold": "[ROLL 3d6*15]",
+            "items": [
+              {"item": "iron_sword", "chance": 60},
+              {"item": "leather_armor", "chance": 40},
+              {"item": "healing_potion", "quantity": "[ROLL 1d3]"}
+            ],
+            "reputation": "+2 with village, +1 with merchants"
+          },
+          "escalation": "If not completed, bandits grow bolder and start raiding the village itself",
+          "unicode_symbol": "⚔️"
+        }
+      }
+    },
+    
+    "town_quests": {
+      "investigation_quests": {
+        "mysterious_disappearances": {
+          "name": "The Mystery of [RANDOM_CHOICE locations]",
+          "description": "[RANDOM_CHOICE victims] have been disappearing near [RANDOM_CHOICE locations]. The town guard is baffled. [RANDOM_CHOICE clues] suggest [RANDOM_CHOICE theories].",
+          "victims": [
+            "Traveling merchants",
+            "Young villagers",
+            "Pilgrims heading to the shrine",
+            "Lone travelers on the road"
+          ],
+          "locations": [
+            "the old cemetery",
+            "the abandoned manor house",
+            "the ancient stone circle",
+            "the misty marshlands"
+          ],
+          "clues": [
+            "Strange lights seen at midnight",
+            "Witnesses report hearing otherworldly music",
+            "Tracks that suddenly vanish",
+            "Torn clothing found hanging on thorns"
+          ],
+          "theories": [
+            "supernatural forces are at work",
+            "a cult is practicing dark rituals",
+            "wild beasts have claimed new territory",
+            "an ancient curse has been awakened"
+          ],
+          "investigation_phases": [
+            {
+              "phase": 1,
+              "objective": "Interview [ROLL 1d3+2] witnesses in town",
+              "clues_revealed": ["Time patterns", "Common locations", "Victim profiles"]
+            },
+            {
+              "phase": 2, 
+              "objective": "Search [RANDOM_CHOICE locations] for physical evidence",
+              "clues_revealed": ["Creature tracks", "Ritual symbols", "Personal belongings"]
+            },
+            {
+              "phase": 3,
+              "objective": "Confront the source of the disappearances",
+              "possible_culprits": ["Cultist circle", "Restless ghost", "Dire wolf pack", "Mad hermit"]
+            }
+          ],
+          "rewards": {
+            "gold": "[ROLL 4d6*20]",
+            "items": [
+              {"item": "silver_blade", "chance": 30},
+              {"item": "scroll_of_protection", "quantity": "[ROLL 1d3]"}
+            ],
+            "reputation": "+3 with town, title of 'Investigator'"
+          },
+          "unicode_symbol": "🔍"
+        }
+      },
+      
+      "delivery_quests": {
+        "urgent_message": {
+          "name": "Urgent Dispatch to [RANDOM_CHOICE destinations]",
+          "description": "The [RANDOM_CHOICE sender] needs [RANDOM_CHOICE message_types] delivered to [RANDOM_CHOICE recipients] in [RANDOM_CHOICE destinations]. [RANDOM_CHOICE urgency] [RANDOM_CHOICE complications]",
+          "sender": [
+            "town mayor",
+            "merchant guild master",
+            "church bishop",
+            "military captain"
+          ],
+          "message_types": [
+            "sealed official documents",
+            "trade agreements",
+            "warning of impending danger",
+            "request for military aid"
+          ],
+          "recipients": [
+            "the lord of the castle",
+            "the head of the merchant's guild",
+            "the high priest",
+            "the garrison commander"
+          ],
+          "destinations": [
+            "Kingsholm Castle",
+            "the port city of Seahaven",
+            "the mountain fortress of Ironhold",
+            "the cathedral city of Goldspire"
+          ],
+          "urgency": [
+            "Time is of the essence -",
+            "Lives depend on this message reaching its destination.",
+            "War may be prevented if this arrives in time.",
+            "A trade deal worth thousands hangs in the balance."
+          ],
+          "complications": [
+            "Bandits are known to patrol the roads.",
+            "Strange weather has made travel treacherous.",
+            "Enemy spies may try to intercept the message.",
+            "Wild creatures have been seen along the route."
+          ],
+          "objectives": [
+            "Safely deliver the message within [ROLL 1d3+2] days",
+            "Overcome [ROLL 1d3] obstacles along the way",
+            "Return with confirmation of delivery"
+          ],
+          "time_pressure": {
+            "early_delivery": "Bonus reward for arriving ahead of schedule",
+            "on_time": "Standard reward",
+            "late_delivery": "Reduced reward and reputation loss"
+          },
+          "rewards": {
+            "gold": "[ROLL 3d6*25]",
+            "items": [
+              {"item": "fine_wine", "quantity": 1},
+              {"item": "travel_rations", "quantity": "[ROLL 2d6]"}
+            ],
+            "reputation": "+2 with sender's faction"
+          },
+          "unicode_symbol": "📜"
+        }
+      }
+    },
+    
+    "noble_quests": {
+      "political_intrigue": {
+        "court_conspiracy": {
+          "name": "Shadows in the Court of Lord [RANDOM_CHOICE noble_names]",
+          "description": "Lord [RANDOM_CHOICE noble_names] suspects [RANDOM_CHOICE suspicions] within his court. [RANDOM_CHOICE evidence] points to [RANDOM_CHOICE conspirators]. Discretion is paramount.",
+          "noble_names": ["Aldric", "Godfrey", "Baldwin", "Edmund", "Roderick"],
+          "suspicions": [
+            "treasonous correspondence with enemy kingdoms",
+            "embezzlement of tax revenues",
+            "plots against his life",
+            "secret alliances with hostile nobles"
+          ],
+          "evidence": [
+            "Intercepted coded messages",
+            "Unusual financial records",
+            "Witness testimony from servants",
+            "Strange meetings held at midnight"
+          ],
+          "conspirators": [
+            "the court wizard",
+            "the captain of the guard",
+            "a trusted advisor",
+            "the lord's own brother"
+          ],
+          "investigation_methods": [
+            "Infiltrate court gatherings to gather intelligence",
+            "Search private chambers for evidence",
+            "Follow suspects to clandestine meetings",
+            "Question servants and staff discreetly"
+          ],
+          "objectives": [
+            "Gather concrete evidence of the conspiracy",
+            "Identify all conspirators involved",
+            "Present findings to Lord [RANDOM_CHOICE noble_names]",
+            "Choose whether to expose publicly or handle quietly"
+          ],
+          "consequences": {
+            "public_exposure": "Political scandal, enemies made, but justice served",
+            "quiet_resolution": "Conspirators dealt with secretly, reputation preserved",
+            "failed_investigation": "Conspiracy succeeds, lord may be overthrown"
+          },
+          "rewards": {
+            "gold": "[ROLL 5d6*50]",
+            "items": [
+              {"item": "knights_sword", "chance": 40},
+              {"item": "noble_signet_ring", "chance": 60}
+            ],
+            "reputation": "+4 with nobility, possible knighthood"
+          },
+          "unicode_symbol": "👑"
+        }
+      },
+      
+      "monster_hunting": {
+        "legendary_beast": {
+          "name": "The [RANDOM_CHOICE beast_titles] of [RANDOM_CHOICE territories]",
+          "description": "A [RANDOM_CHOICE creatures] of enormous size and cunning has been [RANDOM_CHOICE depredations] in [RANDOM_CHOICE territories]. Lord [RANDOM_CHOICE noble_names] offers substantial reward for its head.",
+          "beast_titles": [
+            "Terror",
+            "Scourge", 
+            "Shadow",
+            "Bane",
+            "Nightmare"
+          ],
+          "territories": [
+            "Darkwood Forest",
+            "the Northern Marches",
+            "Thornwood Valley",
+            "the Whispering Hills"
+          ],
+          "creatures": [
+            "dire wolf",
+            "forest troll",
+            "dragon wyrmling",
+            "corrupted bear"
+          ],
+          "depredations": [
+            "terrorizing entire villages",
+            "destroying trade caravans",
+            "killing livestock and farmers",
+            "desecrating holy sites"
+          ],
+          "preparation_phase": [
+            "Research the creature's habits and weaknesses",
+            "Gather specialized equipment (silver weapons, fire oil, etc.)",
+            "Recruit local guides familiar with the territory",
+            "Prepare proper provisions for extended hunt"
+          ],
+          "hunt_phases": [
+            {
+              "phase": "Tracking",
+              "description": "Follow the beast's trail through [RANDOM_CHOICE territories]",
+              "challenges": ["Environmental hazards", "False trails", "Territorial animals"]
+            },
+            {
+              "phase": "Confrontation", 
+              "description": "Face the legendary creature in its lair",
+              "challenges": ["Enhanced stats", "Lair effects", "Desperate tactics"]
+            },
+            {
+              "phase": "Proof",
+              "description": "Return with evidence of the kill",
+              "challenges": ["Preserving trophy", "Safe return journey", "Rival hunters"]
+            }
+          ],
+          "rewards": {
+            "gold": "[ROLL 6d6*100]",
+            "items": [
+              {"item": "legendary_weapon", "chance": 50},
+              {"item": "trophy_item", "chance": 100}
+            ],
+            "reputation": "+5 with all factions, legendary status",
+            "title": "Granted title of 'Beastslayer' or similar"
+          },
+          "unicode_symbol": "🐉"
+        }
+      }
+    },
+    
+    "royal_quests": {
+      "kingdom_threatening": {
+        "ancient_evil": {
+          "name": "The Awakening of [RANDOM_CHOICE ancient_evils]",
+          "description": "[RANDOM_CHOICE ancient_evils] stirs in [RANDOM_CHOICE ancient_locations]. [RANDOM_CHOICE dark_signs] herald its return. Only heroes of legend can prevent [RANDOM_CHOICE catastrophes].",
+          "ancient_evils": [
+            "the Lich King Mortanis",
+            "the Dragon Emperor Pyraxis",
+            "the Demon Lord Balgorth",
+            "the Shadow Queen Nyx'ara"
+          ],
+          "ancient_locations": [
+            "the Sunken City of Thalorim",
+            "the Cursed Fortress of Ironbane",
+            "the Twisted Spire of Malachar",
+            "the Forgotten Catacombs of Kings"
+          ],
+          "dark_signs": [
+            "The dead rise from their graves",
+            "Crops wither and skies turn blood red",
+            "Demons pour through rifts in reality",
+            "Darkness spreads across the land"
+          ],
+          "catastrophes": [
+            "the kingdom falling to undead hordes",
+            "all life being consumed by dragonfire",
+            "reality being twisted into nightmare",
+            "eternal night falling upon the world"
+          ],
+          "quest_stages": [
+            {
+              "stage": "Prophecy",
+              "description": "Consult ancient texts and wise oracles",
+              "objectives": ["Visit the Great Library", "Speak with the Oracle of Delphos", "Decipher ancient prophecies"]
+            },
+            {
+              "stage": "Artifacts",
+              "description": "Gather legendary artifacts needed to face the evil",
+              "objectives": ["Retrieve the Sword of Light", "Find the Shield of Faith", "Obtain the Crown of Kings"]
+            },
+            {
+              "stage": "Allies",
+              "description": "Unite the kingdoms against the common threat",
+              "objectives": ["Convince rival lords to ally", "Rally the scattered armies", "Forge temporary peace treaties"]
+            },
+            {
+              "stage": "Confrontation",
+              "description": "Face the ancient evil in final battle",
+              "objectives": ["Breach the evil's stronghold", "Overcome legendary guardians", "Destroy the source of darkness"]
+            }
+          ],
+          "rewards": {
+            "gold": "[ROLL 10d6*500]",
+            "items": [
+              {"item": "artifact_weapon", "chance": 100},
+              {"item": "legendary_armor", "chance": 100}
+            ],
+            "reputation": "Maximum with all factions",
+            "legacy": "Named in songs and legends for all time"
+          },
+          "unicode_symbol": "⚡"
+        }
+      }
+    }
+  },
+  
+  "quest_chains": {
+    "village_to_kingdom": {
+      "the_bandit_conspiracy": {
+        "chain_description": "What starts as simple bandit trouble reveals a deeper conspiracy threatening the kingdom",
+        "quests": [
+          {
+            "level": "village",
+            "name": "Highway Robbery",
+            "description": "Clear bandits from the local roads",
+            "leads_to": "Discovery of sophisticated organization"
+          },
+          {
+            "level": "town", 
+            "name": "The Missing Caravan",
+            "description": "Investigate disappearance of merchant convoy",
+            "leads_to": "Evidence of insider knowledge"
+          },
+          {
+            "level": "noble",
+            "name": "Corrupt Officials",
+            "description": "Expose corruption in local government",
+            "leads_to": "Links to enemy kingdom agents"
+          },
+          {
+            "level": "royal",
+            "name": "Foreign Infiltration",
+            "description": "Uncover and stop enemy spy network",
+            "resolution": "Save kingdom from internal collapse"
+          }
+        ]
+      },
+      
+      "the_cursed_bloodline": {
+        "chain_description": "A family curse threatens to destroy a noble house and unleash ancient evil",
+        "quests": [
+          {
+            "level": "village",
+            "name": "The Sick Child",
+            "description": "Heal a mysteriously ill child",
+            "leads_to": "Symptoms suggest supernatural curse"
+          },
+          {
+            "level": "town",
+            "name": "Family History",
+            "description": "Research the family's genealogy and past",
+            "leads_to": "Discovery of ancient transgression"
+          },
+          {
+            "level": "noble",
+            "name": "The Ancestral Sin", 
+            "description": "Uncover what the family's ancestor did wrong",
+            "leads_to": "Location of cursed artifact or tomb"
+          },
+          {
+            "level": "royal",
+            "name": "Breaking the Curse",
+            "description": "Perform ritual to lift ancestral curse",
+            "resolution": "Save family and prevent dark entity's return"
+          }
+        ]
+      }
+    }
+  },
+  
+  "seasonal_quests": {
+    "spring": {
+      "planting_festival": {
+        "name": "Blessing of the Fields",
+        "description": "Help prepare for the spring planting festival",
+        "objectives": ["Gather sacred spring water", "Protect ceremony from disruption", "Ensure good harvest omens"],
+        "seasonal_bonus": "Extra food items as rewards"
+      }
+    },
+    
+    "summer": {
+      "midsummer_fair": {
+        "name": "The Great Summer Fair",
+        "description": "Ensure the annual fair proceeds safely",
+        "objectives": ["Investigate threats to merchants", "Organize competitions", "Handle disputes"],
+        "seasonal_bonus": "Increased reputation gains with merchants"
+      }
+    },
+    
+    "autumn": {
+      "harvest_protection": {
+        "name": "Protecting the Harvest",
+        "description": "Guard the vital harvest from threats",
+        "objectives": ["Drive off crop-eating pests", "Prevent bandit raids on granaries", "Ensure safe storage"],
+        "seasonal_bonus": "Extra gold and food rewards"
+      }
+    },
+    
+    "winter": {
+      "winter_spirits": {
+        "name": "The Hungry Ghosts",
+        "description": "Deal with restless spirits active during long nights",
+        "objectives": ["Appease angry spirits", "Protect villages from supernatural threats", "Perform proper burial rites"],
+        "seasonal_bonus": "Enhanced reputation with priests and elders"
+      }
+    }
+  },
+  
+  "dynamic_quest_generation": {
+    "quest_templates": {
+      "fetch_template": {
+        "structure": "Retrieve [RANDOM_CHOICE objects] from [RANDOM_CHOICE locations] for [RANDOM_CHOICE npcs]",
+        "complications": ["Guarded by monsters", "Environmental hazards", "Time pressure", "Rival seekers"],
+        "objects": ["ancient artifact", "rare ingredient", "lost heirloom", "important document"],
+        "locations": ["abandoned ruins", "dangerous wilderness", "enemy territory", "cursed ground"]
+      },
+      
+      "escort_template": {
+        "structure": "Safely escort [RANDOM_CHOICE escorts] from [RANDOM_CHOICE origins] to [RANDOM_CHOICE destinations]",
+        "complications": ["Bandit ambushes", "Hostile wildlife", "Political enemies", "Supernatural threats"],
+        "escorts": ["merchant caravan", "noble heir", "holy pilgrims", "diplomatic envoy"],
+        "origins": ["trading post", "allied city", "friendly castle", "neutral territory"],
+        "destinations": ["enemy lands", "dangerous frontier", "holy shrine", "diplomatic meeting"]
+      },
+      
+      "mystery_template": {
+        "structure": "Investigate [RANDOM_CHOICE mysteries] involving [RANDOM_CHOICE victims] in [RANDOM_CHOICE locations]",
+        "complications": ["False clues", "Unreliable witnesses", "Dangerous suspects", "Time pressure"],
+        "mysteries": ["disappearances", "murders", "thefts", "supernatural events"],
+        "victims": ["prominent citizens", "random travelers", "specific professions", "family members"],
+        "locations": ["bustling town", "remote village", "noble court", "religious site"]
+      }
+    }
+  },
+  
+  "reward_scaling": {
+    "by_quest_level": {
+      "village": {
+        "gold_range": "[ROLL 2d6*10] to [ROLL 4d6*15]",
+        "item_rarity": "Common to Uncommon",
+        "reputation": "+1 to +2",
+        "special_rewards": ["Free meals", "Discounted goods", "Local guide services"]
+      },
+      "town": {
+        "gold_range": "[ROLL 3d6*25] to [ROLL 5d6*30]", 
+        "item_rarity": "Uncommon to Rare",
+        "reputation": "+2 to +3",
+        "special_rewards": ["Guild membership", "Property deed", "Political connections"]
+      },
+      "noble": {
+        "gold_range": "[ROLL 4d6*75] to [ROLL 6d6*100]",
+        "item_rarity": "Rare to Legendary", 
+        "reputation": "+3 to +4",
+        "special_rewards": ["Knighthood", "Land grants", "Noble title"]
+      },
+      "royal": {
+        "gold_range": "[ROLL 6d6*200] to [ROLL 8d6*500]",
+        "item_rarity": "Legendary to Artifact",
+        "reputation": "+4 to Maximum",
+        "special_rewards": ["Earldom", "Royal favor", "Legendary status"]
+      }
+    }
+  },
+  
+  "quest_complications": {
+    "random_events": [
+      {
+        "event": "Unexpected Alliance",
+        "description": "Former enemies offer to help for their own reasons",
+        "effect": "Moral choice: Accept suspicious aid or maintain principles"
+      },
+      {
+        "event": "Innocent Bystander",
+        "description": "Civilians are caught in the middle of the conflict",
+        "effect": "Must protect innocents while completing objectives"
+      },
+      {
+        "event": "False Information",
+        "description": "Key information provided turns out to be incorrect",
+        "effect": "Must adapt plan and overcome misinformation"
+      },
+      {
+        "event": "Resource Shortage",
+        "description": "Expected supplies or aid are unavailable",
+        "effect": "Must complete quest with limited resources"
+      }
+    ],
+    
+    "moral_dilemmas": [
+      {
+        "dilemma": "Lesser Evil",
+        "description": "Must choose between two negative outcomes",
+        "example": "Save the many by sacrificing the few, or vice versa"
+      },
+      {
+        "dilemma": "Lawful vs Right",
+        "description": "Legal solution conflicts with moral solution",
+        "example": "Follow corrupt laws or do what's right illegally"
+      },
+      {
+        "dilemma": "Personal Cost",
+        "description": "Success requires significant personal sacrifice",
+        "example": "Give up something precious to achieve quest goal"
+      }
+    ]
+  },
+  
+  "integration_systems": {
+    "world_connection": {
+      "location_integration": "Quests reference specific locations from world_db",
+      "npc_integration": "Quest givers and targets use npc templates from world_db", 
+      "monster_integration": "Quest enemies drawn from monsters_db encounters",
+      "item_integration": "Rewards use items from items_db with proper rarity scaling"
+    },
+    
+    "progression_tracking": {
+      "reputation_effects": "Quest completion affects standing with different factions",
+      "consequence_system": "Quest choices have lasting effects on world state",
+      "chain_unlocking": "Completing quests unlocks follow-up quests in chains",
+      "seasonal_availability": "Some quests only available during specific seasons"
+    },
+    
+    "difficulty_scaling": {
+      "party_level_scaling": "Quest difficulty adjusts based on character level",
+      "regional_scaling": "More dangerous areas offer more challenging quests",
+      "reputation_scaling": "Higher reputation unlocks more important quests",
+      "failure_consequences": "Failed quests can lead to worse situations"
+    }
+  }
+}

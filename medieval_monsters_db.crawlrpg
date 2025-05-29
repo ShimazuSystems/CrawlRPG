@@ -1,0 +1,1196 @@
+{
+  "database_version": "1.0",
+  "world_theme": "European Medieval Monsters",
+  "encounter_scaling": "Challenge Rating system from 1-20",
+  
+  "creature_categories": {
+    "wild_animals": {
+      "wolf": {
+        "name": "Gray Wolf",
+        "challenge_rating": 2,
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "max_hp": "same as hp",
+          "damage": "1d6+1",
+          "defense": 1,
+          "agility": "[ROLL 2d6+6]",
+          "strength": "[ROLL 2d6+4]",
+          "intelligence": "[ROLL 1d6+2]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE wolf_descriptions] wolf emerges from [RANDOM_CHOICE locations], [RANDOM_CHOICE behaviors]",
+          "You hear a low growling as a [RANDOM_CHOICE wolf_descriptions] wolf steps into view, [RANDOM_CHOICE behaviors]"
+        ],
+        "wolf_descriptions": ["lean and hungry", "scarred battle-worn", "massive alpha", "sleek gray", "grizzled old"],
+        "locations": ["the underbrush", "behind a tree", "the shadows", "a rocky outcrop", "tall grass"],
+        "behaviors": [
+          "yellow eyes fixed on you with predatory intent",
+          "hackles raised and teeth bared in warning",
+          "circling slowly as if testing your resolve",
+          "head low and ears back, ready to pounce",
+          "sniffing the air and letting out a menacing growl"
+        ],
+        "ai_behavior": {
+          "combat_style": "Pack Hunter",
+          "tactics": [
+            "Attempts to flank player if other wolves present",
+            "Uses hit-and-run attacks, retreating when injured",
+            "Howls to summon pack members ([PERCENTAGE_CHANCE 30] per round)",
+            "Focuses on weakest-looking target in group"
+          ],
+          "morale": "Flees when reduced to 25% HP unless protecting cubs",
+          "special_abilities": [
+            "Pack Tactics: +2 to hit if another wolf is adjacent to target",
+            "Keen Smell: Can track wounded prey across great distances",
+            "Howl: [PERCENTAGE_CHANCE 30] to summon 1d3 additional wolves"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "wolf_pelt", "chance": 80, "quantity": 1},
+            {"item": "wolf_fang", "chance": 60, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "rare_herbs", "chance": 20, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d4]"
+        },
+        "unicode_symbol": "🐺",
+        "encounter_environments": ["forest", "mountains", "plains", "wilderness"],
+        "encounter_chance": 0.4,
+        "pack_size": "[ROLL 1d4+1]",
+        "seasonal_behavior": {
+          "winter": "More aggressive due to food scarcity (+2 damage)",
+          "spring": "Protecting cubs (will not flee)",
+          "summer": "Normal behavior",
+          "autumn": "Building fat reserves (larger pack sizes)"
+        }
+      },
+      
+      "brown_bear": {
+        "name": "Brown Bear",
+        "challenge_rating": 4,
+        "stats": {
+          "hp": "[ROLL 4d6+12]",
+          "max_hp": "same as hp", 
+          "damage": "1d8+3",
+          "defense": 2,
+          "agility": "[ROLL 2d6+3]",
+          "strength": "[ROLL 3d6+9]",
+          "intelligence": "[ROLL 1d6+3]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE bear_descriptions] brown bear [RANDOM_CHOICE bear_actions], [RANDOM_CHOICE bear_moods]",
+          "The massive form of a [RANDOM_CHOICE bear_descriptions] bear blocks your path, [RANDOM_CHOICE bear_actions]"
+        ],
+        "bear_descriptions": ["enormous", "shaggy", "battle-scarred", "powerful", "ancient-looking"],
+        "bear_actions": [
+          "rears up on its hind legs",
+          "sniffs the air with its massive snout", 
+          "paws at the ground with dinner-plate sized claws",
+          "lets out a bone-shaking roar",
+          "sways back and forth menacingly"
+        ],
+        "bear_moods": [
+          "clearly agitated by your presence",
+          "seemingly more curious than hostile",
+          "displaying aggressive territorial behavior",
+          "protecting something behind it",
+          "looking for an easy meal"
+        ],
+        "ai_behavior": {
+          "combat_style": "Berserker",
+          "tactics": [
+            "Charges directly at strongest-looking opponent",
+            "Uses claw swipe that can hit multiple adjacent targets",
+            "Goes into rage when below 50% HP (+3 damage, -1 defense)",
+            "Attempts to grapple and maul prone targets"
+          ],
+          "morale": "Fights to the death when cornered or protecting cubs",
+          "special_abilities": [
+            "Claw Swipe: Can attack all adjacent enemies in single action",
+            "Bear Hug: Grapples target, deals automatic damage each round",
+            "Rage: When below 50% HP, +3 damage but -1 defense",
+            "Thick Hide: Reduces damage from small weapons by 1"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "bear_pelt", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "bear_fat", "chance": 70, "quantity": "[ROLL 1d3]"},
+            {"item": "bear_meat", "chance": 90, "quantity": "[ROLL 2d4]"}
+          ],
+          "rare": [
+            {"item": "bear_claw_necklace", "chance": 30, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d6*2]"
+        },
+        "unicode_symbol": "🐻",
+        "encounter_environments": ["forest", "mountains", "caves"],
+        "encounter_chance": 0.2,
+        "territorial_radius": "1 mile around den/cubs"
+      },
+      
+      "wild_boar": {
+        "name": "Wild Boar",
+        "challenge_rating": 3,
+        "stats": {
+          "hp": "[ROLL 3d6+6]",
+          "max_hp": "same as hp",
+          "damage": "1d6+2", 
+          "defense": 1,
+          "agility": "[ROLL 2d6+4]",
+          "strength": "[ROLL 2d6+6]",
+          "intelligence": "[ROLL 1d6+1]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE boar_descriptions] wild boar [RANDOM_CHOICE boar_actions], [RANDOM_CHOICE boar_threat_displays]",
+          "Snorting and grunting, a [RANDOM_CHOICE boar_descriptions] boar [RANDOM_CHOICE boar_actions]"
+        ],
+        "boar_descriptions": ["bristling", "tusked", "mud-covered", "fierce", "massive"],
+        "boar_actions": [
+          "paws the ground with sharp hooves",
+          "lowers its head to display wicked tusks",
+          "charges through the underbrush",
+          "squeals angrily at your intrusion",
+          "roots around, tearing up earth and plants"
+        ],
+        "boar_threat_displays": [
+          "foam dripping from its snout",
+          "small eyes glinting with animal cunning",
+          "muscles bunched for a devastating charge",
+          "clearly protecting its territory",
+          "sizing you up as either threat or prey"
+        ],
+        "ai_behavior": {
+          "combat_style": "Charger",
+          "tactics": [
+            "Opens combat with devastating charge attack",
+            "Uses tusks to gore fallen enemies",
+            "Attempts to knock opponents prone with charge",
+            "Fights fiercely but retreats if severely outnumbered"
+          ],
+          "morale": "Retreats when reduced to 30% HP unless protecting young",
+          "special_abilities": [
+            "Charge: Double damage if moves at least 20 feet before attack",
+            "Gore: Prone enemies take +2 damage from tusk attacks",
+            "Thick Hide: Natural armor reduces damage by 1",
+            "Relentless: Can continue fighting for 1 round after reaching 0 HP"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "boar_meat", "chance": 100, "quantity": "[ROLL 2d6]"}
+          ],
+          "common": [
+            {"item": "boar_hide", "chance": 80, "quantity": 1},
+            {"item": "boar_tusks", "chance": 70, "quantity": 2}
+          ],
+          "rare": [],
+          "gold": "[ROLL 1d3]"
+        },
+        "unicode_symbol": "🐗",
+        "encounter_environments": ["forest", "swamp", "plains"],
+        "encounter_chance": 0.3,
+        "group_size": "[ROLL 1d3]"
+      }
+    },
+    
+    "humanoid_enemies": {
+      "bandit": {
+        "name": "Highway Bandit",
+        "challenge_rating": 2,
+        "stats": {
+          "hp": "[ROLL 2d6+6]",
+          "max_hp": "same as hp",
+          "damage": "1d6+2",
+          "defense": 2,
+          "agility": "[ROLL 2d6+4]",
+          "strength": "[ROLL 2d6+5]",
+          "intelligence": "[ROLL 2d6+4]",
+          "charisma": "[ROLL 2d6+3]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE bandit_descriptions] bandit [RANDOM_CHOICE bandit_actions], [RANDOM_CHOICE bandit_equipment]",
+          "[RANDOM_CHOICE bandit_greetings] shouts a [RANDOM_CHOICE bandit_descriptions] bandit, [RANDOM_CHOICE bandit_weapons]"
+        ],
+        "bandit_descriptions": ["scarred", "desperate-looking", "grizzled", "young but vicious", "weather-beaten"],
+        "bandit_actions": [
+          "steps out from behind a tree",
+          "emerges from the roadside bushes",
+          "drops down from an overhanging branch", 
+          "rises from a concealed position",
+          "blocks your path with drawn weapon"
+        ],
+        "bandit_equipment": [
+          "wearing patched leather armor and a cruel grin",
+          "armed with a notched sword and rusty dagger",
+          "carrying a crossbow with bolt already loaded",
+          "wielding a wickedly curved blade",
+          "dressed in stolen finery over chain mail"
+        ],
+        "bandit_greetings": [
+          "'Stand and deliver!'",
+          "'Your coin or your life!'",
+          "'This road has a toll, stranger!'",
+          "'Empty your purse, traveler!'",
+          "'Time to pay the bandit tax!'"
+        ],
+        "bandit_weapons": [
+          "brandishing a well-used sword",
+          "twirling a pair of sharp daggers",
+          "aiming a loaded crossbow at your chest",
+          "hefting a brutal-looking axe",
+          "drawing steel with practiced ease"
+        ],
+        "ai_behavior": {
+          "combat_style": "Opportunist",
+          "tactics": [
+            "Demands surrender before attacking ([PERCENTAGE_CHANCE 60])",
+            "Uses ranged weapons from cover when possible",
+            "Attempts to flank with allies",
+            "Focuses on wealthy-looking targets first"
+          ],
+          "morale": "Flees when reduced to 25% HP or when allies are defeated",
+          "special_abilities": [
+            "Sneak Attack: +1d6 damage when attacking from hiding",
+            "Dirty Fighting: [PERCENTAGE_CHANCE 25] to blind opponent for 1 round",
+            "Desperate Strike: When below 25% HP, attacks deal +2 damage"
+          ],
+          "surrender_conditions": [
+            "Offers to spare party for [ROLL 2d6*10] gold",
+            "Reveals location of bandit camp for mercy",
+            "Provides information about road dangers"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "bandit_weapon", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "leather_armor", "chance": 60, "quantity": 1},
+            {"item": "travel_rations", "chance": 80, "quantity": "[ROLL 1d3]"},
+            {"item": "rope", "chance": 40, "quantity": 1}
+          ],
+          "rare": [
+            {"item": "stolen_jewelry", "chance": 20, "quantity": 1},
+            {"item": "treasure_map", "chance": 10, "quantity": 1}
+          ],
+          "gold": "[ROLL 2d6*5]"
+        },
+        "unicode_symbol": "🗡️",
+        "encounter_environments": ["roads", "forest", "mountains"],
+        "encounter_chance": 0.3,
+        "group_size": "[ROLL 1d4+1]",
+        "dialogue_options": {
+          "intimidation": "DC 12 to make them flee without combat",
+          "negotiation": "DC 15 to reduce demanded tribute by half",
+          "deception": "DC 13 to convince them you're also an outlaw"
+        }
+      },
+      
+      "bandit_leader": {
+        "name": "Bandit Captain",
+        "challenge_rating": 5,
+        "stats": {
+          "hp": "[ROLL 4d6+12]",
+          "max_hp": "same as hp",
+          "damage": "1d8+3",
+          "defense": 4,
+          "agility": "[ROLL 2d6+6]",
+          "strength": "[ROLL 2d6+8]",
+          "intelligence": "[ROLL 2d6+6]",
+          "charisma": "[ROLL 2d6+8]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE leader_descriptions] figure in [RANDOM_CHOICE leader_equipment] [RANDOM_CHOICE leader_actions]",
+          "The bandit leader, a [RANDOM_CHOICE leader_descriptions] [RANDOM_CHOICE leader_gender], [RANDOM_CHOICE leader_demeanor]"
+        ],
+        "leader_descriptions": ["commanding", "battle-scarred", "imposing", "ruthless-looking", "charismatic"],
+        "leader_equipment": [
+          "fine stolen armor",
+          "expensive weapons and jewelry",
+          "a mixture of military gear and outlaw garb",
+          "the regalia of a fallen knight",
+          "rich merchant's clothing over chain mail"
+        ],
+        "leader_actions": [
+          "surveys the scene with calculating eyes",
+          "barks orders to subordinates",
+          "draws an impressive weapon with flourish",
+          "steps forward with confident swagger",
+          "sizes up your group with professional interest"
+        ],
+        "leader_gender": ["man", "woman"],
+        "leader_demeanor": [
+          "radiates natural authority and danger",
+          "carries themselves like a former soldier",
+          "speaks with the accent of nobility fallen on hard times",
+          "has the look of someone who's seen too much violence",
+          "grins with the confidence of one who rarely loses"
+        ],
+        "ai_behavior": {
+          "combat_style": "Tactical Commander",
+          "tactics": [
+            "Commands other bandits to focus fire on one target",
+            "Uses terrain advantages and cover",
+            "Attempts to capture rather than kill wealthy opponents",
+            "Retreats strategically when battle turns against them"
+          ],
+          "morale": "Fights until 50% HP, then attempts strategic withdrawal",
+          "special_abilities": [
+            "Battle Commander: Allies within 30 feet get +1 to attack rolls",
+            "Parry: Can reduce incoming damage by [ROLL 1d4] once per round",
+            "Intimidating Presence: Enemies must save vs fear on first encounter",
+            "Rallying Cry: Can restore [ROLL 1d6] HP to all allies once per combat"
+          ],
+          "leadership_abilities": [
+            "Can call for reinforcements ([ROLL 1d3] bandits arrive in 3 rounds)",
+            "Knows secret paths and escape routes",
+            "Has contacts in nearby settlements"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "fine_weapon", "chance": 100, "quantity": 1},
+            {"item": "quality_armor", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "stolen_goods", "chance": 90, "quantity": "[ROLL 1d4]"},
+            {"item": "silver_jewelry", "chance": 70, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "treasure_map", "chance": 40, "quantity": 1},
+            {"item": "noble_signet_ring", "chance": 30, "quantity": 1}
+          ],
+          "gold": "[ROLL 3d6*25]"
+        },
+        "unicode_symbol": "👑",
+        "encounter_environments": ["bandit_camp", "roads", "hideouts"],
+        "unique_drops": [
+          {"item": "captains_blade", "description": "A well-made sword with the captain's personal mark"},
+          {"item": "letter_of_marque", "description": "Official papers showing this bandit was once legitimate"},
+          {"item": "loot_ledger", "description": "Detailed records of recent raids and hidden treasures"}
+        ]
+      },
+      
+      "cultist": {
+        "name": "Dark Cultist",
+        "challenge_rating": 3,
+        "stats": {
+          "hp": "[ROLL 2d6+4]",
+          "max_hp": "same as hp",
+          "damage": "1d6+1",
+          "defense": 1,
+          "agility": "[ROLL 2d6+3]",
+          "strength": "[ROLL 2d6+3]",
+          "intelligence": "[ROLL 2d6+6]",
+          "magic_power": "[ROLL 2d6+4]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE cultist_descriptions] figure in [RANDOM_CHOICE robes] [RANDOM_CHOICE cultist_actions]",
+          "Chanting in a [RANDOM_CHOICE languages], a [RANDOM_CHOICE cultist_descriptions] cultist [RANDOM_CHOICE ritual_actions]"
+        ],
+        "cultist_descriptions": ["hooded", "gaunt", "wild-eyed", "pale", "tattooed"],
+        "robes": [
+          "black robes marked with strange symbols",
+          "blood-red ceremonial garments", 
+          "tattered vestments covered in occult markings",
+          "dark purple robes that seem to absorb light",
+          "ritual dress made from unusual materials"
+        ],
+        "cultist_actions": [
+          "raises a ceremonial dagger skyward",
+          "traces arcane symbols in the air",
+          "mutters dark prayers under their breath",
+          "stares with unsettling intensity",
+          "prepares to cast a sinister spell"
+        ],
+        "languages": [
+          "forgotten tongue",
+          "dark language",
+          "ancient dialect",
+          "whispered incantation",
+          "guttural chant"
+        ],
+        "ritual_actions": [
+          "draws a summoning circle in the dirt",
+          "lights strange-smelling incense",
+          "prepares a dark ritual sacrifice",
+          "communes with otherworldly forces",
+          "channels malevolent energy"
+        ],
+        "ai_behavior": {
+          "combat_style": "Dark Spellcaster",
+          "tactics": [
+            "Opens combat with fear-inducing spells",
+            "Uses dark magic to curse enemies",
+            "Attempts to summon minor demons or undead",
+            "Retreats behind summoned creatures"
+          ],
+          "morale": "Fanatically devoted, fights to the death",
+          "special_abilities": [
+            "Dark Bolt: Ranged magic attack dealing [ROLL 1d8] damage",
+            "Curse: Target gets -2 to all rolls for [ROLL 1d4+1] rounds",
+            "Summon Familiar: Calls forth a minor demon or undead minion",
+            "Ritual Magic: Given time, can cast powerful area effects"
+          ],
+          "spells": [
+            {"name": "Fear", "effect": "Target must save or flee for [ROLL 1d3] rounds"},
+            {"name": "Drain Life", "effect": "Steals [ROLL 1d6] HP and adds to cultist's health"},
+            {"name": "Dark Shield", "effect": "+3 defense for [ROLL 1d6] rounds"}
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "ritual_dagger", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "dark_scroll", "chance": 60, "quantity": "[ROLL 1d3]"},
+            {"item": "strange_herbs", "chance": 70, "quantity": "[ROLL 1d4]"}
+          ],
+          "rare": [
+            {"item": "cursed_amulet", "chance": 30, "quantity": 1},
+            {"item": "forbidden_tome", "chance": 20, "quantity": 1}
+          ],
+          "gold": "[ROLL 1d6*3]"
+        },
+        "unicode_symbol": "🔮",
+        "encounter_environments": ["ruins", "caves", "graveyards", "abandoned_temples"],
+        "encounter_chance": 0.15,
+        "group_ritual_bonus": "When 3+ cultists are present, they can combine spells for greater effect"
+      }
+    },
+    
+    "undead": {
+      "skeleton_warrior": {
+        "name": "Skeleton Warrior",
+        "challenge_rating": 3,
+        "stats": {
+          "hp": "[ROLL 2d8+4]",
+          "max_hp": "same as hp",
+          "damage": "1d8+2",
+          "defense": 2,
+          "agility": "[ROLL 2d6+2]",
+          "strength": "[ROLL 2d6+4]",
+          "intelligence": "[ROLL 1d6]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE skeleton_descriptions] skeleton [RANDOM_CHOICE skeleton_actions], [RANDOM_CHOICE skeleton_equipment]",
+          "Rising from [RANDOM_CHOICE origins], a [RANDOM_CHOICE skeleton_descriptions] skeletal warrior [RANDOM_CHOICE skeleton_movements]"
+        ],
+        "skeleton_descriptions": ["ancient", "battle-worn", "gleaming white", "moss-covered", "cracked and yellowed"],
+        "skeleton_actions": [
+          "raises a rusty sword with bony fingers",
+          "turns empty eye sockets toward you",
+          "rattles as it shifts into combat stance",
+          "draws weapons with mechanical precision",
+          "advances with jerky, unnatural movements"
+        ],
+        "skeleton_equipment": [
+          "clad in the remnants of ancient armor",
+          "wielding weapons from a bygone era",
+          "wearing tattered surcoat over chain mail",
+          "carrying a cracked shield and notched blade",
+          "armored in pieces scavenged from many battles"
+        ],
+        "origins": [
+          "a shallow grave",
+          "beneath a pile of old bones",
+          "an ancient battlefield",
+          "a forgotten crypt",
+          "the ruins of an old barracks"
+        ],
+        "skeleton_movements": [
+          "clicks and clacks as it moves",
+          "shambles forward with grim purpose",
+          "maintains perfect military posture despite death",
+          "moves with the muscle memory of a trained soldier",
+          "advances with the relentless pace of the undead"
+        ],
+        "ai_behavior": {
+          "combat_style": "Relentless Warrior",
+          "tactics": [
+            "Fights with remembered military training",
+            "Uses formation fighting when multiple skeletons present",
+            "Never retreats or shows fear",
+            "Continues fighting even when severely damaged"
+          ],
+          "morale": "Fearless and fights to destruction",
+          "special_abilities": [
+            "Undead Resilience: Immune to fear, poison, and disease",
+            "Bone Armor: Reduces damage from piercing weapons by 1",
+            "Death Rattle: When destroyed, [PERCENTAGE_CHANCE 25] to summon another skeleton",
+            "Reassemble: [PERCENTAGE_CHANCE 20] to continue fighting for 1 round after reaching 0 HP"
+          ],
+          "vulnerabilities": [
+            "Holy water deals double damage",
+            "Blunt weapons bypass bone armor",
+            "Turn undead effects cause them to flee"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "ancient_weapon", "chance": 70, "quantity": 1},
+            {"item": "old_armor_pieces", "chance": 50, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "skeleton_key", "chance": 25, "quantity": 1},
+            {"item": "ancient_coin", "chance": 15, "quantity": "[ROLL 1d6]"}
+          ],
+          "gold": "[ROLL 1d4*2]"
+        },
+        "unicode_symbol": "💀",
+        "encounter_environments": ["graveyards", "ruins", "battlefields", "crypts"],
+        "encounter_chance": 0.25,
+        "group_behavior": "Forms ranks and fights in formation when multiple skeletons present"
+      },
+      
+      "zombie": {
+        "name": "Shambling Zombie",
+        "challenge_rating": 2,
+        "stats": {
+          "hp": "[ROLL 3d6+6]",
+          "max_hp": "same as hp",
+          "damage": "1d6+1",
+          "defense": 0,
+          "agility": "[ROLL 1d6+1]",
+          "strength": "[ROLL 2d6+6]",
+          "intelligence": "[ROLL 1d3]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE zombie_descriptions] zombie [RANDOM_CHOICE zombie_actions], [RANDOM_CHOICE decay_details]",
+          "The [RANDOM_CHOICE zombie_state] corpse of what was once [RANDOM_CHOICE former_profession] [RANDOM_CHOICE shambling_actions]"
+        ],
+        "zombie_descriptions": ["rotting", "shambling", "putrid", "decomposing", "plague-ridden"],
+        "zombie_actions": [
+          "lurches toward you with outstretched arms",
+          "moans hungrily while reaching grasping hands",
+          "stumbles forward with single-minded purpose",
+          "drags itself along despite missing limbs",
+          "advances with the inexorable pace of death"
+        ],
+        "decay_details": [
+          "flesh hanging in tatters from exposed bone",
+          "eyes clouded white with death",
+          "green-black skin mottled with corruption",
+          "wounds crawling with flies and maggots",
+          "missing chunks of flesh revealing ribs beneath"
+        ],
+        "zombie_state": ["recently risen", "badly decomposed", "plague-bloated", "desiccated", "freshly dead"],
+        "former_profession": [
+          "a farmer",
+          "a soldier", 
+          "a merchant",
+          "a noble",
+          "a commoner"
+        ],
+        "shambling_actions": [
+          "shambles toward you with hunger in its dead eyes",
+          "drags one leg as it pursues living flesh",
+          "reaches out with desperate, grasping motions",
+          "moans with the voice of insatiable hunger",
+          "moves with the persistence only the undead possess"
+        ],
+        "ai_behavior": {
+          "combat_style": "Relentless Pursuer",
+          "tactics": [
+            "Always moves toward nearest living creature",
+            "Ignores pain and continues fighting when injured",
+            "Attempts to grapple and bite opponents",
+            "Swarms targets when in groups"
+          ],
+          "morale": "Mindless - fights until destroyed",
+          "special_abilities": [
+            "Undead Fortitude: Can continue fighting for 1 round after reaching 0 HP",
+            "Disease Carrier: Bite attacks may cause infection (save vs constitution)",
+            "Grapple: Successfully grappled victims take automatic bite damage each round",
+            "Mindless: Immune to fear, charm, and mental effects"
+          ],
+          "weaknesses": [
+            "Slow movement makes them easy to outrun",
+            "Fire deals double damage",
+            "Destroying the head kills instantly"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [
+            {"item": "tattered_clothing", "chance": 60, "quantity": 1},
+            {"item": "personal_effects", "chance": 40, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "gold_tooth", "chance": 15, "quantity": 1},
+            {"item": "family_heirloom", "chance": 10, "quantity": 1}
+          ],
+          "disease_risk": "[PERCENTAGE_CHANCE 30] for zombie plague if bitten",
+          "gold": "[ROLL 1d3]"
+        },
+        "unicode_symbol": "🧟",
+        "encounter_environments": ["graveyards", "plague_sites", "battlefields", "abandoned_villages"],
+        "encounter_chance": 0.2,
+        "horde_behavior": "Zombies attract other zombies - encountering one may lead to more arriving"
+      },
+      
+      "ghost": {
+        "name": "Restless Spirit",
+        "challenge_rating": 6,
+        "stats": {
+          "hp": "[ROLL 3d6+9]",
+          "max_hp": "same as hp",
+          "damage": "1d8+2 (spectral)",
+          "defense": "Special (incorporeal)",
+          "agility": "[ROLL 2d6+8]",
+          "strength": "[ROLL 1d6]",
+          "intelligence": "[ROLL 2d6+6]",
+          "charisma": "[ROLL 2d6+4]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE ghost_descriptions] apparition [RANDOM_CHOICE manifestation] [RANDOM_CHOICE ghost_actions]",
+          "The [RANDOM_CHOICE ghost_state] spirit of [RANDOM_CHOICE ghost_identity] [RANDOM_CHOICE haunting_behavior]"
+        ],
+        "ghost_descriptions": ["translucent", "shimmering", "pale", "ethereal", "sorrowful"],
+        "manifestation": [
+          "materializes from the morning mist",
+          "phases through the solid wall",
+          "coalesces from wisps of ectoplasm",
+          "emerges from the shadows like smoke",
+          "appears suddenly with a chill in the air"
+        ],
+        "ghost_actions": [
+          "reaches out with spectral fingers",
+          "wails with the voice of the grave",
+          "floats just above the ground",
+          "flickers between visible and invisible",
+          "stares with eyes full of otherworldly sorrow"
+        ],
+        "ghost_state": ["tormented", "vengeful", "lost", "mournful", "angry"],
+        "ghost_identity": [
+          "a murdered noble",
+          "a fallen knight",
+          "a betrayed lover",
+          "a wrongfully executed criminal",
+          "a mother searching for her children"
+        ],
+        "haunting_behavior": [
+          "seeks justice for wrongs committed in life",
+          "guards a place of great personal significance",
+          "searches endlessly for something lost",
+          "tries to communicate an important message",
+          "lashes out at the living in frustrated rage"
+        ],
+        "ai_behavior": {
+          "combat_style": "Ethereal Tormentor",
+          "tactics": [
+            "Phases in and out of corporeality to avoid attacks",
+            "Uses fear and possession abilities first",
+            "Attacks through walls and obstacles",
+            "Focuses on psychologically weakest opponents"
+          ],
+          "morale": "Bound to haunt until specific conditions are met",
+          "special_abilities": [
+            "Incorporeal: Physical weapons deal half damage, magic weapons normal damage",
+            "Possession: Can attempt to control target for [ROLL 1d4] rounds",
+            "Spectral Touch: Ignores armor, deals direct damage to life force",
+            "Phase Walk: Can move through solid objects",
+            "Terrifying Presence: Causes fear in living creatures",
+            "Telekinesis: Can move objects without touching them"
+          ],
+          "resolution_conditions": [
+            "Completing unfinished business from life",
+            "Receiving proper burial or funeral rites",
+            "Having wrongs against them made right",
+            "Finding lost loved ones or possessions"
+          ]
+        },
+        "loot_drops": {
+          "always": [],
+          "common": [],
+          "rare": [
+            {"item": "ectoplasm", "chance": 50, "quantity": "[ROLL 1d3]"},
+            {"item": "spectral_essence", "chance": 30, "quantity": 1}
+          ],
+          "unique": [
+            {"item": "ghostly_revelation", "description": "Knowledge of hidden treasure or secret"}
+          ],
+          "gold": 0
+        },
+        "unicode_symbol": "👻",
+        "encounter_environments": ["haunted_houses", "graveyards", "battlefields", "tragic_locations"],
+        "encounter_chance": 0.1,
+        "communication": "May attempt to communicate through writing, moving objects, or possession"
+      }
+    },
+    
+    "magical_creatures": {
+      "dire_wolf": {
+        "name": "Dire Wolf",
+        "challenge_rating": 5,
+        "stats": {
+          "hp": "[ROLL 4d6+8]",
+          "max_hp": "same as hp",
+          "damage": "1d8+3",
+          "defense": 2,
+          "agility": "[ROLL 2d6+8]",
+          "strength": "[ROLL 2d6+8]",
+          "intelligence": "[ROLL 2d6+4]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE dire_descriptions] dire wolf [RANDOM_CHOICE dire_features] [RANDOM_CHOICE dire_presence]",
+          "This [RANDOM_CHOICE size_descriptors] wolf [RANDOM_CHOICE magical_aspects] [RANDOM_CHOICE threatening_behavior]"
+        ],
+        "dire_descriptions": ["massive", "ancient", "shadow-touched", "primordial", "legendary"],
+        "dire_features": [
+          "towers above normal wolves",
+          "has eyes that glow with inner fire",
+          "sports fangs like curved daggers", 
+          "moves with supernatural grace",
+          "radiates an aura of primal power"
+        ],
+        "dire_presence": [
+          "causing smaller animals to flee in terror",
+          "making the very air seem to thicken with menace",
+          "filling the area with the scent of wild magic",
+          "creating an unnatural silence in the forest",
+          "leaving frost-covered paw prints despite the season"
+        ],
+        "size_descriptors": ["enormous", "gigantic", "colossal", "titan-sized"],
+        "magical_aspects": [
+          "seems to phase in and out of reality",
+          "has fur that shimmers with starlight",
+          "breathes mist that glows faintly blue",
+          "appears to be made of living shadow",
+          "has runes carved into its hide"
+        ],
+        "threatening_behavior": [
+          "stalks you with predatory intelligence",
+          "howls with a sound that chills your soul",
+          "circles with the patience of eons",
+          "watches you with unsettling awareness",
+          "tests your resolve with penetrating stare"
+        ],
+        "ai_behavior": {
+          "combat_style": "Alpha Predator",
+          "tactics": [
+            "Uses hit-and-run tactics, retreating into shadows",
+            "Attempts to separate strongest opponent from group",
+            "Calls supernatural pack with otherworldly howl",
+            "Uses magic abilities to confuse and disorient"
+          ],
+          "morale": "Proud creature - will not flee unless reduced to 25% HP",
+          "special_abilities": [
+            "Shadow Step: Can teleport up to 30 feet through shadows",
+            "Frost Breath: [ROLL 1d6] cold damage in cone, may freeze opponents",
+            "Alpha Howl: Summons [ROLL 1d3] normal wolves or frightens enemies",
+            "Magic Resistance: Takes half damage from spells",
+            "Tracking: Can follow scent trails across vast distances"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "dire_wolf_pelt", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "dire_wolf_fang", "chance": 80, "quantity": "[ROLL 1d4]"},
+            {"item": "wolf_claw", "chance": 70, "quantity": "[ROLL 1d6]"}
+          ],
+          "rare": [
+            {"item": "moonstone", "chance": 40, "quantity": 1},
+            {"item": "wolf_spirit_essence", "chance": 25, "quantity": 1}
+          ],
+          "gold": "[ROLL 2d6*5]"
+        },
+        "unicode_symbol": "🐺",
+        "encounter_environments": ["deep_forest", "magical_groves", "mountain_peaks"],
+        "encounter_chance": 0.1,
+        "legend_status": "Known to local folklore, has specific name and reputation"
+      },
+      
+      "forest_troll": {
+        "name": "Forest Troll",
+        "challenge_rating": 8,
+        "stats": {
+          "hp": "[ROLL 6d6+18]",
+          "max_hp": "same as hp",
+          "damage": "2d6+4",
+          "defense": 3,
+          "agility": "[ROLL 2d6+3]",
+          "strength": "[ROLL 3d6+12]",
+          "intelligence": "[ROLL 1d6+3]",
+          "constitution": "[ROLL 3d6+12]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE troll_size] troll [RANDOM_CHOICE troll_features] [RANDOM_CHOICE troll_actions]",
+          "This [RANDOM_CHOICE troll_descriptions] creature [RANDOM_CHOICE environmental_adaptation] [RANDOM_CHOICE threatening_posture]"
+        ],
+        "troll_size": ["massive", "hulking", "gigantic", "towering", "enormous"],
+        "troll_features": [
+          "covered in moss and bark-like hide",
+          "with arms that reach nearly to the ground",
+          "sporting wicked claws and tusks",
+          "whose skin seems to be part plant",
+          "with small trees growing from its shoulders"
+        ],
+        "troll_actions": [
+          "pounds its chest like a gorilla",
+          "uproots a small tree as a club",
+          "bellows a challenge that echoes through the forest",
+          "tears boulders from the earth",
+          "displays its massive fangs in a threatening grin"
+        ],
+        "troll_descriptions": ["ancient", "moss-covered", "primordial", "nature-touched"],
+        "environmental_adaptation": [
+          "blends perfectly with the forest surroundings",
+          "has vines and flowers growing from its hide",
+          "smells of rich earth and growing things",
+          "moves with surprising grace for its size",
+          "seems to be one with the natural world"
+        ],
+        "threatening_posture": [
+          "blocks your path with outstretched arms",
+          "roars loud enough to shake leaves from trees",
+          "demonstrates its strength by crushing rocks",
+          "makes the ground tremble with each step",
+          "fixes you with intelligent, calculating eyes"
+        ],
+        "ai_behavior": {
+          "combat_style": "Brute Force Regenerator",
+          "tactics": [
+            "Uses environment as weapons (trees, rocks)",
+            "Attempts to grapple and crush opponents",
+            "Throws large objects at distant enemies",
+            "Regenerates health while fighting"
+          ],
+          "morale": "Territorial but not suicidal - retreats if fire is used extensively",
+          "special_abilities": [
+            "Regeneration: Heals [ROLL 1d6] HP per round unless damaged by fire",
+            "Tree Club: Can uproot trees for 2d8+STR damage weapons",
+            "Rock Throw: Range attack for 2d6+STR damage",
+            "Thick Hide: Reduces damage from small weapons by 2",
+            "Forest Camouflage: +4 to hiding in natural environments"
+          ],
+          "weaknesses": [
+            "Fire prevents regeneration and deals double damage",
+            "Acid prevents regeneration for that round"
+          ]
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "troll_hide", "chance": 100, "quantity": 1}
+          ],
+          "common": [
+            {"item": "troll_blood", "chance": 70, "quantity": "[ROLL 1d4]"},
+            {"item": "giant_bone", "chance": 60, "quantity": "[ROLL 1d3]"}
+          ],
+          "rare": [
+            {"item": "regeneration_gland", "chance": 30, "quantity": 1},
+            {"item": "earth_stone", "chance": 20, "quantity": 1}
+          ],
+          "gold": "[ROLL 3d6*10]"
+        },
+        "unicode_symbol": "🧌",
+        "encounter_environments": ["deep_forest", "swamps", "mountain_caves"],
+        "encounter_chance": 0.05,
+        "territorial_behavior": "Guards a specific area, may be reasoned with if approached peacefully"
+      },
+      
+      "dragon_wyrmling": {
+        "name": "Green Dragon Wyrmling",
+        "challenge_rating": 10,
+        "stats": {
+          "hp": "[ROLL 8d6+24]",
+          "max_hp": "same as hp",
+          "damage": "1d10+4",
+          "defense": 6,
+          "agility": "[ROLL 2d6+8]",
+          "strength": "[ROLL 3d6+9]",
+          "intelligence": "[ROLL 2d6+12]",
+          "charisma": "[ROLL 2d6+10]"
+        },
+        "description_templates": [
+          "A [RANDOM_CHOICE dragon_size] dragon [RANDOM_CHOICE dragon_features] [RANDOM_CHOICE dragon_demeanor]",
+          "This [RANDOM_CHOICE dragon_coloration] wyrm [RANDOM_CHOICE draconic_aspects] [RANDOM_CHOICE power_display]"
+        ],
+        "dragon_size": ["young but impressive", "smaller than legends tell", "compact but deadly"],
+        "dragon_features": [
+          "with scales that shimmer like emeralds",
+          "whose breath mists with poisonous vapor",
+          "sporting wicked claws and needle-sharp teeth",
+          "with eyes like molten gold",
+          "whose presence fills the air with the scent of chlorine"
+        ],
+        "dragon_demeanor": [
+          "regards you with ancient intelligence",
+          "coils like a serpent ready to strike",
+          "preens with draconic arrogance",
+          "calculates your worth with a merchant's eye",
+          "speaks in riddles and veiled threats"
+        ],
+        "dragon_coloration": ["emerald-scaled", "forest-green", "jade-hued"],
+        "draconic_aspects": [
+          "radiates an aura of magical power",
+          "moves with fluid, predatory grace",
+          "has treasure gleaming in its lair behind it",
+          "speaks in a voice like silk over steel",
+          "commands respect through sheer presence"
+        ],
+        "power_display": [
+          "lets wisps of poison gas escape its nostrils",
+          "flexes claws that could rend steel",
+          "spreads wings to show their impressive span",
+          "demonstrates its magical abilities casually",
+          "makes the very air thrum with draconic might"
+        ],
+        "ai_behavior": {
+          "combat_style": "Intelligent Tactical Fighter",
+          "tactics": [
+            "Uses breath weapon to control battlefield",
+            "Employs hit-and-run aerial tactics if possible",
+            "Attempts to negotiate before resorting to violence",
+            "Uses magic and cunning over brute force"
+          ],
+          "morale": "Proud but not foolish - will retreat if clearly outmatched",
+          "special_abilities": [
+            "Poison Breath: [ROLL 3d6] poison damage in 15-foot cone",
+            "Spell Casting: Can cast 3 spells per day from [RANDOM_CHOICE spell_schools]",
+            "Dragon Fear: Frightens creatures with less than 5 HD",
+            "Flight: Can take to the air if environment allows",
+            "Treasure Sense: Can detect valuable items and magic within 60 feet"
+          ],
+          "spell_schools": ["illusion", "enchantment", "divination"],
+          "negotiation": "Intelligent enough to bargain, especially for treasure or knowledge"
+        },
+        "loot_drops": {
+          "always": [
+            {"item": "dragon_scale", "chance": 100, "quantity": "[ROLL 2d6]"}
+          ],
+          "common": [
+            {"item": "dragon_blood", "chance": 80, "quantity": "[ROLL 1d3]"},
+            {"item": "precious_gems", "chance": 90, "quantity": "[ROLL 2d4]"}
+          ],
+          "rare": [
+            {"item": "dragon_tooth", "chance": 60, "quantity": "[ROLL 1d4]"},
+            {"item": "magic_item", "chance": 40, "quantity": 1}
+          ],
+          "treasure_hoard": {
+            "gold": "[ROLL 6d6*100]",
+            "art_objects": "[ROLL 1d6]",
+            "magic_items": "[ROLL 1d3]"
+          },
+          "gold": "[ROLL 5d6*50]"
+        },
+        "unicode_symbol": "🐉",
+        "encounter_environments": ["deep_caves", "ancient_ruins", "mountain_peaks"],
+        "encounter_chance": 0.02,
+        "lair_effects": "Area around dragon's lair may have magical effects or environmental changes"
+      }
+    }
+  },
+  
+  "encounter_tables": {
+    "forest_encounters": {
+      "common": [
+        {"creature": "wolf", "chance": 30, "group_size": "[ROLL 1d4+1]"},
+        {"creature": "wild_boar", "chance": 25, "group_size": "[ROLL 1d3]"},
+        {"creature": "bandit", "chance": 20, "group_size": "[ROLL 1d4+2]"}
+      ],
+      "uncommon": [
+        {"creature": "brown_bear", "chance": 15, "group_size": 1},
+        {"creature": "dire_wolf", "chance": 8, "group_size": 1},
+        {"creature": "forest_troll", "chance": 2, "group_size": 1}
+      ]
+    },
+    
+    "road_encounters": {
+      "common": [
+        {"creature": "bandit", "chance": 40, "group_size": "[ROLL 1d6+2]"},
+        {"creature": "wolf", "chance": 20, "group_size": "[ROLL 1d3+1]"},
+        {"creature": "wild_boar", "chance": 15, "group_size": "[ROLL 1d2]"}
+      ],
+      "uncommon": [
+        {"creature": "bandit_leader", "chance": 20, "group_size": "1 + [ROLL 1d4] bandits"},
+        {"creature": "dire_wolf", "chance": 5, "group_size": 1}
+      ]
+    },
+    
+    "graveyard_encounters": {
+      "common": [
+        {"creature": "skeleton_warrior", "chance": 35, "group_size": "[ROLL 1d6+1]"},
+        {"creature": "zombie", "chance": 30, "group_size": "[ROLL 1d4+2]"}
+      ],
+      "uncommon": [
+        {"creature": "ghost", "chance": 25, "group_size": 1},
+        {"creature": "cultist", "chance": 10, "group_size": "[ROLL 1d3+1]"}
+      ]
+    },
+    
+    "ruins_encounters": {
+      "common": [
+        {"creature": "skeleton_warrior", "chance": 25, "group_size": "[ROLL 1d4+2]"},
+        {"creature": "cultist", "chance": 20, "group_size": "[ROLL 1d3+1]"}
+      ],
+      "uncommon": [
+        {"creature": "ghost", "chance": 30, "group_size": 1},
+        {"creature": "dragon_wyrmling", "chance": 15, "group_size": 1},
+        {"creature": "forest_troll", "chance": 10, "group_size": 1}
+      ]
+    }
+  },
+  
+  "behavioral_patterns": {
+    "pack_hunters": {
+      "creatures": ["wolf", "dire_wolf"],
+      "tactics": [
+        "Surround prey in coordinated attacks",
+        "Use alpha to direct pack behavior",
+        "Attempt to separate weakest member of party",
+        "Retreat if alpha is killed or severely wounded"
+      ]
+    },
+    
+    "territorial_guardians": {
+      "creatures": ["brown_bear", "forest_troll", "dragon_wyrmling"],
+      "tactics": [
+        "Give warning displays before attacking",
+        "Fight fiercely when in their territory",
+        "May be negotiated with if approached respectfully",
+        "Pursue intruders only to territorial boundary"
+      ]
+    },
+    
+    "undead_hordes": {
+      "creatures": ["skeleton_warrior", "zombie"],
+      "tactics": [
+        "Mindless assault on living creatures",
+        "Never retreat or show fear",
+        "Drawn to noise and movement",
+        "May animate more undead during combat"
+      ]
+    },
+    
+    "intelligent_opponents": {
+      "creatures": ["bandit", "bandit_leader", "cultist", "dragon_wyrmling"],
+      "tactics": [
+        "Use terrain and cover to advantage",
+        "Attempt negotiation when clearly outmatched",
+        "Employ complex strategies and cooperation",
+        "May surrender or flee when situation is hopeless"
+      ]
+    }
+  },
+  
+  "special_encounter_events": {
+    "alpha_encounters": {
+      "alpha_wolf": {
+        "description": "A massive wolf with silver-streaked fur and scars from countless battles",
+        "stat_bonuses": {
+          "hp": "+[ROLL 2d6]",
+          "damage": "+2",
+          "defense": "+1"
+        },
+        "special_abilities": ["Commanding Howl: Summons [ROLL 1d6] additional wolves"],
+        "loot_bonus": "Double normal loot drops"
+      },
+      
+      "bandit_king": {
+        "description": "A legendary outlaw known throughout the kingdom for daring raids",
+        "stat_bonuses": {
+          "hp": "+[ROLL 3d6]",
+          "damage": "+3",
+          "defense": "+2"
+        },
+        "special_abilities": ["Master Swordsman: Can parry and counter-attack in same round"],
+        "unique_loot": ["Bandit King's Crown", "Map to Secret Treasure", "Royal Pardon Papers"]
+      }
+    },
+    
+    "cursed_variants": {
+      "cursed_wolf": {
+        "description": "A wolf touched by dark magic, with glowing red eyes and shadow-wreathed fur",
+        "stat_changes": {
+          "damage": "+1d4 shadow damage",
+          "special": "Attacks may cause fear"
+        }
+      },
+      
+      "plague_zombie": {
+        "description": "A zombie carrier of supernatural disease, with green-tinged flesh",
+        "stat_changes": {
+          "special": "Bite causes wasting disease if save failed"
+        }
+      }
+    },
+    
+    "environmental_modifiers": {
+      "full_moon": {
+        "effect": "Wolves and dire wolves gain +2 damage and pack size doubles",
+        "description": "The full moon drives wolves into a supernatural frenzy"
+      },
+      
+      "consecrated_ground": {
+        "effect": "Undead take 1 damage per round and attack at -2",
+        "description": "Holy ground weakens the undead significantly"
+      },
+      
+      "magical_storm": {
+        "effect": "All magical creatures gain +1 to all stats",
+        "description": "Arcane energy crackles in the air, empowering magical beings"
+      }
+    }
+  },
+  
+  "monster_lore": {
+    "identification_system": {
+      "intelligence_check_results": {
+        "basic_success": "Learn creature type, rough HP range, and primary attack",
+        "good_success": "Learn special abilities, weaknesses, and typical tactics",
+        "excellent_success": "Learn complete stat block, lore, and optimal strategies"
+      }
+    },
+    
+    "creature_knowledge": {
+      "local_legends": [
+        "The Ghost of Blackridge Pass appears only during winter storms",
+        "Silver weapons are said to be the bane of supernatural creatures",
+        "The Dragon of Thornwood Forest hoards ancient elvish artifacts",
+        "Wolves touched by the moon grow to enormous size and cunning"
+      ],
+      
+      "scholarly_texts": [
+        "Undead creatures are animated by negative energy and hate all life",
+        "Trolls regenerate rapidly unless damaged by fire or acid",
+        "Dragons, even young ones, possess intelligence rivaling great scholars",
+        "Forest spirits sometimes inhabit animals, granting them supernatural abilities"
+      ]
+    }
+  },
+  
+  "integration_systems": {
+    "experience_rewards": {
+      "challenge_rating_1_3": "[ROLL 1d6+15] XP",
+      "challenge_rating_4_6": "[ROLL 2d6+30] XP", 
+      "challenge_rating_7_9": "[ROLL 3d6+60] XP",
+      "challenge_rating_10_plus": "[ROLL 4d6+100] XP"
+    },
+    
+    "scaling_encounters": {
+      "party_level_1_2": "Use CR 1-3 creatures primarily",
+      "party_level_3_4": "Use CR 2-5 creatures, occasional CR 6",
+      "party_level_5_plus": "Use CR 4+ creatures, introduce legendary monsters"
+    },
+    
+    "random_generation": {
+      "encounter_frequency": "[PERCENTAGE_CHANCE 25] per exploration turn",
+      "creature_condition": {
+        "healthy": "[PERCENTAGE_CHANCE 70]",
+        "wounded": "[PERCENTAGE_CHANCE 20] (-25% HP)",
+        "diseased": "[PERCENTAGE_CHANCE 8] (-1 to all stats)",
+        "enraged": "[PERCENTAGE_CHANCE 2] (+2 damage, never flees)"
+      }
+    }
+  }
+}
