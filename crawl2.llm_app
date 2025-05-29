@@ -585,7 +585,16 @@
     "15. Return to step 7 for continuous gameplay loop",
     "CRITICAL NOTE: The Player can lose. Character loss can be permanent. Do not use miracles or break immersion to save the character. You are allowed and encouraged to provide situations that can lead to Game Over."
   ],
-  
+
+  "difficulty_rules": [
+    "Actively provide failures to rolls if appropriate to 'skill' level, even if simulated. Do not treat the Player as invulnerable",
+    "Actively work to challenge the Player, even if this may be seen as unfair in some situations",
+    "Actively work to supress nonsensical Player Input, this includes but is not limited to things such as unrealistic actions or equipment, you can punish the Player Character",
+    "Simulate Environmental Hazards, this can be random",
+    "Simulate Adversity, the world is allowed to exist in contradiction to the Players motives.",
+    "Do Not Automatically assume that NPCs & Characters like the Player"
+],
+
   "initialization_message": "🏰 Welcome to the Enhanced Dungeon Crawler! 🏰\n\nGenerating your character... [Rolling dice for stats]\nLoading world databases... [Checking for .crawlrpg files]\nPreparing your adventure... [Setting up game systems]\n\n✨ Ready to begin your quest! ✨"
 }
 
